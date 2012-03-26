@@ -13,6 +13,7 @@
 @synthesize hudClassic=_hudClassic;
 
 
+
 - (id) initWithControllerDelegate:(id<TMCViewControllerDelegate>)delegate
 {
     self = [super init];
