@@ -27,6 +27,8 @@
     TMCColumn* _SW;
     
     TMCColumn* _directions[8];
+
+    NSArray* _neighbors;
     
     TMCTile* _tile;
 }
@@ -42,7 +44,7 @@
 @property int y;
 @property (readonly) int targetDepth;
 @property (assign) TMCTile* tile;
-@property (readonly) CCNode* node;
-@property (readonly) CCSprite* view;
+@property (assign) id view;
+@property (readonly) NSArray* neighbors;
 
 @end

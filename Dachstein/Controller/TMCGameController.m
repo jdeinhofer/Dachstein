@@ -74,7 +74,9 @@
         [self setSelectedView:nil];
     }
     else if (![column isPickable]) {
-        [columnView startWiggleAnim];
+        if (!onRelease) {
+            [_view playWiggleAnimFor:columnView];
+        }
     }
     else if (_selectedColumnView != columnView && [selectedColumn tile] == [column tile]) {
         [self removePair:columnView pickedColumn:column selectedColumn:selectedColumn];

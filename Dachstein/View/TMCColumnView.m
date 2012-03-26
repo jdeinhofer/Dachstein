@@ -18,6 +18,7 @@
     self = [super init];
     if (self) {
         _column = column;
+        _column.view = self;
         _sprite = [CCSprite alloc];
         
         [self addChild:_sprite];

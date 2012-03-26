@@ -46,13 +46,14 @@
 - (id) findColumnTouchedBy: (UITouch*) touch;
 - (void) playGameStartAnimations;
 - (void) playGameOverAnimations;
+
+- (void)playWiggleAnimFor:(TMCColumnView *)view;
+
 - (void) updateVerticalOffset;
 - (void) setSelectionTo: (TMCColumnView*) view;
 - (void) showHintOn:(TMCColumnView *)view;
 - (NSArray *)getPickableColumnViewsExcluding:(TMCColumnView *)excludedView;
 - (void) setLevel: (int)level;
-
-- (TMCColumnView *)nearestViewTouchedBy:(UITouch *)touch flagged:(BOOL)pickable;
 
 + (BOOL) isLowRes;
 

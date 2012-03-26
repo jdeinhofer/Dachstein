@@ -15,8 +15,8 @@
 @synthesize y=_y;
 @synthesize targetDepth=_targetDepth;
 @synthesize tile=_tile;
-@synthesize node=_node;
 @synthesize view=_view;
+@synthesize neighbors=_neighbors;
 
 
 - (id) initWithDepth: (int) depthArg x: (int) xArg y: (int) yArg;
@@ -48,6 +48,16 @@
     _directions[5] =    _SW =   [model getColumnAtX:(self.x - 1)    Y:(self.y)];
     _directions[6] =    _NW;
     _directions[7] =    _N;
+
+    NSMutableArray *tmp = [[[NSMutableArray alloc] init] autorelease];
+    for (int n = 0; n < 6; n++) {
+        TMCColumn *const neighbor = _directions[n];
+        if (neighbor != nil) {
+            [tmp addObject:neighbor];
+        }
+    }
+
+    _neighbors = [[NSArray alloc] initWithArray:tmp];
 }
 
 - (BOOL) isPickable
@@ -70,6 +80,13 @@
 - (void) pick
 {
     _top++;
+}
+
+- (void) dealloc
+{
+    [_neighbors release];
+
+    [super dealloc];
 }
 
 @end

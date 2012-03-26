@@ -162,6 +162,28 @@
     }
 }
 
+- (void) playWiggleAnimFor: (TMCColumnView *) view {
+    if ([[CCActionManager sharedManager] numberOfRunningActionsInTarget:view] > 0) return;
+
+    [view startWiggleAnim];
+
+    NSArray *neighbors = view.column.neighbors;
+
+    for (TMCColumn *neighbor in neighbors) {
+        if (neighbor.top > view.column.top) continue;
+
+        TMCColumnView *neighborView = neighbor.view;
+
+        CGPoint neighborPos = neighborView.position;
+        CGPoint offset = ccpMult(ccpSub(neighborPos, view.position), 0.05f);
+
+        id moveAway = [CCMoveTo actionWithDuration:0.05f position:ccpAdd(neighborPos, offset)];
+        id moveBack = [CCMoveTo actionWithDuration:0.25f position:neighborPos];
+        id sequence = [CCSequence actions:moveAway, moveBack, nil];
+        [neighborView runAction:sequence];
+    }
+}
+
 - (void) updateVerticalOffset
 {
     for (TMCColumnView* view in _columnViews) {
@@ -193,37 +215,26 @@
 
 - (id) findColumnTouchedBy:(UITouch*)touch
 {
-    TMCColumnView *nearestPickable = [self nearestViewTouchedBy:touch flagged:TRUE];
-    if (nearestPickable)
-        return nearestPickable;
-    else
-        return [self nearestViewTouchedBy:touch flagged:FALSE];
-}
-
-- (TMCColumnView *) nearestViewTouchedBy: (UITouch *) touch flagged: (BOOL) pickable
-{
     CGSize textureSize = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"Red_1.png"].rect.size;
     float maxDistSqr = (textureSize.width * textureSize.width + textureSize.height * textureSize.height) / 9;
     TMCColumnView *nearest = nil;
-    
+
     for (TMCColumnView *view in _columnViews) {
-        if (view.column.isPickable == pickable) {
-            CGRect box = view.sprite.boundingBox;
-            float viewX = box.origin.x + box.size.width / 2;
-            float viewY = box.origin.y + box.size.height / 2;
-            
-            CGPoint touchLocationView = [view convertTouchToNodeSpace:touch];
-            float dX = viewX - touchLocationView.x;
-            float dY = viewY - touchLocationView.y;
-            
-            float distSqr = dX * dX + dY * dY;
-            if (distSqr < maxDistSqr) {
-                nearest = view;
-                maxDistSqr = distSqr;
-            }
+        CGRect box = view.sprite.boundingBox;
+        float viewX = box.origin.x + box.size.width / 2;
+        float viewY = box.origin.y + box.size.height / 2;
+
+        CGPoint touchLocationView = [view convertTouchToNodeSpace:touch];
+        float dX = viewX - touchLocationView.x;
+        float dY = viewY - touchLocationView.y;
+
+        float distSqr = dX * dX + dY * dY;
+        if (distSqr < maxDistSqr) {
+            nearest = view;
+            maxDistSqr = distSqr;
         }
     }
-    
+
     return nearest;
 }
 
