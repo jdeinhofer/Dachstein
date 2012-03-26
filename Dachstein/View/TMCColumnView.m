@@ -53,26 +53,6 @@
     float contentHeight = _sprite.contentSize.height;
     float contentWidth = _sprite.contentSize.width;
 
-    // ortho
-    //float spriteYcomponentY = - y * contentHeight * SPRITE_OFFSET_FACTOR_Y;
-    //float spriteYcomponentZ = - z * contentHeight * SPRITE_OFFSET_FACTOR_Z;
-    //float spriteX = x * contentWidth - y * contentWidth / 2;
-    //float spriteY = spriteYcomponentY + spriteYcomponentZ;     
-    //CGPoint position = ccp(spriteX, spriteY);
-    
-    // iso 45
-//    float tileHeight = contentHeight * 0.85f;
-//    float tileStep = contentHeight - tileHeight;
-//    float tileWidth = contentWidth;
-//
-//    float xx = x * tileWidth / 2;
-//    float xy = -y * tileWidth * 3 / 4;
-//    
-//    float yx = -x * tileHeight / 2;
-//    float yy = -y * tileHeight / 4;
-//    float yz = -z * tileStep;
- 
-    // iso 45 flat
     float tileHeight = contentHeight * 0.85f;
     float tileStep = contentHeight - tileHeight;
     float tileWidth = contentWidth;
@@ -83,45 +63,7 @@
     float yx = -x * tileHeight / 2;
     float yy = -y * tileHeight / 4;
     float yz = -z * tileStep;    
-    
-    // iso 30
-//    float tileHeight = contentHeight * 0.87f;
-//    float tileStep = contentHeight - tileHeight;
-//    float tileWidth = contentWidth;
-//    
-//    float xx = x * tileWidth * 0.325f;
-//    float xy = -y * tileWidth * 0.84f;
-//    
-//    float yx = -x * tileHeight * 0.65f;
-//    float yy = 0; //y * tileHeight * 0.2f;
-//    float yz = -z * tileStep;
-    
-    // iso 20
-//    float tileHeight = contentHeight * 0.87f;
-//    float tileStep = contentHeight - tileHeight;
-//    float tileWidth = contentWidth;
-//    
-//    float xx = x * tileWidth * 0.28f;
-//    float xy = -y * tileWidth * 0.87f;
-//    
-//    float yx = -x * tileHeight * 0.725f;
-//    float yy = y * tileHeight * 0.11f;
-//    float yz = -z * tileStep;
 
-    
-    // iso 10
-//    float tileHeight = contentHeight * 0.87f;
-//    float tileStep = contentHeight - tileHeight;
-//    float tileWidth = contentWidth;
-//    
-//    float xx = x * tileWidth * 0.2f;
-//    float xy = -y * tileWidth * 0.9f;
-//    
-//    float yx = -x * tileHeight * 0.8f;
-//    float yy = y * tileHeight * 0.22f;
-//    float yz = -z * tileStep;
-
-    
     CGPoint position = ccp(xx + xy, yx + yy + yz);
     
     return position;
