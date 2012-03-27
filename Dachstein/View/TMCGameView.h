@@ -17,7 +17,6 @@
 @required
 - (void) columnViewTouched: (id) columnView onRelease: (BOOL) onRelease;
 - (void) update: (ccTime) delta;
-@property (readonly) TMCModel *model;
 @end
 
 @interface TMCGameView : CCLayer
@@ -35,28 +34,25 @@
     NSArray *_huds;
 }
 
-- (void) setupResourcesAndLayout: (CGSize)screensize;
-- (void) setupColumnViews;
-- (void) setupViewForColumn: (TMCColumn*) column;
-- (void) setupBackground;
-- (void) setupHudsWith:(CGSize)screenSize;
-- (void) showHud: (id) hud;
-- (void) reset;
-- (id) initWithControllerDelegate: (id <TMCViewControllerDelegate>) delegate;
-- (id) findColumnTouchedBy: (UITouch*) touch;
-- (void) playGameStartAnimations;
-- (void) playGameOverAnimations;
-
+- (id)initWithControllerDelegate:(id <TMCViewControllerDelegate>)delegate model:(TMCModel *)model;
+- (void)setupResourcesAndLayout:(CGSize)screensize;
+- (void)setupColumnViewsFromModel:(TMCModel *)model;
+- (void)setupViewForColumn:(TMCColumn *)column;
+- (void)setupBackground;
+- (void)setupHudsWith:(CGSize)screenSize;
+- (void)showHud:(id)hud;
+- (void)reset;
+- (id)findColumnTouchedBy:(UITouch *)touch;
+- (void)playGameStartAnimations;
+- (void)playGameOverAnimations;
 - (void)playWiggleAnimFor:(TMCColumnView *)view;
-
-- (void) updateVerticalOffset;
-- (void) setSelectionTo: (TMCColumnView*) view;
-- (void) showHintOn:(TMCColumnView *)view;
+- (void)updateVerticalOffset;
+- (void)setSelectionTo:(TMCColumnView *)view;
+- (void)showHintOn:(TMCColumnView *)view;
 - (NSArray *)getPickableColumnViewsExcluding:(TMCColumnView *)excludedView;
-- (void) setLevel: (int)level;
+- (void)setLevel:(int)level;
++ (BOOL)isLowRes;
 
-+ (BOOL) isLowRes;
-
-@property (readonly, assign) TMCHudClassic *hudClassic;
+@property(readonly, assign) TMCHudClassic *hudClassic;
 
 @end

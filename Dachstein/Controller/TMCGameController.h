@@ -45,15 +45,16 @@ typedef enum {
 - (void) resetHintTimer;
 - (void) showHint;
 - (void) setSelectedView: (TMCColumnView*) view;
+- (void) startBackgroundAmbience;
+- (void) startJuchetzer;
 - (void) startBackgroundMusic;
-
 - (void) prepareGame;
 - (void) startGame;
 - (void) endGame;
 - (void) enableGame;
-
 - (void) update: (ccTime) delta;
 
 @property (readonly) TMCGameView *view;
-@property (readonly) TMCModel *model;
+
+
 @end

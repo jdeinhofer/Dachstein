@@ -11,7 +11,6 @@
 @implementation TMCGameController
 
 @synthesize view = _view;
-@synthesize model = _model;
 
 - (id)init
 {
@@ -19,12 +18,12 @@
     
     if (self) {
         _model = [[TMCModel alloc] init];
-        _view = [[TMCGameView alloc] initWithControllerDelegate: self];
+        _view = [[TMCGameView alloc] initWithControllerDelegate: self model: _model];
         _rules = [[TMCRulesClassic alloc] initWithController: self];
         
         _selectedColumnView = nil;
         
-        [self startBackgroundMusic];
+        [self startBackgroundAmbience];
     }
     
     return self;
@@ -101,6 +100,7 @@
     [_rules prepareGame];
     [self setSelectedView:nil];
     [self resetHintTimer];
+    [self startJuchetzer];
 }
 
 - (void) startGame
@@ -114,6 +114,7 @@
     _gameState = GAMESTATE_GAMEOVER;
     [[CCScheduler sharedScheduler] unscheduleSelector:@selector(showHint) forTarget:self];
     [_view playGameOverAnimations];
+    [self startBackgroundAmbience];
 
     [_view runAction:[CCSequence actions:[CCDelayTime actionWithDuration:2], [CCCallFunc actionWithTarget:self selector:@selector(enableGame)], nil]];
 }
@@ -141,7 +142,7 @@
     NSArray *pickableViews = [_view getPickableColumnViewsExcluding:_selectedColumnView];
     NSMutableArray *viewsContainingMatchingTile = [[[NSMutableArray alloc] init] autorelease];
     for(TMCColumnView *view in pickableViews) {
-        if ([[view column] tile] == tile) {
+        if (view.column.tile == tile) {
             [viewsContainingMatchingTile addObject:view];
         }
     }
@@ -153,7 +154,7 @@
     NSArray *pickableViews = [_view getPickableColumnViewsExcluding:nil];
     NSMutableArray *pairableViews = [[[NSMutableArray alloc] init] autorelease];
     for (TMCColumnView *view in pickableViews) {
-        if ([[[view column] tile] pickable] > 1) {
+        if (view.column.tile.pickable > 1) {
             [pairableViews addObject:view];
         }
     }
@@ -179,9 +180,20 @@
     [_view setSelectionTo:view];
 }
 
-- (void) startBackgroundMusic
+- (void)startBackgroundAmbience
 {
-    [[CDAudioManager sharedManager] playBackgroundMusic:@"music_a.mp3" loop:YES];
+    [[CDAudioManager sharedManager] playBackgroundMusic:@"ambience.mp3" loop:YES];
+}
+
+- (void)startJuchetzer
+{
+    [[CDAudioManager sharedManager] playBackgroundMusic:@"juchetzer.mp3" loop:NO];
+    [[CDAudioManager sharedManager] setBackgroundMusicCompletionListener:self selector:@selector(startBackgroundMusic)];
+}
+
+- (void)startBackgroundMusic
+{
+    [[CDAudioManager sharedManager] playBackgroundMusic:@"music.mp3" loop:YES];
 }
 
 - (void) update: (ccTime) delta

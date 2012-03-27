@@ -14,7 +14,7 @@
 
 
 
-- (id) initWithControllerDelegate:(id<TMCViewControllerDelegate>)delegate
+- (id) initWithControllerDelegate:(id<TMCViewControllerDelegate>)delegate model:(TMCModel *) model
 {
     self = [super init];
     if (self) {
@@ -27,7 +27,7 @@
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         [self setupResourcesAndLayout:screenSize];
         [self setupBackground];
-        [self setupColumnViews];
+        [self setupColumnViewsFromModel: model];
         [self setupHudsWith:screenSize];
 
         _hint = [[TMCHint alloc] init];
@@ -61,14 +61,12 @@
 }
 
 
-- (void)setupColumnViews {
+- (void)setupColumnViewsFromModel:(TMCModel *)model {
     _columnViews = [[NSMutableArray alloc] init];
     
     _columnViewsRoot = [[CCNode alloc] init];
     
     [self addChild:_columnViewsRoot];
-
-    TMCModel *model = [_controllerDelegate model];
 
     for (int y = -COLUMNS_OFFSET; y <= COLUMNS_OFFSET; y++) {
         for (int x = -COLUMNS_OFFSET; x <= COLUMNS_OFFSET; x++) {
