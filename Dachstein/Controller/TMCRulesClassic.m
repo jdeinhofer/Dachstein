@@ -71,6 +71,22 @@
     [_controller.view.hudClassic.timerProgress setProgress:progress];
 }
 
+- (void) selectedTile: (TMCTile*) tile
+{
+    if (_lastTile == tile) {
+        [[SimpleAudioEngine sharedEngine] playEffect:@"select_3.wav"];
+    }
+    else if (_lastTile == nil) {
+        [[SimpleAudioEngine sharedEngine] playEffect:@"select_1.wav"];
+    }
+    else if (_lastTile.color == tile.color || _lastTile.value == tile.value) {
+        [[SimpleAudioEngine sharedEngine] playEffect:@"select_2.wav"];
+    }
+    else {
+        [[SimpleAudioEngine sharedEngine] playEffect:@"select_1.wav"];
+    }
+}
+
 - (void) pickedTile: (TMCTile*) tile
 {
     if (_level < MAX_LEVEL) {
@@ -102,6 +118,8 @@
         _scoreGainBase = SCORE_BASE;
         _scoreGainBonus = 0;
         CCLOG(@"FIRST TILE! (%i %i)", tile.color, tile.value);
+
+        [[SimpleAudioEngine sharedEngine] playEffect:@"success_1.wav"];
     }
     // a tile matching in at least one aspect
     else if (_lastTile.value == tile.value || _lastTile.color == tile.color) {
@@ -111,11 +129,16 @@
             _bonusLevel += 2;
             _scoreGainBonus = _scoreGainBase;
             CCLOG(@"SAME TILE! (%i %i)", tile.color, tile.value);
+
+            [[SimpleAudioEngine sharedEngine] playEffect:@"success_2.wav"];
+
         } else {
             _scoreGainBase += SCORE_BASE / 10;
             _bonusLevel += 1;
             _scoreGainBonus = _scoreGainBase / 2;
             CCLOG(@"FITTING TILE! (%i %i)", tile.color, tile.value);
+
+            [[SimpleAudioEngine sharedEngine] playEffect:@"success_3.wav"];
         }
     }
     // a totally unrelated tile
@@ -123,6 +146,8 @@
         _scoreGainBonus = 0;
         _bonusLevel = 0;
         CCLOG(@"ANY TILE! (%i %i)", tile.color, tile.value);
+
+        [[SimpleAudioEngine sharedEngine] playEffect:@"success_1.wav"];
     }
 
     _scoreGainTotal = _scoreGainBase + _scoreGainBonus;

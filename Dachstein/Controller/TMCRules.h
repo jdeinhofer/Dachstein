@@ -28,6 +28,7 @@
 - (id <TMCRules>) initWithController: (id <TMCRulesControllerDelegate>) model;
 - (void) update: (ccTime) delta;
 - (void) pickedTile: (TMCTile*) tile;
+- (void) selectedTile: (TMCTile*) tile;
 - (void) prepareGame;
 - (void) startGame;
 

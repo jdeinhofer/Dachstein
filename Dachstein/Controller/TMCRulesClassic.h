@@ -33,4 +33,7 @@
     int _highScore;
 }
 
+- (void) selectedTile: (TMCTile *) tile;
+
+
 @end

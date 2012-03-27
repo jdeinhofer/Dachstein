@@ -75,6 +75,7 @@
     else if (![column isPickable]) {
         if (!onRelease) {
             [_view playWiggleAnimFor:columnView];
+            [[SimpleAudioEngine sharedEngine] playEffect:@"blocked.wav"];
         }
     }
     else if (_selectedColumnView != columnView && [selectedColumn tile] == [column tile]) {
@@ -178,6 +179,10 @@
 {
     _selectedColumnView = view;
     [_view setSelectionTo:view];
+
+    if (view != nil) {
+        [_rules selectedTile:view.column.tile];
+    }
 }
 
 - (void)startBackgroundAmbience
