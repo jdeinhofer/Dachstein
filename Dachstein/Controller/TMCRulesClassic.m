@@ -19,6 +19,7 @@
 #define PAIRS_PER_LEVEL_1 10
 #define PAIRS_PER_LEVEL_INCREASE 5
 
+
 @implementation TMCRulesClassic
 
 - (id<TMCRules>) initWithController: (id <TMCRulesControllerDelegate>) controller
