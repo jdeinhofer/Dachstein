@@ -130,7 +130,7 @@
             _scoreGainBonus = _scoreGainBase;
             CCLOG(@"SAME TILE! (%i %i)", tile.color, tile.value);
 
-            [[SimpleAudioEngine sharedEngine] playEffect:@"success_2.wav"];
+            [[SimpleAudioEngine sharedEngine] playEffect:@"success_3.wav"];
 
         } else {
             _scoreGainBase += SCORE_BASE / 10;
@@ -138,7 +138,7 @@
             _scoreGainBonus = _scoreGainBase / 2;
             CCLOG(@"FITTING TILE! (%i %i)", tile.color, tile.value);
 
-            [[SimpleAudioEngine sharedEngine] playEffect:@"success_3.wav"];
+            [[SimpleAudioEngine sharedEngine] playEffect:@"success_2.wav"];
         }
     }
     // a totally unrelated tile
