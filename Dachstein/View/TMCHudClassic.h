@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 
 #import "TMCTimer.h"
-#import "TMCNumberTicker.h"
 #import "TMCProgressBar.h"
 
 @interface TMCHudClassic : CCNode
@@ -18,7 +17,6 @@
     CCLabelTTF* _TMPhighScoreLabel;
     CCLabelTTF* _TMPscoreGainLabel;
     CCLabelTTF* _TMPpairCounterLabel;
-    TMCNumberTicker* _scoreTicker;
     TMCProgressBar* _timerProgress;
     TMCProgressBar* _levelProgress;
 }

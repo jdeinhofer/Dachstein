@@ -20,12 +20,6 @@
         [self setupProgressBars:screenSize];
         [self setupScoreLabel:screenSize];
         [self setupPairCounterLabel:screenSize];
-
-        // TMP!
-        //_scoreTicker = [[TMCNumberTicker alloc] initWithFrameName:@"ScoreFont_L"];
-        //[self addChild:_scoreTicker];
-
-
     }
 
     return self;
@@ -40,7 +34,6 @@
 //
 //    // TMP!
 //    if ([TMCGameView isLowRes]) [_timer setScale:0.5f];
-
 
 
     CGSize levelProgressSize = CGSizeMake(screenSize.width, 8);
@@ -119,9 +112,6 @@
         [_TMPscoreGainLabel stopAllActions];
         [_TMPscoreGainLabel runAction:ease];
     }
-
-    // TMP!
-    [_scoreTicker setValue:score];
 }
 
 - (void) dealloc
