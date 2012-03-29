@@ -65,7 +65,6 @@
         return;
     }
 
-
     TMCColumn* column = [columnView column];
     TMCColumn* selectedColumn = [_selectedColumnView column];
 
@@ -101,7 +100,8 @@
     [_rules prepareGame];
     [self setSelectedView:nil];
     [self resetHintTimer];
-    [self startJuchetzer];
+
+    [self startBackgroundMusic];
 }
 
 - (void) startGame
@@ -128,7 +128,6 @@
 - (void) resetHintTimer
 {
     [[CCScheduler sharedScheduler] unscheduleSelector:@selector(showHint) forTarget:self];
-
     [[CCScheduler sharedScheduler] scheduleSelector:@selector(showHint) forTarget:self interval:HINT_TIMER_DELAY paused:false];
 }
 
@@ -190,12 +189,6 @@
     [[CDAudioManager sharedManager] playBackgroundMusic:@"ambience.mp3" loop:YES];
 }
 
-- (void)startJuchetzer
-{
-    [[CDAudioManager sharedManager] playBackgroundMusic:@"juchetzer.mp3" loop:NO];
-    [[CDAudioManager sharedManager] setBackgroundMusicCompletionListener:self selector:@selector(startBackgroundMusic)];
-}
-
 - (void)startBackgroundMusic
 {
     [[CDAudioManager sharedManager] playBackgroundMusic:@"music.mp3" loop:YES];
@@ -222,7 +215,6 @@
 	// return the scene
 	return scene;
 }
-
 
 - (void) dealloc
 {

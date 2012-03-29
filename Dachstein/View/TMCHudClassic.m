@@ -6,123 +6,110 @@
 
 
 #import "TMCHudClassic.h"
+#import "TMCTimer.h"
+#import "TMCLabel.h"
 
 
 @implementation TMCHudClassic
 
-@synthesize timerProgress=_timerProgress;
-@synthesize levelProgress=_levelProgress;
+@synthesize timerProgress=_timer;
 
-- (id) initWithScreenSize: (CGSize) screenSize
-{
+
+- (id)initWithScreenSize:(CGSize)screenSize lowRes:(BOOL)lowRes {
     self = [super init];
     if (self) {
+        _isLowRes = lowRes;
         [self setupProgressBars:screenSize];
         [self setupScoreLabel:screenSize];
-        [self setupPairCounterLabel:screenSize];
+        [self setupLevelInfo:screenSize];
     }
 
     return self;
 }
 
-
 - (void) setupProgressBars: (CGSize) screenSize
 {
-//    _timer = [[TMCTimer alloc] init];
-//    [_timer setPosition:ccp(0, screenSize.height / 2 - 7)];
-//    [self addChild:_timer];
-//
-//    // TMP!
-//    if ([TMCGameView isLowRes]) [_timer setScale:0.5f];
+    _timer = [[TMCTimer alloc] init];
+    [_timer setPosition:ccp(0, screenSize.height / 2 - 12)];
+    [self addChild:_timer];
 
-
-    CGSize levelProgressSize = CGSizeMake(screenSize.width, 8);
-    _levelProgress = [[TMCProgressBar alloc] initWithSizeBG:levelProgressSize bgFrameName:@"LevelProgressBar_BG.png" sizeFG:levelProgressSize fgFrameName:@"LevelProgressBar_FG.png"];
-    [_levelProgress setPosition:ccp(0, screenSize.height / 2 - 4)];
-    [self addChild:_levelProgress];
-
-    CGSize pgbSize = CGSizeMake(screenSize.width - 4, 6);
-    _timerProgress = [[TMCProgressBar alloc] initWithSizeBG:pgbSize bgFrameName:@"TimerProgressBar_BG.png" sizeFG:pgbSize fgFrameName:@"TimerProgressBar_FG.png"];
-    [_timerProgress setPosition:ccp(0, screenSize.height / 2 - 2)];
-    [self addChild:_timerProgress];
+    // TMP!
+    if (_isLowRes) [_timer setScale:0.5f];
 }
-
 
 - (void) setupScoreLabel: (CGSize) screenSize
 {
-    _TMPscoreLabel = [[CCLabelTTF labelWithString:@""
-                         dimensions:CGSizeMake(320, 50) alignment:UITextAlignmentCenter
-                         fontName:@"Arial" fontSize:32.0] retain];
-    _TMPscoreLabel.position = ccp(0, screenSize.height / 2 - (_TMPscoreLabel.contentSize.height/2) - 7);
-    _TMPscoreLabel.color = ccc3(20,20,20);
-    [self addChild:_TMPscoreLabel];
+    _scoreLabel = [[TMCLabel alloc] initWithFontsize:18];
+    _scoreLabel.position = ccp(0, screenSize.height / 2 - 25);
+    [self addChild:_scoreLabel];
 
-    _TMPhighScoreLabel = [[CCLabelTTF labelWithString:@""
-                         dimensions:CGSizeMake(320, 50) alignment:UITextAlignmentCenter
-                         fontName:@"Arial" fontSize:24.0] retain];
-    _TMPhighScoreLabel.position = ccp(screenSize.width / - 3.5f, screenSize.height / 2 - (_TMPhighScoreLabel.contentSize.height/2) - 7);
-    _TMPhighScoreLabel.color = ccc3(20,20,20);
-    [self addChild:_TMPhighScoreLabel];
+    _highscoreLabel = [[TMCLabel alloc] initWithFontsize:14];
+    _highscoreLabel.position = ccp(screenSize.width / - 2.5f, screenSize.height / 2 - 16);
+    [self addChild:_highscoreLabel];
 
-    _TMPscoreGainLabel = [[CCLabelTTF labelWithString:@""
-                             dimensions:CGSizeMake(320, 50) alignment:UITextAlignmentCenter
-                             fontName:@"Arial" fontSize:24.0] retain];
-    _TMPscoreGainLabel.position = ccp(screenSize.width / 3.5f, screenSize.height / 2 - (_TMPscoreGainLabel.contentSize.height/2) - 7);
-    _TMPscoreGainLabel.color = ccc3(20,20,20);
-    [self addChild:_TMPscoreGainLabel];
+    _scoreGainLabel = [[TMCLabel alloc] initWithFontsize:14];
+    _scoreGainLabel.position = ccp(screenSize.width / 2.5f, screenSize.height / 2 - 16);
+    [self addChild:_scoreGainLabel];
 }
 
-- (void) setupPairCounterLabel: (CGSize)screenSize
+- (void) setupLevelInfo: (CGSize)screenSize
 {
-    _TMPpairCounterLabel = [[CCLabelTTF labelWithString:@""
-                             dimensions:CGSizeMake(100, 24) alignment:UITextAlignmentLeft
-                             fontName:@"Arial" fontSize:24.0] retain];
-    _TMPpairCounterLabel.position = ccp(screenSize.width / -2 + 52, screenSize.height / -2 + (_TMPpairCounterLabel.contentSize.height/2) + 2);
-    _TMPpairCounterLabel.color = ccc3(20,20,20);
-    [self addChild:_TMPpairCounterLabel];
+    _pairCounterLabel = [[TMCLabel alloc] initWithFontsize:14];
+    _pairCounterLabel.position = ccp(screenSize.width / -2.2, screenSize.height / -2 + 12);
+    [self addChild:_pairCounterLabel];
+
+    _levelLabel = [[TMCLabel alloc] initWithFontsize:14];
+    _levelLabel.position  = ccp(screenSize.width / 2.2, screenSize.height / -2 + 12);
+    [self addChild:_levelLabel];
 }
 
 - (void)updatePairCounter:(int)pairs of:(int)total {
     NSString *pairsString = [NSString stringWithFormat:@"%i/%i", pairs, total];
-    [_TMPpairCounterLabel setString:pairsString];
+    [_pairCounterLabel setString:pairsString];
 }
 
+- (void) updateLevelLabel: (int) level
+{
+    NSString *levelString = [NSString stringWithFormat:@"LEVEL %i", level];
+    [_levelLabel setString:levelString];
+}
 
 - (void)updateScoreTo:(int)score highScore:(int)highScore gain:(int)gain bonus:(int)bonus {
     NSString* scoreString = [NSString stringWithFormat:@"%i", score];
-    [_TMPscoreLabel setString:scoreString];
+    [_scoreLabel setString:scoreString];
 
     NSString* highScoreString = [NSString stringWithFormat:@"%i", highScore];
-    [_TMPhighScoreLabel setString:highScoreString];
+    [_highscoreLabel setString:highScoreString];
 
     NSString* scoreGainString;
     if (bonus > 0)
         scoreGainString = [NSString stringWithFormat:@"+ %i + %i", gain, bonus];
     else
         scoreGainString = [NSString stringWithFormat:@"+ %i", gain];
-    [_TMPscoreGainLabel setString:scoreGainString];
+
+    [_scoreGainLabel setString:scoreGainString];
 
     if (gain + bonus == 0)
-        [_TMPscoreGainLabel setOpacity:0];
+        [_scoreGainLabel setOpacity:0];
     else {
-        [_TMPscoreGainLabel setOpacity:255];
+        [_scoreGainLabel setOpacity:255];
 
         id fadeOut = [CCFadeOut actionWithDuration:3.0f];
         id ease = [CCEaseSineInOut actionWithAction:fadeOut];
-        [_TMPscoreGainLabel stopAllActions];
-        [_TMPscoreGainLabel runAction:ease];
+        [_scoreGainLabel stopAllActions];
+        [_scoreGainLabel runAction:ease];
     }
 }
 
 - (void) dealloc
 {
-    [_TMPhighScoreLabel release];
-    [_TMPscoreLabel release];
-    [_TMPscoreGainLabel release];
-    [_TMPpairCounterLabel release];
+    [_levelLabel release];
+    [_pairCounterLabel release];
+    [_highscoreLabel release];
+    [_scoreGainLabel release];
+    [_scoreLabel release];
 
-    [_timerProgress release];
-    [_levelProgress release];
+    [_timer release];
 
     [super dealloc];
 }

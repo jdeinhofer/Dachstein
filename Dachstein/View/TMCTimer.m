@@ -14,8 +14,8 @@
 {
     self = [super init];
     if (self) {
-        CCSprite* background = [CCSprite spriteWithSpriteFrameName:@"Timerbar_BG.png"];
-        _timer = [CCProgressTimer progressWithFile:@"Timerbar_FG.png"];
+        CCSprite* background = [CCSprite spriteWithSpriteFrameName:@"TimerBar_BG.png"];
+        _timer = [CCProgressTimer progressWithFile:@"TimerBar_FG.png"];
         _timer.type = kCCProgressTimerTypeHorizontalBarRL;
         _timer.percentage = 100;
         
@@ -28,7 +28,7 @@
 
 - (void) setProgress: (float) progress
 {
-    _timer.percentage = 100 - progress;
+    _timer.percentage = 100 * progress;
 }
 
 @end

@@ -50,7 +50,8 @@
     TMCHudClassic *hud = _controller.view.hudClassic;
     [hud updateScoreTo:0 highScore:_highScore gain:0 bonus:0];
     [hud updatePairCounter:0 of:PAIRS_PER_LEVEL_1];
-    [[hud timerProgress] setProgress:0];
+    [hud updateLevelLabel:1];
+    [hud.timerProgress setProgress:1];
 }
 
 - (void) startGame
@@ -69,6 +70,7 @@
         _timer_progress = _timer_duration;
     }
     float progress = 1.0f - _timer_progress / _timer_duration;
+
     [_controller.view.hudClassic.timerProgress setProgress:progress];
 }
 
@@ -105,12 +107,11 @@
             _timer_duration = TIMER_DURATION_MIN + factor * (TIMER_DURATION_MAX - TIMER_DURATION_MIN);
 
             [_controller.view setLevel:_level];
+            [_controller.view.hudClassic updateLevelLabel:1];
         }
     } else {
          _timer_duration *= TIMER_SPEEDUP_FACTOR_MAXLEVEL;
     }
-    float levelProgress = 1.0f - (float) _pairs_remaining / (float) _pairs_per_level;
-    [_controller.view.hudClassic.levelProgress setProgress:levelProgress];
 
     [_controller.view.hudClassic updatePairCounter:_pairs_per_level - _pairs_remaining of:_pairs_per_level];
     
@@ -162,7 +163,6 @@
 
     [_controller.view.hudClassic updateScoreTo:_score highScore:_highScore gain:_scoreGainBase bonus:_scoreGainBonus];
     
-    //_timer_progress = MAX(0, _timer_progress - _timer_duration * TIMER_INCREASE);
     _timer_progress = _timer_progress * (1.0f - TIMER_INCREASE);
 }
 

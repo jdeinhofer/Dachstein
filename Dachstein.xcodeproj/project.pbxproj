@@ -13,6 +13,7 @@
 		2E0BF79E148F712A00CC6697 /* TMCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0BF79A148F712A00CC6697 /* TMCModel.m */; };
 		2E0BF79F148F712A00CC6697 /* TMCTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0BF79C148F712A00CC6697 /* TMCTile.m */; };
 		2E5946C714ED77CD0019F582 /* TMCTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5946C614ED77CD0019F582 /* TMCTimer.m */; };
+		2E65DB5B152330A400451D1D /* SF Fedora.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB5A152330A400451D1D /* SF Fedora.ttf */; };
 		2EB3AB1814EED1A500A805C9 /* TMCRulesClassic.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB3AB1714EED1A500A805C9 /* TMCRulesClassic.m */; };
 		2ECD1DF014E9556E00F295AA /* TMCColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECD1DEF14E9556E00F295AA /* TMCColumnView.m */; };
 		2ED7D697140FD7D000CC2C51 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED7D696140FD7D000CC2C51 /* QuartzCore.framework */; };
@@ -133,7 +134,6 @@
 		2ED7D806140FD7D200CC2C5F /* TMCSelectionHighlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2C5E /* TMCSelectionHighlight.m */; };
 		2ED7D806140FD7D200CC2C62 /* TMCHint.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2C61 /* TMCHint.m */; };
 		2ED7D806140FD7D200CC2C65 /* TMCBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2C64 /* TMCBackground.m */; };
-		2ED7D806140FD7D200CC2C6B /* TMCProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2C6A /* TMCProgressBar.m */; };
 		2ED7D806140FD7D200CC2C6E /* texture_background_1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2C6D /* texture_background_1.plist */; };
 		2ED7D806140FD7D200CC2C70 /* texture_background_1.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2C6F /* texture_background_1.pvr.ccz */; };
 		2ED7D806140FD7D200CC2C72 /* texture_background_2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2C71 /* texture_background_2.plist */; };
@@ -164,6 +164,8 @@
 		2ED7D806140FD7D200CC2CA5 /* success_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2CA4 /* success_1.wav */; };
 		2ED7D806140FD7D200CC2CA7 /* success_2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2CA6 /* success_2.wav */; };
 		2ED7D806140FD7D200CC2CA9 /* success_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2CA8 /* success_3.wav */; };
+		2ED7D806140FD7D200CC2CAC /* TimerBar_FG.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2CAB /* TimerBar_FG.png */; };
+		2ED7D806140FD7D200CC2CAE /* TMCLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2CAD /* TMCLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -179,6 +181,7 @@
 		2E0BF7A5148F767E00CC6697 /* TMCGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCGameView.h; sourceTree = "<group>"; };
 		2E5946C514ED77CD0019F582 /* TMCTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCTimer.h; sourceTree = "<group>"; };
 		2E5946C614ED77CD0019F582 /* TMCTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCTimer.m; sourceTree = "<group>"; };
+		2E65DB5A152330A400451D1D /* SF Fedora.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Fedora.ttf"; sourceTree = "<group>"; };
 		2EB3AB1614EED1A500A805C9 /* TMCRulesClassic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCRulesClassic.h; sourceTree = "<group>"; };
 		2EB3AB1714EED1A500A805C9 /* TMCRulesClassic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCRulesClassic.m; sourceTree = "<group>"; };
 		2EB3AB1A14EEDB4F00A805C9 /* TMCRules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCRules.h; sourceTree = "<group>"; };
@@ -425,8 +428,6 @@
 		2ED7D806140FD7D200CC2C63 /* TMCHint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCHint.h; sourceTree = "<group>"; };
 		2ED7D806140FD7D200CC2C64 /* TMCBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCBackground.m; sourceTree = "<group>"; };
 		2ED7D806140FD7D200CC2C66 /* TMCBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCBackground.h; sourceTree = "<group>"; };
-		2ED7D806140FD7D200CC2C6A /* TMCProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCProgressBar.m; sourceTree = "<group>"; };
-		2ED7D806140FD7D200CC2C6C /* TMCProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCProgressBar.h; sourceTree = "<group>"; };
 		2ED7D806140FD7D200CC2C6D /* texture_background_1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = texture_background_1.plist; path = ../Art/referenced_in_project/texture_background_1.plist; sourceTree = "<group>"; };
 		2ED7D806140FD7D200CC2C6F /* texture_background_1.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file.ccz; name = texture_background_1.pvr.ccz; path = ../Art/referenced_in_project/texture_background_1.pvr.ccz; sourceTree = "<group>"; };
 		2ED7D806140FD7D200CC2C71 /* texture_background_2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = texture_background_2.plist; path = ../Art/referenced_in_project/texture_background_2.plist; sourceTree = "<group>"; };
@@ -457,6 +458,9 @@
 		2ED7D806140FD7D200CC2CA4 /* success_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = success_1.wav; path = ../Sound/referenced_in_project/success_1.wav; sourceTree = "<group>"; };
 		2ED7D806140FD7D200CC2CA6 /* success_2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = success_2.wav; path = ../Sound/referenced_in_project/success_2.wav; sourceTree = "<group>"; };
 		2ED7D806140FD7D200CC2CA8 /* success_3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = success_3.wav; path = ../Sound/referenced_in_project/success_3.wav; sourceTree = "<group>"; };
+		2ED7D806140FD7D200CC2CAB /* TimerBar_FG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TimerBar_FG.png; path = ../Art/referenced_in_project/TimerBar_FG.png; sourceTree = "<group>"; };
+		2ED7D806140FD7D200CC2CAD /* TMCLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCLabel.m; sourceTree = "<group>"; };
+		2ED7D806140FD7D200CC2CAF /* TMCLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCLabel.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -506,8 +510,8 @@
 		2E0BF7A1148F763100CC6697 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2ED7D806140FD7D200CC2C6C /* TMCProgressBar.h */,
-				2ED7D806140FD7D200CC2C6A /* TMCProgressBar.m */,
+				2ED7D806140FD7D200CC2CAF /* TMCLabel.h */,
+				2ED7D806140FD7D200CC2CAD /* TMCLabel.m */,
 				2ED7D806140FD7D200CC2C66 /* TMCBackground.h */,
 				2ED7D806140FD7D200CC2C64 /* TMCBackground.m */,
 				2ED7D806140FD7D200CC2C63 /* TMCHint.h */,
@@ -579,6 +583,7 @@
 		2ED7D6A7140FD7D000CC2C51 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2E65DB5A152330A400451D1D /* SF Fedora.ttf */,
 				2ED7D6A8140FD7D000CC2C51 /* Default.png */,
 				2ED7D6AA140FD7D000CC2C51 /* fps_images.png */,
 				2ED7D6AC140FD7D000CC2C51 /* Icon-72.png */,
@@ -909,6 +914,7 @@
 		2ED7D806140FD7D200CC2C95 /* art */ = {
 			isa = PBXGroup;
 			children = (
+				2ED7D806140FD7D200CC2CAB /* TimerBar_FG.png */,
 				2ED7D806140FD7D200CC2C93 /* texture_tiles_retina.pvr.ccz */,
 				2ED7D806140FD7D200CC2C91 /* texture_tiles_retina.plist */,
 				2ED7D806140FD7D200CC2C8F /* texture_background_9.pvr.ccz */,
@@ -1039,6 +1045,8 @@
 				2ED7D806140FD7D200CC2CA5 /* success_1.wav in Resources */,
 				2ED7D806140FD7D200CC2CA7 /* success_2.wav in Resources */,
 				2ED7D806140FD7D200CC2CA9 /* success_3.wav in Resources */,
+				2ED7D806140FD7D200CC2CAC /* TimerBar_FG.png in Resources */,
+				2E65DB5B152330A400451D1D /* SF Fedora.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1158,7 +1166,7 @@
 				2ED7D806140FD7D200CC2C5F /* TMCSelectionHighlight.m in Sources */,
 				2ED7D806140FD7D200CC2C62 /* TMCHint.m in Sources */,
 				2ED7D806140FD7D200CC2C65 /* TMCBackground.m in Sources */,
-				2ED7D806140FD7D200CC2C6B /* TMCProgressBar.m in Sources */,
+				2ED7D806140FD7D200CC2CAE /* TMCLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,31 +7,31 @@
 
 #import <Foundation/Foundation.h>
 
-#import "TMCTimer.h"
-#import "TMCProgressBar.h"
+@class TMCLabel;
+@class TMCTimer;
 
 @interface TMCHudClassic : CCNode
 {
-//    TMCTimer* _timer;
-    CCLabelTTF* _TMPscoreLabel;
-    CCLabelTTF* _TMPhighScoreLabel;
-    CCLabelTTF* _TMPscoreGainLabel;
-    CCLabelTTF* _TMPpairCounterLabel;
-    TMCProgressBar* _timerProgress;
-    TMCProgressBar* _levelProgress;
+    TMCLabel *_scoreLabel;
+    TMCLabel *_highscoreLabel;
+    TMCLabel *_scoreGainLabel;
+
+    TMCLabel *_pairCounterLabel;
+    TMCLabel *_levelLabel;
+
+    TMCTimer *_timer;
+    BOOL _isLowRes;
 }
 
-- (id) initWithScreenSize: (CGSize) screenSize;
+- (id)initWithScreenSize:(CGSize)screenSize lowRes:(BOOL)lowRes;
 
-- (void) setupPairCounterLabel:(CGSize)screenSize;
+- (void) setupLevelInfo:(CGSize)screenSize;
 - (void) updatePairCounter: (int)pairs of: (int)total;
+- (void) updateLevelLabel:(int)level;
 - (void) updateScoreTo:(int)score highScore:(int)highScore gain:(int)gain bonus:(int)bonus;
 - (void) setupProgressBars: (CGSize) screenSize;
 - (void) setupScoreLabel: (CGSize) screenSize;
 
-//@property (readonly, assign) TMCTimer *timer;
-
-@property (readonly, assign) TMCProgressBar *timerProgress;
-@property (readonly, assign) TMCProgressBar *levelProgress;
+@property (readonly, assign) TMCTimer *timerProgress;
 
 @end

@@ -49,5 +49,9 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SF Fedora.ttf</string>
+	</array>
 </dict>
 </plist>

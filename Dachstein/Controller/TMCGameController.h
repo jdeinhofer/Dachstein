@@ -46,7 +46,6 @@ typedef enum {
 - (void) showHint;
 - (void) setSelectedView: (TMCColumnView*) view;
 - (void) startBackgroundAmbience;
-- (void) startJuchetzer;
 - (void) startBackgroundMusic;
 - (void) prepareGame;
 - (void) startGame;

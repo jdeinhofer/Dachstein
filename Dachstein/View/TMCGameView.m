@@ -6,12 +6,12 @@
 //  Copyright 2011 TheMountainCalls. All rights reserved.
 //
 
+
 #import "TMCGameView.h"
 
 @implementation TMCGameView
 
 @synthesize hudClassic=_hudClassic;
-
 
 
 - (id) initWithControllerDelegate:(id<TMCViewControllerDelegate>)delegate model:(TMCModel *) model
@@ -20,10 +20,8 @@
     if (self) {
         _controllerDelegate = delegate;
 
-        // register for touch events
         [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
         
-        // setup layout
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         [self setupResourcesAndLayout:screenSize];
         [self setupBackground];
@@ -33,7 +31,6 @@
         _hint = [[TMCHint alloc] init];
         _selection = [[TMCSelectionHighlight alloc] init];
 
-        // start game tick
         [self scheduleUpdate];
     }
     
@@ -42,7 +39,6 @@
 
 - (void) setupResourcesAndLayout: (CGSize)screensize
 {
-    // TMP! - load lo-res textures for 480x320 devices
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"texture_tiles_retina.plist"];
     
     CGPoint screenCenter = ccp(screensize.width / 2, screensize.height / 2);
@@ -56,10 +52,9 @@
 
     [self addChild:_background];
 
-    // TMP!
-    if ([TMCGameView isLowRes]) [_background setScale:0.5f];
+    if ([TMCGameView isLowRes])
+        [_background setScale:0.5f];
 }
-
 
 - (void)setupColumnViewsFromModel:(TMCModel *)model {
     _columnViews = [[NSMutableArray alloc] init];
@@ -77,17 +72,12 @@
         }
     }
 
-    // TMP!
     if ([TMCGameView isLowRes])
         [_columnViewsRoot setScale: 0.5f];
-    else
-        [_columnViewsRoot setScale: 1.0f];
 }
-
 
 - (void) setSelectionTo: (TMCColumnView*) view
 {
-    // if something is selected: deselect it
     [_selection removeFromParentAndCleanup:YES];
     
     if (view == nil) return; 
@@ -95,7 +85,6 @@
     [view addChild:_selection];
     [_selection restartAnimation];
 }
-
 
 - (void) showHintOn: (TMCColumnView*) view
 {
@@ -114,7 +103,6 @@
 
     return ret;
 }
-
 
 - (void) setLevel: (int)level
 {
@@ -196,7 +184,6 @@
     [_controllerDelegate update: delta];
 }
 
-
 - (BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
     TMCColumnView* touched = [self findColumnTouchedBy:touch];
@@ -242,7 +229,7 @@
 }
 
 - (void)setupHudsWith:(CGSize)screenSize {
-    _hudClassic = [[TMCHudClassic alloc] initWithScreenSize:screenSize];
+    _hudClassic = [[TMCHudClassic alloc] initWithScreenSize:screenSize lowRes:[TMCGameView isLowRes]];
     [self addChild:_hudClassic];
 
     _huds = [[NSArray alloc] initWithObjects:_hudClassic, nil];
