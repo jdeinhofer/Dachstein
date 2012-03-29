@@ -55,11 +55,11 @@
 - (void) setupLevelInfo: (CGSize)screenSize
 {
     _pairCounterLabel = [[TMCLabel alloc] initWithFontsize:14];
-    _pairCounterLabel.position = ccp(screenSize.width / -2.2, screenSize.height / -2 + 12);
+    _pairCounterLabel.position = ccp(screenSize.width / -2.4, screenSize.height / -2 + 12);
     [self addChild:_pairCounterLabel];
 
     _levelLabel = [[TMCLabel alloc] initWithFontsize:14];
-    _levelLabel.position  = ccp(screenSize.width / 2.2, screenSize.height / -2 + 12);
+    _levelLabel.position  = ccp(screenSize.width / 2.4, screenSize.height / -2 + 12);
     [self addChild:_levelLabel];
 }
 
