@@ -402,13 +402,31 @@ static CCTexture2DPixelFormat defaultAlphaPixelFormat_ = kCCTexture2DPixelFormat
 	
 	UIGraphicsPushContext(context);
 
-	// normal fonts
-	if( [uifont isKindOfClass:[UIFont class] ] )
-		[string drawInRect:CGRectMake(0, 0, dimensions.width, dimensions.height) withFont:uifont lineBreakMode:lineBreakMode alignment:alignment];
-	
+//	// normal fonts
+//	if( [uifont isKindOfClass:[UIFont class] ] )
+//		[string drawInRect:CGRectMake(0, 0, dimensions.width, dimensions.height) withFont:uifont lineBreakMode:lineBreakMode alignment:alignment];
+//
+//#if CC_FONT_LABEL_SUPPORT
+//	else // ZFont class
+//		[string drawInRect:CGRectMake(0, 0, dimensions.width, dimensions.height) withZFont:uifont lineBreakMode:lineBreakMode alignment:alignment];
+//
+//#endif
+
+// normal fonts
+    if( [uifont isKindOfClass:[UIFont class] ] )
+    {
+        CGSize renderedSize = [string sizeWithFont:uifont constrainedToSize:CGSizeMake(dimensions.width, dimensions.height)];
+        CGRect renderRect = CGRectMake(0, (dimensions.height - renderedSize.height)/2, dimensions.width, dimensions.height);
+        [string drawInRect:renderRect withFont:uifont lineBreakMode:lineBreakMode alignment:alignment];
+    }
+
 #if CC_FONT_LABEL_SUPPORT
-	else // ZFont class 
-		[string drawInRect:CGRectMake(0, 0, dimensions.width, dimensions.height) withZFont:uifont lineBreakMode:lineBreakMode alignment:alignment];
+    else // ZFont class
+    {
+        CGSize renderedSize = [string sizeWithZFont:uifont constrainedToSize:CGSizeMake(dimensions.width, dimensions.height)];
+        CGRect renderRect = CGRectMake(0, (dimensions.height - renderedSize.height)/2, dimensions.width, dimensions.height);
+        [string drawInRect:renderRect withZFont:uifont lineBreakMode:lineBreakMode alignment:alignment];
+    }
 #endif
 	
 	UIGraphicsPopContext();
