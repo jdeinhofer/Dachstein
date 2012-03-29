@@ -14,7 +14,8 @@
 		2E0BF79F148F712A00CC6697 /* TMCTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0BF79C148F712A00CC6697 /* TMCTile.m */; };
 		2E5946C714ED77CD0019F582 /* TMCTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5946C614ED77CD0019F582 /* TMCTimer.m */; };
 		2E65DB5B152330A400451D1D /* SF Fedora.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB5A152330A400451D1D /* SF Fedora.ttf */; };
-		2E65DB6C1524719400451D1D /* texture_tiles_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB6B1524719400451D1D /* texture_tiles_retina.png */; };
+		2E65DB6F15249F4200451D1D /* texture_tiles_retina.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB6D15249F4200451D1D /* texture_tiles_retina.plist */; };
+		2E65DB7015249F4200451D1D /* texture_tiles_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB6E15249F4200451D1D /* texture_tiles_retina.png */; };
 		2EB3AB1814EED1A500A805C9 /* TMCRulesClassic.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB3AB1714EED1A500A805C9 /* TMCRulesClassic.m */; };
 		2ECD1DF014E9556E00F295AA /* TMCColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECD1DEF14E9556E00F295AA /* TMCColumnView.m */; };
 		2ED7D697140FD7D000CC2C51 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED7D696140FD7D000CC2C51 /* QuartzCore.framework */; };
@@ -153,7 +154,6 @@
 		2ED7D806140FD7D200CC2C8C /* texture_background_8.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2C8B /* texture_background_8.pvr.ccz */; };
 		2ED7D806140FD7D200CC2C8E /* texture_background_9.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2C8D /* texture_background_9.plist */; };
 		2ED7D806140FD7D200CC2C90 /* texture_background_9.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2C8F /* texture_background_9.pvr.ccz */; };
-		2ED7D806140FD7D200CC2C92 /* texture_tiles_retina.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2C91 /* texture_tiles_retina.plist */; };
 		2ED7D806140FD7D200CC2C97 /* ambience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2C96 /* ambience.mp3 */; };
 		2ED7D806140FD7D200CC2C99 /* blocked.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2C98 /* blocked.wav */; };
 		2ED7D806140FD7D200CC2C9B /* juchetzer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2C9A /* juchetzer.mp3 */; };
@@ -182,7 +182,8 @@
 		2E5946C514ED77CD0019F582 /* TMCTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCTimer.h; sourceTree = "<group>"; };
 		2E5946C614ED77CD0019F582 /* TMCTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCTimer.m; sourceTree = "<group>"; };
 		2E65DB5A152330A400451D1D /* SF Fedora.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Fedora.ttf"; sourceTree = "<group>"; };
-		2E65DB6B1524719400451D1D /* texture_tiles_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture_tiles_retina.png; sourceTree = "<group>"; };
+		2E65DB6D15249F4200451D1D /* texture_tiles_retina.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = texture_tiles_retina.plist; sourceTree = "<group>"; };
+		2E65DB6E15249F4200451D1D /* texture_tiles_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture_tiles_retina.png; sourceTree = "<group>"; };
 		2EB3AB1614EED1A500A805C9 /* TMCRulesClassic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCRulesClassic.h; sourceTree = "<group>"; };
 		2EB3AB1714EED1A500A805C9 /* TMCRulesClassic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCRulesClassic.m; sourceTree = "<group>"; };
 		2EB3AB1A14EEDB4F00A805C9 /* TMCRules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCRules.h; sourceTree = "<group>"; };
@@ -447,7 +448,6 @@
 		2ED7D806140FD7D200CC2C8B /* texture_background_8.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file.ccz; name = texture_background_8.pvr.ccz; path = ../Art/referenced_in_project/texture_background_8.pvr.ccz; sourceTree = "<group>"; };
 		2ED7D806140FD7D200CC2C8D /* texture_background_9.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = texture_background_9.plist; path = ../Art/referenced_in_project/texture_background_9.plist; sourceTree = "<group>"; };
 		2ED7D806140FD7D200CC2C8F /* texture_background_9.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file.ccz; name = texture_background_9.pvr.ccz; path = ../Art/referenced_in_project/texture_background_9.pvr.ccz; sourceTree = "<group>"; };
-		2ED7D806140FD7D200CC2C91 /* texture_tiles_retina.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = texture_tiles_retina.plist; path = ../Art/referenced_in_project/texture_tiles_retina.plist; sourceTree = "<group>"; };
 		2ED7D806140FD7D200CC2C96 /* ambience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ambience.mp3; path = ../Sound/referenced_in_project/ambience.mp3; sourceTree = "<group>"; };
 		2ED7D806140FD7D200CC2C98 /* blocked.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = blocked.wav; path = ../Sound/referenced_in_project/blocked.wav; sourceTree = "<group>"; };
 		2ED7D806140FD7D200CC2C9A /* juchetzer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = juchetzer.mp3; path = ../Sound/referenced_in_project/juchetzer.mp3; sourceTree = "<group>"; };
@@ -914,9 +914,9 @@
 		2ED7D806140FD7D200CC2C95 /* art */ = {
 			isa = PBXGroup;
 			children = (
-				2E65DB6B1524719400451D1D /* texture_tiles_retina.png */,
+				2E65DB6D15249F4200451D1D /* texture_tiles_retina.plist */,
+				2E65DB6E15249F4200451D1D /* texture_tiles_retina.png */,
 				2ED7D806140FD7D200CC2CAB /* TimerBar_FG.png */,
-				2ED7D806140FD7D200CC2C91 /* texture_tiles_retina.plist */,
 				2ED7D806140FD7D200CC2C8F /* texture_background_9.pvr.ccz */,
 				2ED7D806140FD7D200CC2C8D /* texture_background_9.plist */,
 				2ED7D806140FD7D200CC2C8B /* texture_background_8.pvr.ccz */,
@@ -1033,7 +1033,6 @@
 				2ED7D806140FD7D200CC2C8C /* texture_background_8.pvr.ccz in Resources */,
 				2ED7D806140FD7D200CC2C8E /* texture_background_9.plist in Resources */,
 				2ED7D806140FD7D200CC2C90 /* texture_background_9.pvr.ccz in Resources */,
-				2ED7D806140FD7D200CC2C92 /* texture_tiles_retina.plist in Resources */,
 				2ED7D806140FD7D200CC2C97 /* ambience.mp3 in Resources */,
 				2ED7D806140FD7D200CC2C99 /* blocked.wav in Resources */,
 				2ED7D806140FD7D200CC2C9B /* juchetzer.mp3 in Resources */,
@@ -1046,7 +1045,8 @@
 				2ED7D806140FD7D200CC2CA9 /* success_3.wav in Resources */,
 				2ED7D806140FD7D200CC2CAC /* TimerBar_FG.png in Resources */,
 				2E65DB5B152330A400451D1D /* SF Fedora.ttf in Resources */,
-				2E65DB6C1524719400451D1D /* texture_tiles_retina.png in Resources */,
+				2E65DB6F15249F4200451D1D /* texture_tiles_retina.plist in Resources */,
+				2E65DB7015249F4200451D1D /* texture_tiles_retina.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

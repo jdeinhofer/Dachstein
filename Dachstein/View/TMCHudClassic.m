@@ -8,6 +8,8 @@
 #import "TMCHudClassic.h"
 #import "TMCTimer.h"
 #import "TMCLabel.h"
+#import "TMCTile.h"
+#import "TMCColumnView.h"
 
 
 @implementation TMCHudClassic
@@ -22,6 +24,7 @@
         [self setupProgressBars:screenSize];
         [self setupScoreLabel:screenSize];
         [self setupLevelInfo:screenSize];
+        [self setupChainInfo:screenSize];
     }
 
     return self;
@@ -49,7 +52,7 @@
 
     _scoreGainLabel = [[TMCLabel alloc] initWithFontsize:14];
     _scoreGainLabel.position = ccp(screenSize.width / 2.5f, screenSize.height / 2 - 16);
-    [self addChild:_scoreGainLabel];
+    //[self addChild:_scoreGainLabel];
 }
 
 - (void) setupLevelInfo: (CGSize)screenSize
@@ -61,6 +64,28 @@
     _levelLabel = [[TMCLabel alloc] initWithFontsize:14];
     _levelLabel.position  = ccp(screenSize.width / 2.4, screenSize.height / -2 + 12);
     [self addChild:_levelLabel];
+}
+
+- (void) setupChainInfo: (CGSize)screenSize
+{
+    _lastTile = [[CCSprite alloc] initWithSpriteFrameName:@"Red_1.png"];
+
+    CGSize tileSize = _lastTile.contentSize;
+
+    if (_isLowRes) {
+        _lastTile.scale = 0.5f;
+        tileSize = CGSizeMake(tileSize.width * 0.5f, tileSize.height * 0.5f);
+    }
+
+    CGPoint position = ccp(screenSize.width / 2 - tileSize.width * 0.6f, screenSize.height / 2 - tileSize.height * 0.6f);
+
+    _lastTile.position = position;
+    [self addChild:_lastTile];
+    _lastTile.visible = false;
+
+    _chainLength = [[TMCLabel alloc] initWithFontsize:24];
+    _chainLength.position = position;
+    [self addChild:_chainLength];
 }
 
 - (void)updatePairCounter:(int)pairs of:(int)total {
@@ -101,6 +126,28 @@
     }
 }
 
+- (void) updateChainInfo: (TMCTile *) lastTile chainLength: (int) chainLength
+{
+    if (lastTile == nil) {
+        _lastTile.visible = false;
+        _chainLength.visible = false;
+    }
+    else {
+        _lastTile.visible = true;
+        NSString *lastTileFrameName = [TMCColumnView spriteFrameNameForTile:lastTile];
+        [_lastTile setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:lastTileFrameName]];
+
+        if (chainLength > 0) {
+            NSString *chainString = [NSString stringWithFormat:@"%i", chainLength];
+            [_chainLength setString:chainString];
+            _chainLength.visible = true;
+        } else {
+            _chainLength.visible = false;
+        }
+
+    }
+}
+
 - (void) dealloc
 {
     [_levelLabel release];
@@ -108,6 +155,9 @@
     [_highscoreLabel release];
     [_scoreGainLabel release];
     [_scoreLabel release];
+
+    [_lastTile release];
+    [_chainLength release];
 
     [_timer release];
 

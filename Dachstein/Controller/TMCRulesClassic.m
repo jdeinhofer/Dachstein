@@ -52,6 +52,7 @@
     [hud updatePairCounter:0 of:PAIRS_PER_LEVEL_1];
     [hud updateLevelLabel:1];
     [hud.timerProgress setProgress:1];
+    [hud updateChainInfo:nil chainLength:0];
 }
 
 - (void) startGame
@@ -123,25 +124,23 @@
 
         [[SimpleAudioEngine sharedEngine] playEffect:@"success_1.wav"];
     }
+    // a perfect match
+    else if (_lastTile == tile) {
+        _scoreGainBase += SCORE_BASE / 2;
+        _bonusLevel += 1;
+        _scoreGainBonus = _scoreGainBase;
+        CCLOG(@"SAME TILE! (%i %i)", tile.color, tile.value);
+
+        [[SimpleAudioEngine sharedEngine] playEffect:@"success_3.wav"];
+    }
     // a tile matching in at least one aspect
     else if (_lastTile.value == tile.value || _lastTile.color == tile.color) {
+        _scoreGainBase += SCORE_BASE / 10;
+        _bonusLevel += 1;
+        _scoreGainBonus = _scoreGainBase / 2;
+        CCLOG(@"FITTING TILE! (%i %i)", tile.color, tile.value);
 
-        if (_lastTile == tile) {
-            _scoreGainBase += SCORE_BASE / 2;
-            _bonusLevel += 2;
-            _scoreGainBonus = _scoreGainBase;
-            CCLOG(@"SAME TILE! (%i %i)", tile.color, tile.value);
-
-            [[SimpleAudioEngine sharedEngine] playEffect:@"success_3.wav"];
-
-        } else {
-            _scoreGainBase += SCORE_BASE / 10;
-            _bonusLevel += 1;
-            _scoreGainBonus = _scoreGainBase / 2;
-            CCLOG(@"FITTING TILE! (%i %i)", tile.color, tile.value);
-
-            [[SimpleAudioEngine sharedEngine] playEffect:@"success_2.wav"];
-        }
+        [[SimpleAudioEngine sharedEngine] playEffect:@"success_2.wav"];
     }
     // a totally unrelated tile
     else {
@@ -161,6 +160,7 @@
 
     _lastTile = tile;
 
+    [_controller.view.hudClassic updateChainInfo:_lastTile chainLength:_bonusLevel];
     [_controller.view.hudClassic updateScoreTo:_score highScore:_highScore gain:_scoreGainBase bonus:_scoreGainBonus];
     
     _timer_progress = _timer_progress * (1.0f - TIMER_INCREASE);
