@@ -16,6 +16,15 @@
 		2E65DB5B152330A400451D1D /* SF Fedora.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB5A152330A400451D1D /* SF Fedora.ttf */; };
 		2E65DB6F15249F4200451D1D /* texture_tiles_retina.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB6D15249F4200451D1D /* texture_tiles_retina.plist */; };
 		2E65DB7015249F4200451D1D /* texture_tiles_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB6E15249F4200451D1D /* texture_tiles_retina.png */; };
+		2E65DB8C152611C800451D1D /* chain_up.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB83152611C800451D1D /* chain_up.wav */; };
+		2E65DB8D152611C800451D1D /* select_4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB84152611C800451D1D /* select_4.wav */; };
+		2E65DB8E152611C800451D1D /* select_5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB85152611C800451D1D /* select_5.wav */; };
+		2E65DB8F152611C800451D1D /* select_6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB86152611C800451D1D /* select_6.wav */; };
+		2E65DB90152611C800451D1D /* select_7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB87152611C800451D1D /* select_7.wav */; };
+		2E65DB91152611C800451D1D /* success_4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB88152611C800451D1D /* success_4.wav */; };
+		2E65DB92152611C800451D1D /* success_5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB89152611C800451D1D /* success_5.wav */; };
+		2E65DB93152611C800451D1D /* success_6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB8A152611C800451D1D /* success_6.wav */; };
+		2E65DB94152611C800451D1D /* success_7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB8B152611C800451D1D /* success_7.wav */; };
 		2EB3AB1814EED1A500A805C9 /* TMCRulesClassic.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB3AB1714EED1A500A805C9 /* TMCRulesClassic.m */; };
 		2ECD1DF014E9556E00F295AA /* TMCColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECD1DEF14E9556E00F295AA /* TMCColumnView.m */; };
 		2ED7D697140FD7D000CC2C51 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED7D696140FD7D000CC2C51 /* QuartzCore.framework */; };
@@ -184,6 +193,15 @@
 		2E65DB5A152330A400451D1D /* SF Fedora.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Fedora.ttf"; sourceTree = "<group>"; };
 		2E65DB6D15249F4200451D1D /* texture_tiles_retina.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = texture_tiles_retina.plist; sourceTree = "<group>"; };
 		2E65DB6E15249F4200451D1D /* texture_tiles_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture_tiles_retina.png; sourceTree = "<group>"; };
+		2E65DB83152611C800451D1D /* chain_up.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = chain_up.wav; path = Sound/referenced_in_project/chain_up.wav; sourceTree = SOURCE_ROOT; };
+		2E65DB84152611C800451D1D /* select_4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = select_4.wav; path = Sound/referenced_in_project/select_4.wav; sourceTree = SOURCE_ROOT; };
+		2E65DB85152611C800451D1D /* select_5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = select_5.wav; path = Sound/referenced_in_project/select_5.wav; sourceTree = SOURCE_ROOT; };
+		2E65DB86152611C800451D1D /* select_6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = select_6.wav; path = Sound/referenced_in_project/select_6.wav; sourceTree = SOURCE_ROOT; };
+		2E65DB87152611C800451D1D /* select_7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = select_7.wav; path = Sound/referenced_in_project/select_7.wav; sourceTree = SOURCE_ROOT; };
+		2E65DB88152611C800451D1D /* success_4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = success_4.wav; path = Sound/referenced_in_project/success_4.wav; sourceTree = SOURCE_ROOT; };
+		2E65DB89152611C800451D1D /* success_5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = success_5.wav; path = Sound/referenced_in_project/success_5.wav; sourceTree = SOURCE_ROOT; };
+		2E65DB8A152611C800451D1D /* success_6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = success_6.wav; path = Sound/referenced_in_project/success_6.wav; sourceTree = SOURCE_ROOT; };
+		2E65DB8B152611C800451D1D /* success_7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = success_7.wav; path = Sound/referenced_in_project/success_7.wav; sourceTree = SOURCE_ROOT; };
 		2EB3AB1614EED1A500A805C9 /* TMCRulesClassic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCRulesClassic.h; sourceTree = "<group>"; };
 		2EB3AB1714EED1A500A805C9 /* TMCRulesClassic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCRulesClassic.m; sourceTree = "<group>"; };
 		2EB3AB1A14EEDB4F00A805C9 /* TMCRules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCRules.h; sourceTree = "<group>"; };
@@ -942,6 +960,15 @@
 		2ED7D806140FD7D200CC2CAA /* sound */ = {
 			isa = PBXGroup;
 			children = (
+				2E65DB83152611C800451D1D /* chain_up.wav */,
+				2E65DB84152611C800451D1D /* select_4.wav */,
+				2E65DB85152611C800451D1D /* select_5.wav */,
+				2E65DB86152611C800451D1D /* select_6.wav */,
+				2E65DB87152611C800451D1D /* select_7.wav */,
+				2E65DB88152611C800451D1D /* success_4.wav */,
+				2E65DB89152611C800451D1D /* success_5.wav */,
+				2E65DB8A152611C800451D1D /* success_6.wav */,
+				2E65DB8B152611C800451D1D /* success_7.wav */,
 				2ED7D806140FD7D200CC2CA8 /* success_3.wav */,
 				2ED7D806140FD7D200CC2CA6 /* success_2.wav */,
 				2ED7D806140FD7D200CC2CA4 /* success_1.wav */,
@@ -1047,6 +1074,15 @@
 				2E65DB5B152330A400451D1D /* SF Fedora.ttf in Resources */,
 				2E65DB6F15249F4200451D1D /* texture_tiles_retina.plist in Resources */,
 				2E65DB7015249F4200451D1D /* texture_tiles_retina.png in Resources */,
+				2E65DB8C152611C800451D1D /* chain_up.wav in Resources */,
+				2E65DB8D152611C800451D1D /* select_4.wav in Resources */,
+				2E65DB8E152611C800451D1D /* select_5.wav in Resources */,
+				2E65DB8F152611C800451D1D /* select_6.wav in Resources */,
+				2E65DB90152611C800451D1D /* select_7.wav in Resources */,
+				2E65DB91152611C800451D1D /* success_4.wav in Resources */,
+				2E65DB92152611C800451D1D /* success_5.wav in Resources */,
+				2E65DB93152611C800451D1D /* success_6.wav in Resources */,
+				2E65DB94152611C800451D1D /* success_7.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
