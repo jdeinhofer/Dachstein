@@ -15,7 +15,7 @@
 {
     TMCLabel *_scoreLabel;
     TMCLabel *_highscoreLabel;
-    TMCLabel *_scoreGainLabel;
+    TMCLabel *_messageLabel;
 
     TMCLabel *_pairCounterLabel;
     TMCLabel *_levelLabel;
@@ -35,7 +35,11 @@
 
 - (void) updatePairCounter: (int)pairs of: (int)total;
 - (void) updateLevelLabel:(int)level;
-- (void) updateScoreTo:(int)score highScore:(int)highScore gain:(int)gain bonus:(int)bonus;
+
+- (void)updateScoreTo:(int)score highScore:(int)highScore;
+
+- (void)updateScoreMessage:(NSString *)text;
+
 
 - (void)updateChainInfo:(TMCTile *)lastTile chainLength:(int)chainLength;
 

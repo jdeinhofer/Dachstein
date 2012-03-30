@@ -14,7 +14,6 @@
 #import "TMCTile.h"
 #import "TMCColumn.h"
 #import "TMCGameView.h"
-#import "TMCScoring.h"
 #import "TMCRules.h"
 #import "TMCRulesClassic.h"
 

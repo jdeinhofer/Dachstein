@@ -28,12 +28,8 @@
     int _score;
     int _scoreGainBase;
     int _scoreGainBonus;
-    int _scoreGainTotal;
 
     int _highScore;
 }
-
-- (void) selectedTile: (TMCTile *) tile;
-
 
 @end

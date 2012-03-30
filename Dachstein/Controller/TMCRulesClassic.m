@@ -13,14 +13,40 @@
 #define TIMER_DURATION_MAX 45.0f
 #define TIMER_DURATION_MIN 15.0f
 
-#define TIMER_SPEEDUP_FACTOR_MAXLEVEL 0.99f
-#define TIMER_INCREASE 0.2f
+#define TIMER_SPEEDUP_FACTOR_MAXLEVEL 0.995f
+#define TIMER_INCREASE 0.1f
+#define TIMER_INCREASE_CHAIN 0.075f
 
-#define PAIRS_PER_LEVEL_1 10
+#define PAIRS_PER_LEVEL_1 15
 #define PAIRS_PER_LEVEL_INCREASE 5
 
+#define CHAIN_STATE_BUILDUP 0
+#define CHAIN_STATE_COUNTDOWN 1
 
-@implementation TMCRulesClassic
+#define CHAIN_COUNTDOWN_TIME_BASE 0.025f
+#define CHAIN_COUNTDOWN_TIME_SPEEDUP 0.95f
+
+#define SCORE_BASE 100
+#define SCORE_BONUS 25
+
+
+@interface TMCRulesClassic ()
+- (void)scoreDominoChain:(TMCTile *)tile;
+- (void)scorePerfectChain:(TMCTile *)tile;
+- (void)scoreFirstTile:(TMCTile *)tile;
+- (void)levelUp;
+- (void)cashInChain;
+- (void)cashInChainImmediately;
+- (void)startChainCountdown;
+@end
+
+@implementation TMCRulesClassic {
+    int _chainState;
+    int _chainLength;
+    int _chainBonus;
+    float _chainCountdownTime;
+    float _chainCountdownTimeLeft;
+}
 
 - (id<TMCRules>) initWithController: (id <TMCRulesControllerDelegate>) controller
 {
@@ -41,14 +67,15 @@
     _score = 0;
     _scoreGainBase = 0;
     _scoreGainBonus = 0;
-    _scoreGainTotal = 0;
     _bonusLevel = 0;
     
     _pairs_per_level = PAIRS_PER_LEVEL_1;
     _pairs_remaining = _pairs_per_level;
 
+    _chainState = CHAIN_STATE_BUILDUP;
+
     TMCHudClassic *hud = _controller.view.hudClassic;
-    [hud updateScoreTo:0 highScore:_highScore gain:0 bonus:0];
+    [hud updateScoreTo:0 highScore:_highScore];
     [hud updatePairCounter:0 of:PAIRS_PER_LEVEL_1];
     [hud updateLevelLabel:1];
     [hud.timerProgress setProgress:1];
@@ -66,13 +93,33 @@
 {
     _timer_progress += delta;
     if (_timer_progress > _timer_duration) {
-        // GAME OVER!
-        [_controller endGame];
         _timer_progress = _timer_duration;
-    }
-    float progress = 1.0f - _timer_progress / _timer_duration;
 
+//        if (_bonusLevel > 0) {
+//            [self startChainCountdown];
+//            [self cashInChain];
+//        }
+//        else {
+//            [self cashInChainImmediately];
+//            [_controller endGame];
+//        }
+
+        [self cashInChainImmediately];
+        [_controller endGame];
+    }
+
+    float progress = 1.0f - _timer_progress / _timer_duration;
     [_controller.view.hudClassic.timerProgress setProgress:progress];
+
+    if (_chainState == CHAIN_STATE_COUNTDOWN) {
+        _chainCountdownTimeLeft -= delta;
+        if (_chainCountdownTimeLeft <= 0) {
+            _chainCountdownTime *= CHAIN_COUNTDOWN_TIME_SPEEDUP;
+            _chainCountdownTimeLeft = _chainCountdownTime;
+
+            [self cashInChain];
+        }
+    }
 }
 
 - (void) selectedTile: (TMCTile*) tile
@@ -91,80 +138,140 @@
     }
 }
 
+- (void)scoreDominoChain:(TMCTile *)tile {
+    _bonusLevel++;
+    _scoreGainBonus = 3 * _scoreGainBase / 5;
+    CCLOG(@"FITTING TILE! (%i %i)", tile.color, tile.value);
+
+    [_controller.view.hudClassic updateScoreMessage:[NSString stringWithFormat:@"DOMINO CHAIN! %i", _scoreGainBase + _scoreGainBonus]];
+
+    [[SimpleAudioEngine sharedEngine] playEffect:@"success_2.wav"];
+}
+
+- (void)scorePerfectChain:(TMCTile *)tile {
+    _bonusLevel++;
+    _scoreGainBonus = _scoreGainBase;
+    CCLOG(@"SAME TILE! (%i %i)", tile.color, tile.value);
+
+    [_controller.view.hudClassic updateScoreMessage:[NSString stringWithFormat:@"PERFECT CHAIN! %i", _scoreGainBase + _scoreGainBonus]];
+
+    [[SimpleAudioEngine sharedEngine] playEffect:@"success_3.wav"];
+}
+
+- (void)scoreFirstTile:(TMCTile *)tile {
+    _scoreGainBase = SCORE_BASE;
+    _scoreGainBonus = 0;
+    CCLOG(@"FIRST TILE! (%i %i)", tile.color, tile.value);
+
+    [_controller.view.hudClassic updateScoreMessage:[NSString stringWithFormat:@"%i", _scoreGainBase + _scoreGainBonus]];
+
+    [[SimpleAudioEngine sharedEngine] playEffect:@"success_1.wav"];
+}
+
+- (void)scoreAnyTile:(TMCTile *)tile {
+    if (_bonusLevel > 0) {
+        [self startChainCountdown];
+    } else  {
+        [_controller.view.hudClassic updateScoreMessage:[NSString stringWithFormat:@"%i", _scoreGainBase]];
+    }
+
+    _scoreGainBonus = 0;
+    _bonusLevel = 0;
+    CCLOG(@"ANY TILE! (%i %i)", tile.color, tile.value);
+
+    [[SimpleAudioEngine sharedEngine] playEffect:@"success_1.wav"];
+}
+
+- (void)levelUp {
+    _pairs_per_level += PAIRS_PER_LEVEL_INCREASE;
+    _pairs_remaining = _pairs_per_level;
+
+    _level++;
+
+    float factor = (float)(MAX_LEVEL - _level) / (float)MAX_LEVEL;
+    factor = (factor + factor * factor) / 2;
+    _timer_duration = TIMER_DURATION_MIN + factor * (TIMER_DURATION_MAX - TIMER_DURATION_MIN);
+
+    [_controller.view setLevel:_level];
+    [_controller.view.hudClassic updateLevelLabel:_level + 1];
+}
+
 - (void) pickedTile: (TMCTile*) tile
 {
     if (_level < MAX_LEVEL) {
         _pairs_remaining--;
         if (_pairs_remaining == 0) {
-            _pairs_per_level += PAIRS_PER_LEVEL_INCREASE;
-            _pairs_remaining = _pairs_per_level;
-
-            _level++;
-
-            _timer_progress = 0;
-            
-            float factor = (float)(MAX_LEVEL - _level) / (float)MAX_LEVEL;
-            factor = (factor + factor * factor) / 2;
-            _timer_duration = TIMER_DURATION_MIN + factor * (TIMER_DURATION_MAX - TIMER_DURATION_MIN);
-
-            [_controller.view setLevel:_level];
-            [_controller.view.hudClassic updateLevelLabel:1];
+            [self levelUp];
         }
     } else {
          _timer_duration *= TIMER_SPEEDUP_FACTOR_MAXLEVEL;
     }
 
-    [_controller.view.hudClassic updatePairCounter:_pairs_per_level - _pairs_remaining of:_pairs_per_level];
-    
-    // very first tile
+    if (_chainState == CHAIN_STATE_COUNTDOWN) {
+        [self cashInChainImmediately];
+    }
+
     if (_lastTile == nil) {
-        _scoreGainBase = SCORE_BASE;
-        _scoreGainBonus = 0;
-        CCLOG(@"FIRST TILE! (%i %i)", tile.color, tile.value);
-
-        [[SimpleAudioEngine sharedEngine] playEffect:@"success_1.wav"];
+        [self scoreFirstTile:tile];
     }
-    // a perfect match
     else if (_lastTile == tile) {
-        _scoreGainBase += SCORE_BASE / 2;
-        _bonusLevel += 1;
-        _scoreGainBonus = _scoreGainBase;
-        CCLOG(@"SAME TILE! (%i %i)", tile.color, tile.value);
-
-        [[SimpleAudioEngine sharedEngine] playEffect:@"success_3.wav"];
+        [self scorePerfectChain:tile];
     }
-    // a tile matching in at least one aspect
     else if (_lastTile.value == tile.value || _lastTile.color == tile.color) {
-        _scoreGainBase += SCORE_BASE / 10;
-        _bonusLevel += 1;
-        _scoreGainBonus = _scoreGainBase / 2;
-        CCLOG(@"FITTING TILE! (%i %i)", tile.color, tile.value);
-
-        [[SimpleAudioEngine sharedEngine] playEffect:@"success_2.wav"];
+        [self scoreDominoChain:tile];
     }
-    // a totally unrelated tile
     else {
-        _scoreGainBonus = 0;
-        _bonusLevel = 0;
-        CCLOG(@"ANY TILE! (%i %i)", tile.color, tile.value);
-
-        [[SimpleAudioEngine sharedEngine] playEffect:@"success_1.wav"];
+        [self scoreAnyTile:tile];
     }
 
-    _scoreGainTotal = _scoreGainBase + _scoreGainBonus;
-
-    _score += _scoreGainTotal;
+    _score += _scoreGainBase + _scoreGainBonus;
     _highScore = MAX(_score, _highScore);
-
-    CCLOG(@"SCORE: %i  %i %i %i", _score, _scoreGainBase, _scoreGainBonus, _bonusLevel);
 
     _lastTile = tile;
 
+    CCLOG(@"SCORE: %i  %i %i %i", _score, _scoreGainBase, _scoreGainBonus, _bonusLevel);
+
     [_controller.view.hudClassic updateChainInfo:_lastTile chainLength:_bonusLevel];
-    [_controller.view.hudClassic updateScoreTo:_score highScore:_highScore gain:_scoreGainBase bonus:_scoreGainBonus];
-    
+    [_controller.view.hudClassic updateScoreTo:_score highScore:_highScore];
+    [_controller.view.hudClassic updatePairCounter:_pairs_per_level - _pairs_remaining of:_pairs_per_level];
+
     _timer_progress = _timer_progress * (1.0f - TIMER_INCREASE);
 }
 
+- (void) cashInChain
+{
+    _timer_progress = _timer_progress * (1.0f - TIMER_INCREASE_CHAIN);
+    _chainLength--;
+
+    _scoreGainBase += SCORE_BONUS;
+    _score += _scoreGainBase;
+    _highScore = MAX(_score, _highScore);
+
+    if (_chainLength == 0) {
+        _chainState = CHAIN_STATE_BUILDUP;
+    }
+
+    [_controller.view.hudClassic updateChainInfo:_lastTile chainLength:_chainLength];
+    [_controller.view.hudClassic updateScoreTo:_score highScore:_highScore];
+    [_controller.view.hudClassic updateScoreMessage:[NSString stringWithFormat:@"CHAIN UP! %i", _scoreGainBase]];
+}
+
+- (void) cashInChainImmediately
+{
+    while (_chainLength > 0) {
+        [self cashInChain];
+    }
+}
+
+- (void) startChainCountdown
+{
+    _chainLength = _bonusLevel;
+    _bonusLevel = 0;
+
+    _chainBonus = _scoreGainBase;
+    _chainCountdownTime = CHAIN_COUNTDOWN_TIME_BASE;
+    _chainCountdownTimeLeft = _chainCountdownTime;
+    _chainState = CHAIN_STATE_COUNTDOWN;
+}
 
 @end

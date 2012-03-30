@@ -50,9 +50,9 @@
     _highscoreLabel.position = ccp(screenSize.width / - 2.5f, screenSize.height / 2 - 16);
     [self addChild:_highscoreLabel];
 
-    _scoreGainLabel = [[TMCLabel alloc] initWithFontsize:14];
-    _scoreGainLabel.position = ccp(screenSize.width / 2.5f, screenSize.height / 2 - 16);
-    //[self addChild:_scoreGainLabel];
+    _messageLabel = [[TMCLabel alloc] initWithFontsize:24];
+    _messageLabel.position = ccp(0, screenSize.height / 2 - 50);
+    [self addChild:_messageLabel];
 }
 
 - (void) setupLevelInfo: (CGSize)screenSize
@@ -99,30 +99,31 @@
     [_levelLabel setString:levelString];
 }
 
-- (void)updateScoreTo:(int)score highScore:(int)highScore gain:(int)gain bonus:(int)bonus {
+- (void)updateScoreTo:(int)score highScore:(int)highScore {
     NSString* scoreString = [NSString stringWithFormat:@"%i", score];
     [_scoreLabel setString:scoreString];
 
     NSString* highScoreString = [NSString stringWithFormat:@"%i", highScore];
     [_highscoreLabel setString:highScoreString];
+}
 
-    NSString* scoreGainString;
-    if (bonus > 0)
-        scoreGainString = [NSString stringWithFormat:@"+ %i + %i", gain, bonus];
-    else
-        scoreGainString = [NSString stringWithFormat:@"+ %i", gain];
+- (void) updateScoreMessage: (NSString *) text
+{
+    [_messageLabel setString:text];
 
-    [_scoreGainLabel setString:scoreGainString];
-
-    if (gain + bonus == 0)
-        [_scoreGainLabel setOpacity:0];
+    if (text == nil) {
+        [_messageLabel setOpacity:0];
+    }
     else {
-        [_scoreGainLabel setOpacity:255];
+        [_messageLabel setOpacity:255];
 
-        id fadeOut = [CCFadeOut actionWithDuration:3.0f];
-        id ease = [CCEaseSineInOut actionWithAction:fadeOut];
-        [_scoreGainLabel stopAllActions];
-        [_scoreGainLabel runAction:ease];
+        id delay = [CCDelayTime actionWithDuration:0.5f];
+        id fadeOut = [CCFadeOut actionWithDuration:0.3f];
+        id ease = [CCEaseSineIn actionWithAction:fadeOut];
+        id sequence = [CCSequence actions:delay, ease, nil];
+
+        [_messageLabel stopAllActions];
+        [_messageLabel runAction:sequence];
     }
 }
 
@@ -153,7 +154,7 @@
     [_levelLabel release];
     [_pairCounterLabel release];
     [_highscoreLabel release];
-    [_scoreGainLabel release];
+    [_messageLabel release];
     [_scoreLabel release];
 
     [_lastTile release];
