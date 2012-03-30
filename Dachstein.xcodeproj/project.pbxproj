@@ -25,6 +25,9 @@
 		2E65DB92152611C800451D1D /* success_5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB89152611C800451D1D /* success_5.wav */; };
 		2E65DB93152611C800451D1D /* success_6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB8A152611C800451D1D /* success_6.wav */; };
 		2E65DB94152611C800451D1D /* success_7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB8B152611C800451D1D /* success_7.wav */; };
+		2E65DB98152617E700451D1D /* alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB95152617E700451D1D /* alert.mp3 */; };
+		2E65DB99152617E700451D1D /* gameover_high.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB96152617E700451D1D /* gameover_high.mp3 */; };
+		2E65DB9A152617E700451D1D /* gameover_low.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB97152617E700451D1D /* gameover_low.mp3 */; };
 		2EB3AB1814EED1A500A805C9 /* TMCRulesClassic.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB3AB1714EED1A500A805C9 /* TMCRulesClassic.m */; };
 		2ECD1DF014E9556E00F295AA /* TMCColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECD1DEF14E9556E00F295AA /* TMCColumnView.m */; };
 		2ED7D697140FD7D000CC2C51 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED7D696140FD7D000CC2C51 /* QuartzCore.framework */; };
@@ -202,6 +205,9 @@
 		2E65DB89152611C800451D1D /* success_5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = success_5.wav; path = Sound/referenced_in_project/success_5.wav; sourceTree = SOURCE_ROOT; };
 		2E65DB8A152611C800451D1D /* success_6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = success_6.wav; path = Sound/referenced_in_project/success_6.wav; sourceTree = SOURCE_ROOT; };
 		2E65DB8B152611C800451D1D /* success_7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = success_7.wav; path = Sound/referenced_in_project/success_7.wav; sourceTree = SOURCE_ROOT; };
+		2E65DB95152617E700451D1D /* alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = alert.mp3; path = Sound/referenced_in_project/alert.mp3; sourceTree = SOURCE_ROOT; };
+		2E65DB96152617E700451D1D /* gameover_high.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = gameover_high.mp3; path = Sound/referenced_in_project/gameover_high.mp3; sourceTree = SOURCE_ROOT; };
+		2E65DB97152617E700451D1D /* gameover_low.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = gameover_low.mp3; path = Sound/referenced_in_project/gameover_low.mp3; sourceTree = SOURCE_ROOT; };
 		2EB3AB1614EED1A500A805C9 /* TMCRulesClassic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCRulesClassic.h; sourceTree = "<group>"; };
 		2EB3AB1714EED1A500A805C9 /* TMCRulesClassic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCRulesClassic.m; sourceTree = "<group>"; };
 		2EB3AB1A14EEDB4F00A805C9 /* TMCRules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCRules.h; sourceTree = "<group>"; };
@@ -960,6 +966,9 @@
 		2ED7D806140FD7D200CC2CAA /* sound */ = {
 			isa = PBXGroup;
 			children = (
+				2E65DB95152617E700451D1D /* alert.mp3 */,
+				2E65DB96152617E700451D1D /* gameover_high.mp3 */,
+				2E65DB97152617E700451D1D /* gameover_low.mp3 */,
 				2E65DB83152611C800451D1D /* chain_up.wav */,
 				2E65DB84152611C800451D1D /* select_4.wav */,
 				2E65DB85152611C800451D1D /* select_5.wav */,
@@ -1083,6 +1092,9 @@
 				2E65DB92152611C800451D1D /* success_5.wav in Resources */,
 				2E65DB93152611C800451D1D /* success_6.wav in Resources */,
 				2E65DB94152611C800451D1D /* success_7.wav in Resources */,
+				2E65DB98152617E700451D1D /* alert.mp3 in Resources */,
+				2E65DB99152617E700451D1D /* gameover_high.mp3 in Resources */,
+				2E65DB9A152617E700451D1D /* gameover_low.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
