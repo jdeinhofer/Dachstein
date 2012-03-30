@@ -236,7 +236,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "83"
          endingLineNumber = "83"
-         landmarkName = "-selectedTile:"
+         landmarkName = "-prepareGame"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -250,7 +250,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "74"
          endingLineNumber = "74"
-         landmarkName = "-update:"
+         landmarkName = "-prepareGame"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -264,8 +264,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "75"
          endingLineNumber = "75"
-         landmarkName = "@implementation TMCRulesClassic"
-         landmarkType = "3">
+         landmarkName = "-prepareGame"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
