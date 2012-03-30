@@ -29,8 +29,11 @@
 #define SCORE_BASE 100
 #define SCORE_BONUS 25
 
+#define SELECT_SOUNDS_NUM 7
 
 @interface TMCRulesClassic ()
+- (void)playSound:(NSString *)stringFormat indexUp:(BOOL)indexUp;
+
 - (void)scoreDominoChain:(TMCTile *)tile;
 - (void)scorePerfectChain:(TMCTile *)tile;
 - (void)scoreFirstTile:(TMCTile *)tile;
@@ -46,6 +49,8 @@
     int _chainBonus;
     float _chainCountdownTime;
     float _chainCountdownTimeLeft;
+
+    int _soundIndex;
 }
 
 - (id<TMCRules>) initWithController: (id <TMCRulesControllerDelegate>) controller
@@ -124,18 +129,30 @@
 
 - (void) selectedTile: (TMCTile*) tile
 {
-    if (_lastTile == tile) {
-        [[SimpleAudioEngine sharedEngine] playEffect:@"select_3.wav"];
+//    if (_lastTile == tile) {
+//        [[SimpleAudioEngine sharedEngine] playEffect:@"select_3.wav"];
+//    }
+//    else if (_lastTile == nil) {
+//        [[SimpleAudioEngine sharedEngine] playEffect:@"select_1.wav"];
+//    }
+//    else if (_lastTile.color == tile.color || _lastTile.value == tile.value) {
+//        [[SimpleAudioEngine sharedEngine] playEffect:@"select_2.wav"];
+//    }
+//    else {
+//        [[SimpleAudioEngine sharedEngine] playEffect:@"select_1.wav"];
+//    }
+
+    [self playSound:@"select_%i.wav" indexUp:FALSE];
+}
+
+- (void) playSound: (NSString *) stringFormat indexUp: (BOOL) indexUp
+{
+    if (indexUp) {
+        _soundIndex = (_soundIndex + 1) % SELECT_SOUNDS_NUM;
     }
-    else if (_lastTile == nil) {
-        [[SimpleAudioEngine sharedEngine] playEffect:@"select_1.wav"];
-    }
-    else if (_lastTile.color == tile.color || _lastTile.value == tile.value) {
-        [[SimpleAudioEngine sharedEngine] playEffect:@"select_2.wav"];
-    }
-    else {
-        [[SimpleAudioEngine sharedEngine] playEffect:@"select_1.wav"];
-    }
+
+    NSString *soundName = [NSString stringWithFormat:stringFormat, _soundIndex + 1];
+    [[SimpleAudioEngine sharedEngine] playEffect:soundName];
 }
 
 - (void)scoreDominoChain:(TMCTile *)tile {
@@ -145,7 +162,8 @@
 
     [_controller.view.hudClassic updateScoreMessage:[NSString stringWithFormat:@"DOMINO CHAIN! %i", _scoreGainBase + _scoreGainBonus]];
 
-    [[SimpleAudioEngine sharedEngine] playEffect:@"success_2.wav"];
+    //[[SimpleAudioEngine sharedEngine] playEffect:@"success_2.wav"];
+    [self playSound:@"success_%i.wav" indexUp:TRUE];
 }
 
 - (void)scorePerfectChain:(TMCTile *)tile {
@@ -155,7 +173,8 @@
 
     [_controller.view.hudClassic updateScoreMessage:[NSString stringWithFormat:@"PERFECT CHAIN! %i", _scoreGainBase + _scoreGainBonus]];
 
-    [[SimpleAudioEngine sharedEngine] playEffect:@"success_3.wav"];
+    //[[SimpleAudioEngine sharedEngine] playEffect:@"success_3.wav"];
+    [self playSound:@"success_%i.wav" indexUp:TRUE];
 }
 
 - (void)scoreFirstTile:(TMCTile *)tile {
@@ -165,21 +184,25 @@
 
     [_controller.view.hudClassic updateScoreMessage:[NSString stringWithFormat:@"%i", _scoreGainBase + _scoreGainBonus]];
 
-    [[SimpleAudioEngine sharedEngine] playEffect:@"success_1.wav"];
+    //[[SimpleAudioEngine sharedEngine] playEffect:@"success_1.wav"];
+    [self playSound:@"success_%i.wav" indexUp:FALSE];
 }
 
 - (void)scoreAnyTile:(TMCTile *)tile {
     if (_bonusLevel > 0) {
         [self startChainCountdown];
+        [[SimpleAudioEngine sharedEngine] playEffect:@"chain_up.wav"];
+        _soundIndex = 0;
     } else  {
         [_controller.view.hudClassic updateScoreMessage:[NSString stringWithFormat:@"%i", _scoreGainBase]];
+        [self playSound:@"success_%i.wav" indexUp:FALSE];
     }
 
     _scoreGainBonus = 0;
     _bonusLevel = 0;
     CCLOG(@"ANY TILE! (%i %i)", tile.color, tile.value);
 
-    [[SimpleAudioEngine sharedEngine] playEffect:@"success_1.wav"];
+    //[[SimpleAudioEngine sharedEngine] playEffect:@"success_1.wav"];
 }
 
 - (void)levelUp {
