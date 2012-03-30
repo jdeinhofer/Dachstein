@@ -47,7 +47,7 @@
     [self addChild:_scoreLabel];
 
     _highscoreLabel = [[TMCLabel alloc] initWithFontsize:14];
-    _highscoreLabel.position = ccp(screenSize.width / - 2.5f, screenSize.height / 2 - 16);
+    _highscoreLabel.position = ccp(screenSize.width / 2.5f, screenSize.height / 2 - 16);
     [self addChild:_highscoreLabel];
 
     _messageLabel = [[TMCLabel alloc] initWithFontsize:24];
@@ -77,7 +77,7 @@
         tileSize = CGSizeMake(tileSize.width * 0.5f, tileSize.height * 0.5f);
     }
 
-    CGPoint position = ccp(screenSize.width / 2 - tileSize.width * 0.6f, screenSize.height / 2 - tileSize.height * 0.6f);
+    CGPoint position = ccp(screenSize.width / -2 + tileSize.width * 0.6f, screenSize.height / 2 - tileSize.height * 0.6f);
 
     _lastTile.position = position;
     [self addChild:_lastTile];
