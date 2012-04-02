@@ -106,12 +106,6 @@
 
 - (TMCTile*) randomizeTileFor: (TMCColumn*) column
 {
-    // TMP!!!
-    if (column.x == 0 && column.y == 0) {
-        return [_deck objectAtIndex:8];
-    }
-
-
     NSMutableArray* availableTiles;
     
     int vdist = (column.top - column.targetDepth) - (_centerColumn.top - _centerColumn.targetDepth);
