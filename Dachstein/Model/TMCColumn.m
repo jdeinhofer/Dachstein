@@ -8,7 +8,25 @@
 
 #import "TMCColumn.h"
 
-@implementation TMCColumn
+@implementation TMCColumn {
+    int _top;
+    int _x;
+    int _y;
+    int _targetDepth;
+
+    TMCColumn* _NW;
+    TMCColumn* _N;
+    TMCColumn* _NE;
+    TMCColumn* _SE;
+    TMCColumn* _S;
+    TMCColumn* _SW;
+
+    TMCColumn* _directions[8];
+
+    NSArray* _neighbors;
+
+    TMCTile* _tile;
+}
 
 @synthesize top=_top;
 @synthesize x=_x;
