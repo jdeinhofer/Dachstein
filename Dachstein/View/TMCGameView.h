@@ -28,6 +28,7 @@
 - (void)showHintOn:(TMCColumnView *)view;
 - (NSArray *)getPickableColumnViewsExcluding:(TMCColumnView *)excludedView;
 - (void)setLevel:(int)level;
+- (void)swapViewFor:(TMCColumn *)column;
 
 + (BOOL)isLowRes;
 

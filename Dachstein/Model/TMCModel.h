@@ -25,6 +25,8 @@
 - (TMCTile*) randomizeTileFor: (TMCColumn*) column;
 - (int) getMinTopOffset;
 - (void) raiseByOne;
+- (BOOL) noMatchingTiles;
+- (TMCColumn *) swapHighestPickableColumn;
 
 @end
 

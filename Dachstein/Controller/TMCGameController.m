@@ -17,6 +17,9 @@
 @interface TMCGameController ()
 - (void)resetHintTimer;
 - (void)showHint;
+
+- (void)handleNoMatchSituation;
+
 - (void)prepareGame;
 - (void)startBackgroundAmbience;
 - (void)setSelectedView:(TMCColumnView *)view;
@@ -77,6 +80,16 @@
     [columnView startSnapAnim: SNAP_DURATION + 0.075f];
 
     [self setSelectedView:nil];
+
+    [self handleNoMatchSituation];
+}
+
+- (void) handleNoMatchSituation
+{
+    if ([_model noMatchingTiles]) {
+        TMCColumn *swappedColumn = [_model swapHighestPickableColumn];
+        [_view swapViewFor: swappedColumn];
+    }
 }
 
 - (void) columnViewTouched: (TMCColumnView*) columnView onRelease:(BOOL)onRelease

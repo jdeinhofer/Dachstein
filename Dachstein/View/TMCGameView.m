@@ -274,6 +274,12 @@
     [self setSelectionTo:nil];
 }
 
+- (void)swapViewFor:(TMCColumn *)column {
+    TMCColumnView *view = [_columnViewsByColumn objectForKey:[NSValue valueWithPointer:column]];
+    [view refresh];
+    [view startSnapAnim:SNAP_DURATION];
+}
+
 - (void) dealloc
 {
     [_background release];

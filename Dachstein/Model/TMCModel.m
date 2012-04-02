@@ -106,6 +106,12 @@
 
 - (TMCTile*) randomizeTileFor: (TMCColumn*) column
 {
+    // TMP!!!
+    if (column.x == 0 && column.y == 0) {
+        return [_deck objectAtIndex:8];
+    }
+
+
     NSMutableArray* availableTiles;
     
     int vdist = (column.top - column.targetDepth) - (_centerColumn.top - _centerColumn.targetDepth);
@@ -163,6 +169,21 @@
     for (TMCColumn* column in _columns) {
         [column setTile:[self randomizeTileFor:column]];
     }
+
+    // kept for testing: testbed for no matching tiles situations
+//    int tileIndex = 1;
+//    for (TMCColumn *column in _columns) {
+//        if (column.neighbors.count == 3) {
+//            [column setTile:[_deck objectAtIndex:tileIndex++]];
+//        }
+//        else if (column.neighbors.count == 4) {
+//            [column setTile:[_deck objectAtIndex:0]];
+//        }
+//        else
+//        {
+//            [column setTile:[_deck objectAtIndex:8]];
+//        }
+//    }
 }
 
 - (void) updateTileStats
@@ -212,6 +233,60 @@
     for (TMCColumn* column in _columns) {
         column.top--;
     }
+}
+
+- (BOOL) noMatchingTiles
+{
+    [self updateTileStats];
+
+    for (TMCTile *tile in _deck) {
+        if (tile.pickable > 1)
+            return FALSE;
+    }
+
+    return TRUE;
+}
+
+- (TMCColumn *) swapHighestPickableColumn
+{
+    // determine the highest pickable column
+    TMCColumn *highest = [self getColumnAtX:COLUMNS_OFFSET Y:COLUMNS_OFFSET];
+    for (TMCColumn *column in _columns) {
+        if ([column isPickable] && column.top < highest.top) {
+            highest = column;
+        }
+    }
+
+    // collect all columns at the this height
+    NSMutableArray *highestPickableColumns = [NSMutableArray array];
+    for (TMCColumn *column in _columns) {
+        if ([column isPickable] && column.top == highest.top) {
+            [highestPickableColumns addObject:column];
+        }
+    }
+
+    // randomly choose one of them
+    int randomIndex = random() % highestPickableColumns.count;
+    TMCColumn *swappedColumn = [highestPickableColumns objectAtIndex:(NSUInteger) randomIndex];
+
+    // collect all pickable tiles which are not the one swapped out
+    NSMutableArray *pickableTiles = [NSMutableArray array];
+    TMCTile *swappedTile = swappedColumn.tile;
+    for (TMCTile *tile in _deck) {
+        if (tile != swappedTile && tile.pickable > 0) {
+            [pickableTiles addObject:tile];
+        }
+    }
+
+    // randomly choose one of those
+    randomIndex = random() % pickableTiles.count;
+    TMCTile *swappedInTile = [pickableTiles objectAtIndex:(NSUInteger)randomIndex];
+
+    swappedColumn.tile = swappedInTile;
+
+    CCLOG(@"SWAPPING COLUMN AT %i %i", swappedColumn.x, swappedColumn.y);
+
+    return swappedColumn;
 }
 
 - (void) dealloc {
