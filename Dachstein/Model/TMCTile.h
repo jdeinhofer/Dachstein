@@ -12,13 +12,6 @@
 #define NUM_VALUES 3
 
 @interface TMCTile : NSObject
-{
-    int _value;
-    int _color;
-    int _inUse;
-    int _pickable;
-    int _topOffset;
-}
 
 - (id) initWithColor: (int) colorArg Value:(int) valueArg;
 - (void) resetStats;

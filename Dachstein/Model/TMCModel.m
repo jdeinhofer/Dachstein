@@ -7,28 +7,37 @@
 //
 
 #import "TMCModel.h"
-#import "TMCColumn.h"
-#import <stdlib.h>
-#import <time.h>
 
 
-@implementation TMCModel
+@interface TMCModel ()
+- (void)initializeColumns;
+- (void)configureColumns;
+- (void)initializeDeck;
+- (void)addColumnAtDepth:(int)depthArg x:(int)xArg y:(int)yArg;
+@end
 
-int weightedRandom(int count) {
-    int weighted = ABS((random() % count) + (random() % count) - count);
-    if (weighted == count) return 0; // TODO: understand why "count" can even happen as a value
-    return weighted;
+@implementation TMCModel {
+    TMCColumn *mColumnRaster [COLUMNS_NUM][COLUMNS_NUM];
+    NSMutableArray *_columns;
+    NSMutableArray *_deck;
+    TMCColumn *_centerColumn;
 }
+
+// kept for future reference
+//int weightedRandom(int count) {
+//    int weighted = ABS((random() % count) + (random() % count) - count);
+//    if (weighted == count) return 0; // research: understand why "count" can even happen as a value
+//    return weighted;
+//}
 
 - (id)init
 {
     self = [super init];
     if (self) {
-        srandom(time(NULL));
-        
+        srandom((unsigned int)time(NULL));
+
         [self initializeColumns];
         [self initializeDeck];
-        
         [self configureColumns];
     }
     
@@ -37,10 +46,10 @@ int weightedRandom(int count) {
 
 - (void) initializeColumns
 {
-    _model = [[NSMutableArray alloc] init];
+    _columns = [[NSMutableArray alloc] init];
     
     [self addColumnAtDepth: 0 x: 0 y: 0];
-    _centerColumn = [_model objectAtIndex:0];
+    _centerColumn = [_columns objectAtIndex:0];
     
     for (int d = 1; d <= COLUMNS_OFFSET; d++) {
         // horizontal rows
@@ -65,26 +74,21 @@ int weightedRandom(int count) {
 
 - (void) addColumnAtDepth: (int) depthArg x: (int) xArg y: (int) yArg
 {
-    if (DEBUG_OUTPUT) {
-        CCLOG(@"new column added at %i,%i d:%i", xArg, yArg, depthArg);
-    }
-    
-    TMCColumn* column = [[TMCColumn alloc] initWithDepth: depthArg x: xArg y: yArg];
-    [column retain];
-    [_model addObject: column];
+    TMCColumn* column = [[[TMCColumn alloc] initWithDepth: depthArg x: xArg y: yArg] autorelease];
+    [_columns addObject: column];
     mColumnRaster[xArg + COLUMNS_OFFSET][yArg + COLUMNS_OFFSET] = column;
 }
 
 - (void) configureColumns
 {
-    for (TMCColumn* column in _model) {
+    for (TMCColumn* column in _columns) {
         [column configureWithModel: self];
     }
 }
 
 - (void) resetColumns
 {
-    for (TMCColumn* column in _model) {
+    for (TMCColumn* column in _columns) {
         [column reset];
     }
 }
@@ -94,16 +98,9 @@ int weightedRandom(int count) {
     _deck = [[NSMutableArray alloc] init];
     for (int color = 0; color < NUM_COLORS; color++) {
         for (int value = 0; value < NUM_VALUES; value++) {
-            id tile = [[TMCTile alloc] initWithColor:color Value:value];
+            id tile = [[[TMCTile alloc] initWithColor:color Value:value] autorelease];
             [_deck addObject:tile];
         }
-    }
-}
-
-- (void) resetDeck
-{
-    for (TMCTile* tile in _deck) {
-        [tile resetStats];
     }
 }
 
@@ -117,9 +114,7 @@ int weightedRandom(int count) {
         [self updateTileStats];
         availableTiles = [[[NSMutableArray alloc] init] autorelease];
         bool isPickable = [column isPickable];
-        
-        availableTiles = availableTiles;
-        
+
         for (TMCTile* tile in _deck) {
             int numPickable = tile.pickable;
             if (isPickable && numPickable == 0) {
@@ -129,16 +124,16 @@ int weightedRandom(int count) {
         }
 
         if ([availableTiles count] < 1) {
-            [_model sortUsingComparator:^(TMCColumn* columnA, TMCColumn* columnB) {
+            [_columns sortUsingComparator:^(TMCColumn* columnA, TMCColumn* columnB) {
                 if (columnA.top > columnB.top)    return (NSComparisonResult)NSOrderedDescending;
                 if (columnA.top < columnB.top)    return (NSComparisonResult)NSOrderedAscending;
                 return (NSComparisonResult)NSOrderedSame;
             }];
 
             // find topmost pickable column with a tile that has no match yet
-            for (TMCColumn* column in _model) {
-                if (column.tile.pickable < 2) {
-                    [availableTiles addObject:column.tile];
+            for (TMCColumn* anyColumn in _columns) {
+                if (anyColumn.tile.pickable < 2) {
+                    [availableTiles addObject:anyColumn.tile];
                     break;
                 }
             }
@@ -156,32 +151,16 @@ int weightedRandom(int count) {
     }
     
     int index = random() % [availableTiles count];
-    TMCTile* tile = [availableTiles objectAtIndex:index];
+    TMCTile* tile = [availableTiles objectAtIndex:(NSUInteger)index];
     
     return tile;
-    
-    
-//    [self updateTileStats];
-//    
-//    [_deck sortUsingComparator:^(TMCTile* tileA, TMCTile* tileB) {
-//        int tileAValue = tileA.pickable * 10 + tileA.topOffset * 30 + tileA.inUse;
-//        int tileBValue = tileB.pickable * 10 + tileB.topOffset * 30 + tileB.inUse;
-//        if (tileAValue > tileBValue)    return (NSComparisonResult)NSOrderedDescending;
-//        if (tileAValue < tileBValue)    return (NSComparisonResult)NSOrderedAscending;        
-//        return (NSComparisonResult)NSOrderedSame;
-//    }];
-//    
-//    int index = weightedRandom([_deck count] / 3);
-//    TMCTile* tile = [_deck objectAtIndex:index];
-//    
-//    return tile;
 }
 
 - (void) randomizeInitialTiles
 {
     [self resetColumns];
     
-    for (TMCColumn* column in _model) {
+    for (TMCColumn* column in _columns) {
         [column setTile:[self randomizeTileFor:column]];
     }
 }
@@ -192,7 +171,7 @@ int weightedRandom(int count) {
         [tile resetStats];
     }
     
-    for (TMCColumn* column in _model) {
+    for (TMCColumn* column in _columns) {
         TMCTile* tile = column.tile;
         
         tile.inUse++;
@@ -218,16 +197,10 @@ int weightedRandom(int count) {
     return column;
 }
 
-- (NSMutableArray*) getUpdatedDeck
-{
-    [self updateTileStats];
-    return _deck;
-}
-
 - (int)getMinTopOffset {
     int minOff = INT32_MAX;
 
-    for (TMCColumn* column in _model) {
+    for (TMCColumn* column in _columns) {
         minOff = MIN(minOff, [column top]);
     }
     
@@ -236,9 +209,16 @@ int weightedRandom(int count) {
 
 
 - (void) raiseByOne {
-    for (TMCColumn* column in _model) {
+    for (TMCColumn* column in _columns) {
         column.top--;
     }
+}
+
+- (void) dealloc {
+    [_columns release];
+    [_deck release];
+
+    [super dealloc];
 }
 
 @end

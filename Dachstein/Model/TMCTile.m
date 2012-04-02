@@ -8,7 +8,13 @@
 
 #import "TMCTile.h"
 
-@implementation TMCTile
+@implementation TMCTile {
+    int _value;
+    int _color;
+    int _inUse;
+    int _pickable;
+    int _topOffset;
+}
 
 @synthesize value=_value;
 @synthesize color=_color;
