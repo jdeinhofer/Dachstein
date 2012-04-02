@@ -9,7 +9,9 @@
 
 #import "TMCGameView.h"
 
-@implementation TMCGameView
+@implementation TMCGameView {
+    NSDictionary *_columnViewsByColumn;
+}
 
 @synthesize hudClassic=_hudClassic;
 
@@ -58,6 +60,8 @@
 
 - (void)setupColumnViewsFromModel:(TMCModel *)model {
     _columnViews = [[NSMutableArray alloc] init];
+
+    NSMutableDictionary *tmpDictionary = [NSMutableDictionary dictionary];
     
     _columnViewsRoot = [[CCNode alloc] init];
     
@@ -67,10 +71,15 @@
         for (int x = -COLUMNS_OFFSET; x <= COLUMNS_OFFSET; x++) {
             TMCColumn* column = [model getColumnAtX:x Y:y];
             if (column) {
-                [self setupViewForColumn:column];
+                TMCColumnView* columnView = [[[TMCColumnView alloc] initWithColumn:column] autorelease];
+                [_columnViewsRoot addChild:columnView];
+                [_columnViews insertObject:columnView atIndex:0];
+                [tmpDictionary setObject:columnView forKey:[NSValue valueWithPointer:column]];
             }
         }
     }
+
+    _columnViewsByColumn = [[NSDictionary alloc] initWithDictionary:tmpDictionary copyItems:FALSE];
 
     if ([TMCGameView isLowRes])
         [_columnViewsRoot setScale: 0.5f];
@@ -107,13 +116,6 @@
 - (void) setLevel: (int)level
 {
     [_background setLevel:level];
-}
-
-- (void) setupViewForColumn: (TMCColumn*) column
-{
-    TMCColumnView* columnView = [[[TMCColumnView alloc] initWithColumn:column] autorelease];
-    [_columnViewsRoot addChild:columnView];
-    [_columnViews insertObject:columnView atIndex:0];
 }
 
 - (void) playGameStartAnimations
@@ -158,7 +160,7 @@
     for (TMCColumn *neighbor in neighbors) {
         if (neighbor.top > view.column.top) continue;
 
-        TMCColumnView *neighborView = neighbor.view;
+        TMCColumnView *neighborView = [_columnViewsByColumn objectForKey:[NSValue valueWithPointer:neighbor]];
 
         CGPoint neighborPos = neighborView.position;
         CGPoint offset = ccpMult(ccpSub(neighborPos, view.position), 0.05f);
@@ -257,6 +259,7 @@
     [_hint release];
     [_hudClassic release];
     [_huds release];
+    [_columnViewsByColumn release];
 
     [super dealloc];
 }

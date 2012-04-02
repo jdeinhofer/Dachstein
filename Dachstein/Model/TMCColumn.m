@@ -15,7 +15,6 @@
 @synthesize y=_y;
 @synthesize targetDepth=_targetDepth;
 @synthesize tile=_tile;
-@synthesize view=_view;
 @synthesize neighbors=_neighbors;
 
 

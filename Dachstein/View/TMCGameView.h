@@ -37,7 +37,7 @@
 - (id)initWithControllerDelegate:(id <TMCViewControllerDelegate>)delegate model:(TMCModel *)model;
 - (void)setupResourcesAndLayout:(CGSize)screensize;
 - (void)setupColumnViewsFromModel:(TMCModel *)model;
-- (void)setupViewForColumn:(TMCColumn *)column;
+
 - (void)setupBackground;
 - (void)setupHudsWith:(CGSize)screenSize;
 - (void)showHud:(id)hud;

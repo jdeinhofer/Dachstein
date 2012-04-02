@@ -44,7 +44,6 @@
 @property int y;
 @property (readonly) int targetDepth;
 @property (assign) TMCTile* tile;
-@property (assign) id view;
 @property (readonly) NSArray* neighbors;
 
 @end
