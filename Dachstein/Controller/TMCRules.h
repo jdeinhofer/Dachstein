@@ -3,7 +3,7 @@
 //  Dachstein
 //
 //  Created by Josef Deinhofer on 2/17/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 TheMountainCalls. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -15,6 +15,7 @@
 
 @protocol TMCRulesControllerDelegate
 
+@required
 - (void) prepareGame;
 - (void) startGame;
 - (void) endGame;

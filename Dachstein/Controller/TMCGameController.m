@@ -8,7 +8,31 @@
 
 #import "TMCGameController.h"
 
-@implementation TMCGameController
+#import "SimpleAudioEngine.h"
+#import "TMCRulesClassic.h"
+
+#define HINT_TIMER_DELAY 8.0f
+
+
+@interface TMCGameController ()
+- (void)resetHintTimer;
+- (void)showHint;
+- (void)prepareGame;
+- (void)startBackgroundAmbience;
+- (void)setSelectedView:(TMCColumnView *)view;
+- (void)startBackgroundMusic;
+- (void)startGame;
+- (void)endGame;
+- (void)enableGame;
+@end
+
+@implementation TMCGameController {
+    TMCModel *_model;
+    TMCGameView *_view;
+    id <TMCRules> _rules;
+    TMCGameState _gameState;
+    TMCColumnView *_selectedColumnView;
+}
 
 @synthesize view = _view;
 

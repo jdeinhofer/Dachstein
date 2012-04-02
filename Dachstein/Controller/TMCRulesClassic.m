@@ -7,6 +7,8 @@
 //
 
 #import "TMCRulesClassic.h"
+#import "SimpleAudioEngine.h"
+
 
 #define MAX_LEVEL 8
 
@@ -35,7 +37,6 @@
 
 @interface TMCRulesClassic ()
 - (void)playSound:(NSString *)stringFormat indexUp:(BOOL)indexUp;
-
 - (void)scoreDominoChain:(TMCTile *)tile;
 - (void)scorePerfectChain:(TMCTile *)tile;
 - (void)scoreFirstTile:(TMCTile *)tile;
@@ -46,6 +47,23 @@
 @end
 
 @implementation TMCRulesClassic {
+    id<TMCRulesControllerDelegate> _controller;
+
+    int _level;
+    float _timer_duration;
+    float _timer_progress;
+
+    int _pairs_per_level;
+    int _pairs_remaining;
+
+    TMCTile* _lastTile;
+    int _bonusLevel;
+
+    int _score;
+    int _scoreGainBase;
+    int _scoreGainBonus;
+    int _highScore;
+
     int _chainState;
     int _chainLength;
     int _chainBonus;
