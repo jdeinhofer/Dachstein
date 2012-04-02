@@ -42,9 +42,3 @@
 #endif
 
 #endif // __GAME_CONFIG_H
-
-
-// Dachstein specific
-#define DEBUG_OUTPUT FALSE
-#define DEBUG_OUTPUT_WRANDOM_COLUMNS FALSE
-

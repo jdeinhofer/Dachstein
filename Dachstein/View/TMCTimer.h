@@ -6,11 +6,8 @@
 //  Copyright (c) 2012 TheMountainCalls. All rights reserved.
 //
 
-#import "CCNode.h"
 
-@interface TMCTimer : CCNode {
-    CCProgressTimer* _timer;
-}
+@interface TMCTimer : CCNode
 
 - (id) init;
 - (void) setProgress: (float) progress;

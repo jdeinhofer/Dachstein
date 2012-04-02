@@ -4,16 +4,9 @@
 // To change the template use AppCode | Preferences | File Templates.
 //
 
-
-#import <Foundation/Foundation.h>
-
-@interface TMCHint : CCNode {
-    CCSprite *_spriteA;
-    CCSprite *_spriteB;
-}
+@interface TMCHint : CCNode
 
 - (id) init;
 - (void) restartAnimation;
-- (void) removeFromParent;
 
 @end

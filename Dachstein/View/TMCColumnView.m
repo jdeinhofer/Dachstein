@@ -8,10 +8,40 @@
 
 #import "TMCColumnView.h"
 
-@implementation TMCColumnView
+#define SNAP_DISTANCE -500
+
+#define DROP_DURATION 0.20f
+#define DROP_DISTANCE -1000
+
+#define RAISE_DURATION 0.2f
+
+#define SHADE_OPACITY_QUADRATIC 25.0f
+#define SHADE_OPACITY_LINEAR 25.0f
+#define SHADE_OPACITY_PERY 0.3f
+#define SHADE_OPACITY_MAX 200.0f
+
+#define SPRITE_OFFSET_FACTOR_Y 0.85f
+
+#define WIGGLE_DURATION_HORIZONTAL 0.1f
+#define WIGGLE_HORIZONTAL 2.0f
+#define WIGGLE_DURATION_ROTATION 0.06f
+#define WIGGLE_ANGLE 2.0f
+
+
+@interface TMCColumnView ()
+- (CGPoint)calculatePosition;
+- (int)calculateShadowOpacity;
+@end
+
+@implementation TMCColumnView {
+    TMCColumn *_column;
+    CCSprite *_sprite;
+    CCSprite *_shadow;
+}
 
 @synthesize sprite=_sprite;
 @synthesize column=_column;
+
 
 - (id) initWithColumn:(TMCColumn *)column
 {
@@ -53,7 +83,7 @@
     float contentHeight = _sprite.contentSize.height;
     float contentWidth = _sprite.contentSize.width;
 
-    float tileHeight = contentHeight * 0.85f;
+    float tileHeight = contentHeight * SPRITE_OFFSET_FACTOR_Y;
     float tileStep = contentHeight - tileHeight;
     float tileWidth = contentWidth;
 
@@ -159,7 +189,6 @@
                 case 0: return @"Blue_1.png";
                 case 1: return @"Blue_2.png";
                 case 2: return @"Blue_3.png";
-                case 3: return @"Blue_4.png";
             }
             break;
         case 1:
@@ -167,7 +196,6 @@
                 case 0: return @"Green_1.png";
                 case 1: return @"Green_2.png";
                 case 2: return @"Green_3.png";
-                case 3: return @"Green_4.png";
             }
             break;
         case 2:
@@ -175,23 +203,12 @@
                 case 0: return @"Red_1.png";
                 case 1: return @"Red_2.png";
                 case 2: return @"Red_3.png";
-                case 3: return @"Red_4.png";
-            }
-            break;
-        case 3:
-            switch (tile.value) {
-                case 0: return @"Orange_1.png";
-                case 1: return @"Orange_2.png";
-                case 2: return @"Orange_3.png";
-                case 3: return @"Orange_4.png";
             }
             break;
     }
     
     // default
-    return nil;
-    
-//    return @"Red_1.png";
+    return @"Red_1.png";
 }
 
 - (void) dealloc

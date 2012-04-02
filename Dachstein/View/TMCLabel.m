@@ -6,7 +6,11 @@
 
 #import "TMCLabel.h"
 
-@implementation TMCLabel
+@implementation TMCLabel {
+    CCLabelTTF *_outline1;
+    CCLabelTTF *_outline2;
+    CCLabelTTF *_label;
+}
 
 - (id)initWithFontsize:(float)fontSize {
     self = [super init];

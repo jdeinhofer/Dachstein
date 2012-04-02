@@ -8,7 +8,9 @@
 
 #import "TMCTimer.h"
 
-@implementation TMCTimer
+@implementation TMCTimer {
+    CCProgressTimer *_timer;
+}
 
 - (id) init
 {

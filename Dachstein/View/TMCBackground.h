@@ -8,16 +8,10 @@
 #import <Foundation/Foundation.h>
 
 
-@interface TMCBackground : CCNode {
-    NSArray *_backgrounds;
-    CCNode *_currentBackground;
-    CCNode *_previousBackground;
-    int _currentLevel;
-}
+@interface TMCBackground : CCNode
 
 - (id) init;
 - (void) setLevel: (int) level;
 - (void) finishTransition;
-
 
 @end

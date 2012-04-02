@@ -5,21 +5,14 @@
 //
 
 
-#import <Foundation/Foundation.h>
-
 #define FONT_OUTLINE @"SFFedora"
 #define FONT_LABEL @"SFFedora"
 
 
-@interface TMCLabel : CCLayer {
-    CCLabelTTF *_outline1;
-    CCLabelTTF *_outline2;
-    CCLabelTTF *_label;
-}
+@interface TMCLabel : CCLayer
+
 - (id)initWithFontsize:(float)fontSize;
 - (void) setString: (NSString *) text;
-
 - (void)setOpacity:(GLubyte)opacity;
-
 
 @end

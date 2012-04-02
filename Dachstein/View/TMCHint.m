@@ -13,7 +13,14 @@
 #define HINT_DELAY 0.15f
 
 
-@implementation TMCHint 
+@interface TMCHint ()
+- (void)removeFromParent;
+@end
+
+@implementation TMCHint {
+    CCSprite *_spriteA;
+    CCSprite *_spriteB;
+}
 
 - (id) init
 {

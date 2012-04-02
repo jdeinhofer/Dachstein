@@ -5,11 +5,7 @@
 //
 
 
-#import <Foundation/Foundation.h>
-
-@interface TMCSelectionHighlight : CCNode {
-    CCSprite *_sprite;
-}
+@interface TMCSelectionHighlight : CCNode
 
 - (id) init;
 - (void) restartAnimation;

@@ -8,7 +8,12 @@
 #import "TMCBackground.h"
 
 
-@implementation TMCBackground
+@implementation TMCBackground {
+    NSArray *_backgrounds;
+    CCNode *_currentBackground;
+    CCNode *_previousBackground;
+    int _currentLevel;
+}
 
 - (id) init
 {

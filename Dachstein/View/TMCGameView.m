@@ -9,8 +9,32 @@
 
 #import "TMCGameView.h"
 
+#import "TMCSelectionHighlight.h"
+#import "TMCHint.h"
+#import "TMCBackground.h"
+
+
+@interface TMCGameView ()
+- (void)setupResourcesAndLayout:(CGSize)screensize;
+- (void)setupColumnViewsFromModel:(TMCModel *)model;
+- (void)setupBackground;
+- (void)setupHudsWith:(CGSize)screenSize;
+- (id)findColumnTouchedBy:(UITouch *)touch;
+@end
+
 @implementation TMCGameView {
+    id <TMCViewControllerDelegate> _controllerDelegate;
+
     NSDictionary *_columnViewsByColumn;
+    CCNode* _columnViewsRoot;
+    NSMutableArray* _columnViews;
+    TMCBackground* _background;
+
+    TMCSelectionHighlight* _selection;
+    TMCHint* _hint;
+
+    TMCHudClassic *_hudClassic;
+    NSArray *_huds;
 }
 
 @synthesize hudClassic=_hudClassic;
@@ -255,11 +279,11 @@
     [_background release];
     [_columnViews release];
     [_columnViewsRoot release];
+    [_columnViewsByColumn release];
     [_selection release];
     [_hint release];
     [_hudClassic release];
     [_huds release];
-    [_columnViewsByColumn release];
 
     [super dealloc];
 }

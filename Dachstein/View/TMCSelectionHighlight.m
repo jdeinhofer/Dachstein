@@ -8,7 +8,9 @@
 #import "TMCSelectionHighlight.h"
 
 
-@implementation TMCSelectionHighlight
+@implementation TMCSelectionHighlight {
+    CCSprite *_sprite;
+}
 
 - (id) init
 {

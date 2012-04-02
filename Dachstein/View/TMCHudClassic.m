@@ -6,13 +6,31 @@
 
 
 #import "TMCHudClassic.h"
-#import "TMCTimer.h"
 #import "TMCLabel.h"
-#import "TMCTile.h"
 #import "TMCColumnView.h"
 
 
-@implementation TMCHudClassic
+@interface TMCHudClassic ()
+- (void)setupLevelInfo:(CGSize)screenSize;
+- (void)setupChainInfo:(CGSize)screenSize;
+- (void)setupProgressBars:(CGSize)screenSize;
+- (void)setupScoreLabel:(CGSize)screenSize;
+@end
+
+@implementation TMCHudClassic {
+    TMCLabel *_scoreLabel;
+    TMCLabel *_highscoreLabel;
+    TMCLabel *_messageLabel;
+
+    TMCLabel *_pairCounterLabel;
+    TMCLabel *_levelLabel;
+
+    CCSprite *_lastTile;
+    TMCLabel *_chainLength;
+
+    TMCTimer *_timer;
+    BOOL _isLowRes;
+}
 
 @synthesize timerProgress=_timer;
 
