@@ -13,6 +13,9 @@
 - (void)initializeColumns;
 - (void)configureColumns;
 - (void)initializeDeck;
+- (void)pruneTilesArray:(NSMutableArray *)pickableTiles toNumPickables:(int)numPickables;
+- (int)countMatchableTiles;
+- (TMCTile *)returnRandomInPrunedSelection:(int)prunedTo;
 - (void)addColumnAtDepth:(int)depthArg x:(int)xArg y:(int)yArg;
 @end
 
@@ -104,56 +107,90 @@
     }
 }
 
-- (TMCTile*) randomizeTileFor: (TMCColumn*) column
+- (int) countPickableIn: (NSArray *) tileArray
 {
-    NSMutableArray* availableTiles;
-    
-    int vdist = (column.top - column.targetDepth) - (_centerColumn.top - _centerColumn.targetDepth);
-    if (vdist > 0) {
-        
-        [self updateTileStats];
-        availableTiles = [[[NSMutableArray alloc] init] autorelease];
-        bool isPickable = [column isPickable];
+    int sum = 0;
+    for (TMCTile *tile in tileArray) {
+        sum += tile.pickable;
+    }
+    return sum;
+}
 
-        for (TMCTile* tile in _deck) {
-            int numPickable = tile.pickable;
-            if (isPickable && numPickable == 0) {
-                CCLOG(@"considering tile %i/%i, because of %i/%i", tile.color, tile.value, isPickable, numPickable);
-                [availableTiles addObject:tile];
+- (void)pruneTilesArray:(NSMutableArray *)pickableTiles toNumPickables:(int)numPickables {
+    if (pickableTiles.count > numPickables) {
+        // sort _columns by top
+        [_columns sortUsingComparator:^(TMCColumn* columnA, TMCColumn* columnB) {
+           if (columnA.top > columnB.top)    return (NSComparisonResult)NSOrderedDescending;
+           if (columnA.top < columnB.top)    return (NSComparisonResult)NSOrderedAscending;
+           return (NSComparisonResult)NSOrderedSame;
+        }];
+
+        NSUInteger columnsIndex = _columns.count - 1;
+        while (([pickableTiles count] > 1) && ([self countPickableIn:pickableTiles] > numPickables)) {
+            TMCColumn *column = [_columns objectAtIndex:columnsIndex--];
+            if ([column isPickable]) {
+                [pickableTiles removeObjectIdenticalTo:column.tile];
+            }
+        }
+    }
+}
+
+- (int)countMatchableTiles {
+    NSMutableArray *matchableTiles = [NSMutableArray array];
+    for (TMCTile *tile in _deck) {
+        if (tile.pickable > 1)
+            [matchableTiles addObject:tile];
+    }
+    int matchables = matchableTiles.count;
+    return matchables;
+}
+
+- (TMCTile *)returnRandomInPrunedSelection:(int)prunedTo {
+    NSMutableArray *availableTiles = [[_deck mutableCopy] autorelease];
+    [self pruneTilesArray:availableTiles toNumPickables:prunedTo];
+
+    CCLOG(@"choosing from all tiles pruned to the %i topmost tiles", prunedTo);
+    int index = random() % availableTiles.count;
+    return [availableTiles objectAtIndex:(NSUInteger)index];
+}
+
+- (TMCTile *)randomizeTileFor:(TMCColumn *)column
+{
+    [self updateTileStats];
+
+    if ([self countMatchableTiles] < 2) {
+        CCLOG(@"not enough matching tiles, choosing a match-able tile");
+        NSMutableArray *pickableTiles = [NSMutableArray array];
+        for (TMCTile *tile in _deck) {
+            if (tile.pickable > 0) {
+                [pickableTiles addObject:tile];
             }
         }
 
-        if ([availableTiles count] < 1) {
-            [_columns sortUsingComparator:^(TMCColumn* columnA, TMCColumn* columnB) {
-                if (columnA.top > columnB.top)    return (NSComparisonResult)NSOrderedDescending;
-                if (columnA.top < columnB.top)    return (NSComparisonResult)NSOrderedAscending;
-                return (NSComparisonResult)NSOrderedSame;
-            }];
+        [self pruneTilesArray:pickableTiles toNumPickables:13];
 
-            // find topmost pickable column with a tile that has no match yet
-            for (TMCColumn* anyColumn in _columns) {
-                if (anyColumn.tile.pickable < 2) {
-                    [availableTiles addObject:anyColumn.tile];
-                    break;
-                }
+        return [pickableTiles objectAtIndex:(NSUInteger)(random() % pickableTiles.count)];
+    }
+    else if (column.neighbors.count == 3) {
+        NSMutableArray *impracticalTiles = [NSMutableArray array];
+        for (TMCTile *tile in _deck) {
+            if (tile.pickable == 0) {
+                [impracticalTiles addObject:tile];
             }
-            CCLOG(@"no safe tiles found, choosing from those used in the highest columns");
+        }
+
+        if (impracticalTiles.count > 0) {
+            CCLOG(@"corner column, choosing from impractical tiles");
+            return [impracticalTiles objectAtIndex:(NSUInteger)(random() % impracticalTiles.count)];
+        }
+        else {
+            CCLOG(@"corner column, but failed to find an impractical tile");
+            return [self returnRandomInPrunedSelection:2];
         }
     }
     else {
-        availableTiles = _deck;
-        CCLOG(@"choosing from all tiles");
+        return [self returnRandomInPrunedSelection:8];
     }
-
-    // HOTFIX!
-    if ([availableTiles count] < 1) {
-        availableTiles = _deck;
-    }
-    
-    int index = random() % [availableTiles count];
-    TMCTile* tile = [availableTiles objectAtIndex:(NSUInteger)index];
-    
-    return tile;
 }
 
 - (void) randomizeInitialTiles
@@ -161,8 +198,12 @@
     [self resetColumns];
     
     for (TMCColumn* column in _columns) {
-        [column setTile:[self randomizeTileFor:column]];
+        [column setTile:[_deck objectAtIndex:(NSUInteger)(random() % _deck.count)]];
     }
+
+//    for (TMCColumn* column in _columns) {
+//        [column setTile:[self randomizeTileFor:column]];
+//    }
 
     // kept for testing: testbed for no matching tiles situations
 //    int tileIndex = 1;
