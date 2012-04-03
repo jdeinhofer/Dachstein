@@ -158,7 +158,7 @@
 {
     [self updateTileStats];
 
-    if ([self countMatchableTiles] < 2) {
+    if ([self countMatchableTiles] < 3) {
         CCLOG(@"not enough matching tiles, choosing a match-able tile");
         NSMutableArray *pickableTiles = [NSMutableArray array];
         for (TMCTile *tile in _deck) {
@@ -185,7 +185,7 @@
         }
         else {
             CCLOG(@"corner column, but failed to find an impractical tile");
-            return [self returnRandomInPrunedSelection:2];
+            return [self returnRandomInPrunedSelection:4];
         }
     }
     else {
