@@ -5,24 +5,18 @@
     <option name="CUSTOM_SCOPE_NAME" value="Favorite 'Dachstein'" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4b1f3c9-e4bc-401b-8e2c-6d92790f589d" name="Default" comment="refactored: moved instance variables to implementation, moved private methods to private category">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Dachstein/texture_tiles_retina.plist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Dachstein/texture_tiles_retina.png" afterPath="" />
+    <list default="true" id="a4b1f3c9-e4bc-401b-8e2c-6d92790f589d" name="Default" comment="tuned randomization algorithm">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dachstein/View/TMCBlossomExplosion.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dachstein/View/TMCBlossomExplosion.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Archives/Dachstein.ipa" afterPath="$PROJECT_DIR$/Archives/Dachstein.ipa" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Art/texture_tiles_retina/Blue_1.png" afterPath="$PROJECT_DIR$/Art/texture_tiles_retina/Blue_1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Art/texture_tiles_retina/Blue_2.png" afterPath="$PROJECT_DIR$/Art/texture_tiles_retina/Blue_2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Art/texture_tiles_retina/Blue_3.png" afterPath="$PROJECT_DIR$/Art/texture_tiles_retina/Blue_3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Art/texture_tiles_retina/Green_1.png" afterPath="$PROJECT_DIR$/Art/texture_tiles_retina/Green_1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Art/texture_tiles_retina/Green_2.png" afterPath="$PROJECT_DIR$/Art/texture_tiles_retina/Green_2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Art/texture_tiles_retina/Green_3.png" afterPath="$PROJECT_DIR$/Art/texture_tiles_retina/Green_3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Art/texture_tiles_retina/Red_1.png" afterPath="$PROJECT_DIR$/Art/texture_tiles_retina/Red_1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Art/texture_tiles_retina/Red_2.png" afterPath="$PROJECT_DIR$/Art/texture_tiles_retina/Red_2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Art/texture_tiles_retina/Red_3.png" afterPath="$PROJECT_DIR$/Art/texture_tiles_retina/Red_3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Art/referenced_in_project/texture_tiles_retina.png" afterPath="$PROJECT_DIR$/Art/referenced_in_project/texture_tiles_retina.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dachstein.xcodeproj/project.xcworkspace/xcuserdata/jdeinhofer.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/Dachstein.xcodeproj/project.xcworkspace/xcuserdata/jdeinhofer.xcuserdatad/UserInterfaceState.xcuserstate" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Art/referenced_in_project/texture_tiles_retina.plist" afterPath="$PROJECT_DIR$/Art/referenced_in_project/texture_tiles_retina.plist" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dachstein.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Dachstein.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dachstein.xcodeproj/xcuserdata/jdeinhofer.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist" afterPath="$PROJECT_DIR$/Dachstein.xcodeproj/xcuserdata/jdeinhofer.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dachstein/Controller/TMCGameController.m" afterPath="$PROJECT_DIR$/Dachstein/Controller/TMCGameController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dachstein/View/TMCColumnView.h" afterPath="$PROJECT_DIR$/Dachstein/View/TMCColumnView.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dachstein/View/TMCColumnView.m" afterPath="$PROJECT_DIR$/Dachstein/View/TMCColumnView.m" />
     </list>
     <list id="ccdea2d5-56a5-4332-8038-583478d3f453" name="Rejected commit: Default" comment="moved setRetinaEnabled to an earlier time in intialization, thereby fixing layouting problems" />
@@ -46,66 +40,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TMCSelectionHighlight.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCSelectionHighlight.m">
+      <file leaf-file-name="TMCModel.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dachstein/Model/TMCModel.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="28" column="16" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TMCSelectionHighlight.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCSelectionHighlight.h">
+      <file leaf-file-name="TMCBlossomExplosion.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCBlossomExplosion.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0">
+            <state line="11" column="13" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TMCLabel.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCLabel.m">
+      <file leaf-file-name="CCActionInterval.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dachstein/libs/cocos2d/CCActionInterval.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="22" selection-start="1150" selection-end="1150" vertical-scroll-proportion="0.0">
+            <state line="249" column="45" selection-start="8012" selection-end="8012" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TMCLabel.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCLabel.h">
+      <file leaf-file-name="CCActionInterval.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dachstein/libs/cocos2d/CCActionInterval.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TMCTimer.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCTimer.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="144" selection-end="144" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TMCGameView.h" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCGameView.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="71" selection-start="944" selection-end="944" vertical-scroll-proportion="0.6205674">
-              <folding>
-                <element signature="e#143#168#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TMCGameController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dachstein/Controller/TMCGameController.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="811" column="50" selection-start="16948" selection-end="16962" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -114,7 +79,45 @@
       <file leaf-file-name="TMCColumnView.h" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCColumnView.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="8" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0">
+            <state line="14" column="13" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TMCColumnView.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCColumnView.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="186" column="14" selection-start="5435" selection-end="5439" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TMCBlossomExplosion.m" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCBlossomExplosion.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="63" column="70" selection-start="1680" selection-end="1680" vertical-scroll-proportion="0.37943262">
+              <folding>
+                <element signature="e#118#149#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TMCModel.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dachstein/Model/TMCModel.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="184" column="43" selection-start="5568" selection-end="5568" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TMCGameView.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCGameView.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="19" selection-start="709" selection-end="709" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -123,17 +126,10 @@
       <file leaf-file-name="TMCGameController.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dachstein/Controller/TMCGameController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="47" selection-start="1791" selection-end="1804" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TMCTimer.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCTimer.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="45" selection-start="619" selection-end="619" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="100" column="45" selection-start="2470" selection-end="2470" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#149#178#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -152,22 +148,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Dachstein/Controller/TMCRulesClassic.h" />
-        <option value="$PROJECT_DIR$/Dachstein/Controller/TMCGameController.h" />
-        <option value="$PROJECT_DIR$/Dachstein/View/TMCBackground.h" />
-        <option value="$PROJECT_DIR$/Dachstein/GameConfig.h" />
-        <option value="$PROJECT_DIR$/Dachstein/View/TMCColumnView.h" />
-        <option value="$PROJECT_DIR$/Dachstein/View/TMCColumnView.m" />
-        <option value="$PROJECT_DIR$/Dachstein/View/TMCGameView.h" />
-        <option value="$PROJECT_DIR$/Dachstein/View/TMCGameView.m" />
-        <option value="$PROJECT_DIR$/Dachstein/View/TMCHint.h" />
         <option value="$PROJECT_DIR$/Dachstein/View/TMCHint.m" />
         <option value="$PROJECT_DIR$/Dachstein/View/TMCHudClassic.h" />
         <option value="$PROJECT_DIR$/Dachstein/View/TMCHudClassic.m" />
         <option value="$PROJECT_DIR$/Dachstein/View/TMCLabel.h" />
         <option value="$PROJECT_DIR$/Dachstein/View/TMCSelectionHighlight.h" />
         <option value="$PROJECT_DIR$/Dachstein/View/TMCTimer.h" />
+        <option value="$PROJECT_DIR$/Dachstein/Controller/TMCRulesClassic.m" />
+        <option value="$PROJECT_DIR$/Dachstein/View/TMCGameView.h" />
+        <option value="$PROJECT_DIR$/Dachstein/View/TMCGameView.m" />
+        <option value="$PROJECT_DIR$/Dachstein/Model/TMCModel.h" />
+        <option value="$PROJECT_DIR$/Dachstein/Model/TMCModel.m" />
+        <option value="$PROJECT_DIR$/Dachstein/View/TMCBlossomExplosion.h" />
+        <option value="$PROJECT_DIR$/Dachstein/View/TMCColumnView.m" />
+        <option value="$PROJECT_DIR$/Dachstein/View/TMCColumnView.h" />
         <option value="$PROJECT_DIR$/Dachstein/Controller/TMCGameController.m" />
+        <option value="$PROJECT_DIR$/Dachstein/View/TMCBlossomExplosion.m" />
       </list>
     </option>
   </component>
@@ -227,74 +223,6 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dachstein" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dachstein" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodePBXReferenceNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dachstein" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dachstein" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodePBXReferenceNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="View" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodePBXReferenceNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dachstein" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dachstein" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodePBXReferenceNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Model" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodePBXReferenceNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dachstein" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dachstein" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodePBXReferenceNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodePBXReferenceNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -351,7 +279,7 @@
         <option name="com.jetbrains.cidr.execution.StopCurrentSessionBeforeRunTaskProvider$StopCurrentSessionBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="false" name="Dachstein - Debug - Funktelefon" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Dachstein - Debug - Funktelefon" PROJECT_NAME="Dachstein" TARGET_NAME="Dachstein" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Dachstein" RUN_TARGET_NAME="Dachstein" DEBUGGER="GDB" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+    <configuration default="false" name="Dachstein - Debug - Funktelefon" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Dachstein - Debug - Funktelefon" PROJECT_NAME="Dachstein" TARGET_NAME="Dachstein" CONFIG_NAME="Debug" DESTINATION_ID="iphoneos_UNIVERSAL" RUN_TARGET_PROJECT_NAME="Dachstein" RUN_TARGET_NAME="Dachstein" DEBUGGER="GDB" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
       <envs />
       <RunnerSettings RunnerId="AppRunner" />
       <ConfigurationWrapper RunnerId="AppRunner" />
@@ -472,7 +400,35 @@
       <created>1333365523874</created>
       <updated>1333365523874</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="used tiles with crisp outline, changed area/border relation to 0.87f">
+      <created>1333374565822</created>
+      <updated>1333374565822</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fixed bug where alert might be kept for so long it runs out and the flag is not reset&#10;extracted _controller.view.hudclassic to instance variable">
+      <created>1333375627575</created>
+      <updated>1333375627575</updated>
+    </task>
+    <task id="LOCAL-00022" summary="renamed _hudClassic to _hud, used it on one more occasion">
+      <created>1333375788139</created>
+      <updated>1333375788140</updated>
+    </task>
+    <task id="LOCAL-00023" summary="implemented border case handling: no matching tiles (_extreme_ bordercase: last instance when this happened is weeks ago)">
+      <created>1333387349329</created>
+      <updated>1333387349329</updated>
+    </task>
+    <task id="LOCAL-00024" summary="removed test-condition (center tile always 2/2)">
+      <created>1333387483073</created>
+      <updated>1333387483073</updated>
+    </task>
+    <task id="LOCAL-00025" summary="tuned randomization algorithm">
+      <created>1333445185678</created>
+      <updated>1333445185678</updated>
+    </task>
+    <task id="LOCAL-00026" summary="made slightly easier">
+      <created>1333461514829</created>
+      <updated>1333461514829</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -497,13 +453,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="967" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30574593" sideWeight="0.24513173" order="5" side_tool="false" content_ui="tabs" x="11" y="362" width="1897" height="286" />
       <window_info id="Changes" active="false" anchor="left" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.3294676" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="184" y="637" width="609" height="286" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32760596" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29204005" sideWeight="0.2749141" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29204005" sideWeight="0.7170676" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21296784" sideWeight="0.325315" order="4" side_tool="false" content_ui="tabs" x="20" y="623" width="526" height="309" />
+      <window_info id="Find" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3494992" sideWeight="0.37342498" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29204005" sideWeight="0.49140894" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29204005" sideWeight="0.50057274" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40115973" sideWeight="0.27605957" order="4" side_tool="false" content_ui="tabs" x="20" y="623" width="526" height="309" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39862543" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20980495" sideWeight="0.34177214" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25887743" sideWeight="0.5002636" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17640321" sideWeight="0.0" order="1" side_tool="false" content_ui="tabs" />
@@ -511,11 +470,8 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3089088" sideWeight="0.38373426" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30574593" sideWeight="0.34249714" order="5" side_tool="false" content_ui="tabs" x="11" y="362" width="1897" height="286" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39862543" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -553,7 +509,7 @@
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored: moved instance variables to implementation, moved private methods to private category, moved imports to implementation where possible" />
+    <option name="LAST_COMMIT_MESSAGE" value="made slightly easier" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -566,13 +522,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="adding work in progress scoreTicker" />
-    <MESSAGE value="removed commented out legacy code" />
-    <MESSAGE value="changed tile view to isometric" />
-    <MESSAGE value="scaled up isometric tiles&#10;changed tile-shading formula" />
-    <MESSAGE value="committing folder: Art" />
-    <MESSAGE value="implemented TMCProgressBar&#10;used TMCProgressBar for TimerBar and LevelProgressBar" />
-    <MESSAGE value="removed commented out layout code for non-iso-45 layouts" />
     <MESSAGE value="extended not-possible-wiggle to tiles blocking the pick-action" />
     <MESSAGE value="removed test &quot;TMCNumberTicker&quot;" />
     <MESSAGE value="added sounds ambience, juchetzer to project, renamed music_a to music.&#10;implemented basic flow of background-music in outer game loop" />
@@ -591,108 +540,18 @@
     <MESSAGE value="TMCColumn: moved member declarations from header to source&#10;TMCColumnView: removed use of TMCColumn.view" />
     <MESSAGE value="refactored: moved instance variables to implementation, moved private methods to private category" />
     <MESSAGE value="refactored: moved instance variables to implementation, moved private methods to private category, moved imports to implementation where possible" />
+    <MESSAGE value="used tiles with crisp outline, changed area/border relation to 0.87f" />
+    <MESSAGE value="fixed bug where alert might be kept for so long it runs out and the flag is not reset&#10;extracted _controller.view.hudclassic to instance variable" />
+    <MESSAGE value="renamed _hudClassic to _hud, used it on one more occasion" />
+    <MESSAGE value="implemented border case handling: no matching tiles (_extreme_ bordercase: last instance when this happened is weeks ago)" />
+    <MESSAGE value="removed test-condition (center tile always 2/2)" />
+    <MESSAGE value="tuned randomization algorithm" />
+    <MESSAGE value="made slightly easier" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCColumnView.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="186" column="0" selection-start="5422" selection-end="5422" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#805#832#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCGameView.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="281" column="35" selection-start="8043" selection-end="8043" vertical-scroll-proportion="-22.884615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCHint.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="50" selection-start="741" selection-end="741" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCHint.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="18" selection-start="169" selection-end="185" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCHudClassic.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="19" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#118#138#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCHudClassic.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="398" selection-end="398" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#119#144#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCTimer.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="45" selection-start="619" selection-end="619" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/Controller/TMCGameController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="47" selection-start="1791" selection-end="1804" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCColumnView.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="8" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/Controller/TMCGameController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCTimer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="144" selection-end="144" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCLabel.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCLabel.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="22" selection-start="1150" selection-end="1150" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCSelectionHighlight.h">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="0" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0">
@@ -707,11 +566,108 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/libs/cocos2d/ccTypes.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="285" column="14" selection-start="6312" selection-end="6312" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/Controller/TMCRulesClassic.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="231" column="77" selection-start="5991" selection-end="5991" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1333375679000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1333375679000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1333375679000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/Model/TMCColumn.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="9" selection-start="2138" selection-end="2138" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCGameView.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="71" selection-start="944" selection-end="944" vertical-scroll-proportion="0.6205674">
+        <state line="31" column="0" selection-start="905" selection-end="905" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/Model/TMCModel.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="16" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/Model/TMCModel.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="184" column="43" selection-start="5568" selection-end="5568" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCBlossomExplosion.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="13" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/libs/cocos2d/CCActionInterval.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="811" column="50" selection-start="16948" selection-end="16962" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/libs/cocos2d/CCActionInterval.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="249" column="45" selection-start="8012" selection-end="8012" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCColumnView.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="186" column="14" selection-start="5435" selection-end="5439" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCColumnView.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="13" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/Controller/TMCGameController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="45" selection-start="2470" selection-end="2470" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#143#168#0" expanded="true" />
+            <element signature="e#149#178#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCGameView.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="19" selection-start="709" selection-end="709" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCBlossomExplosion.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="70" selection-start="1680" selection-end="1680" vertical-scroll-proportion="0.37943262">
+          <folding>
+            <element signature="e#118#149#0" expanded="true" />
           </folding>
         </state>
       </provider>

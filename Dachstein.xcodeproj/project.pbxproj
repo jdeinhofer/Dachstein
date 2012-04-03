@@ -178,6 +178,7 @@
 		2ED7D806140FD7D200CC2CA9 /* success_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2CA8 /* success_3.wav */; };
 		2ED7D806140FD7D200CC2CAC /* TimerBar_FG.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2CAB /* TimerBar_FG.png */; };
 		2ED7D806140FD7D200CC2CAE /* TMCLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2CAD /* TMCLabel.m */; };
+		2ED7D806140FD7D200CC2CB1 /* TMCBlossomExplosion.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2CB0 /* TMCBlossomExplosion.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -485,6 +486,8 @@
 		2ED7D806140FD7D200CC2CAB /* TimerBar_FG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TimerBar_FG.png; path = ../Art/referenced_in_project/TimerBar_FG.png; sourceTree = "<group>"; };
 		2ED7D806140FD7D200CC2CAD /* TMCLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCLabel.m; sourceTree = "<group>"; };
 		2ED7D806140FD7D200CC2CAF /* TMCLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCLabel.h; sourceTree = "<group>"; };
+		2ED7D806140FD7D200CC2CB0 /* TMCBlossomExplosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCBlossomExplosion.m; sourceTree = "<group>"; };
+		2ED7D806140FD7D200CC2CB2 /* TMCBlossomExplosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCBlossomExplosion.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -534,6 +537,8 @@
 		2E0BF7A1148F763100CC6697 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2ED7D806140FD7D200CC2CB2 /* TMCBlossomExplosion.h */,
+				2ED7D806140FD7D200CC2CB0 /* TMCBlossomExplosion.m */,
 				2ED7D806140FD7D200CC2CAF /* TMCLabel.h */,
 				2ED7D806140FD7D200CC2CAD /* TMCLabel.m */,
 				2ED7D806140FD7D200CC2C66 /* TMCBackground.h */,
@@ -1215,6 +1220,7 @@
 				2ED7D806140FD7D200CC2C62 /* TMCHint.m in Sources */,
 				2ED7D806140FD7D200CC2C65 /* TMCBackground.m in Sources */,
 				2ED7D806140FD7D200CC2CAE /* TMCLabel.m in Sources */,
+				2ED7D806140FD7D200CC2CB1 /* TMCBlossomExplosion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

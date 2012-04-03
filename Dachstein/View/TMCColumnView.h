@@ -10,6 +10,10 @@
 
 #define SNAP_DURATION 0.20f
 
+#define BLUE 0
+#define GREEN 1
+#define RED 2
+
 @interface TMCColumnView : CCNode
 
 - (id) initWithColumn: (TMCColumn*) column;

@@ -10,6 +10,7 @@
 
 #import "SimpleAudioEngine.h"
 #import "TMCRulesClassic.h"
+#import "TMCBlossomExplosion.h"
 
 #define HINT_TIMER_DELAY 8.0f
 
@@ -17,6 +18,8 @@
 @interface TMCGameController ()
 - (void)resetHintTimer;
 - (void)showHint;
+
+- (void)startExplosionOnView:(TMCColumnView *)columnView;
 
 - (void)handleNoMatchSituation;
 
@@ -56,10 +59,20 @@
     return self;
 }
 
+- (void)startExplosionOnView:(TMCColumnView *)columnView {
+    TMCBlossomExplosion *explosion = [[TMCBlossomExplosion alloc] initWithTile:columnView.column.tile];
+    explosion.position = columnView.position;
+    [columnView.parent addChild:explosion];
+    [explosion start];
+}
+
 - (void)removePair:(TMCColumnView *)columnView pickedColumn:(TMCColumn *)pickedColumn selectedColumn:(TMCColumn *)selectedColumn {
     int topOff = [_model getMinTopOffset];
 
     [_rules pickedTile:[pickedColumn tile]];
+
+    [self startExplosionOnView:columnView];
+    [self startExplosionOnView:_selectedColumnView];
 
     [selectedColumn pick];
     [pickedColumn pick];

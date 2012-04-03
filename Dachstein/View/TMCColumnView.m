@@ -184,21 +184,21 @@
 + (NSString*) spriteFrameNameForTile: (TMCTile*) tile
 {
     switch (tile.color) {
-        case 0:
+        case BLUE:
             switch (tile.value) {
                 case 0: return @"Blue_1.png";
                 case 1: return @"Blue_2.png";
                 case 2: return @"Blue_3.png";
             }
             break;
-        case 1:
+        case GREEN:
             switch (tile.value) {
                 case 0: return @"Green_1.png";
                 case 1: return @"Green_2.png";
                 case 2: return @"Green_3.png";
             }
             break;
-        case 2:
+        case RED:
             switch (tile.value) {
                 case 0: return @"Red_1.png";
                 case 1: return @"Red_2.png";

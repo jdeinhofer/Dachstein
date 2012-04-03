@@ -236,7 +236,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "83"
          endingLineNumber = "83"
-         landmarkName = "-prepareGame"
+         landmarkName = "-initWithController:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -250,8 +250,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "74"
          endingLineNumber = "74"
-         landmarkName = "-prepareGame"
-         landmarkType = "5">
+         landmarkName = "@implementation TMCRulesClassic"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -264,8 +264,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "75"
          endingLineNumber = "75"
-         landmarkName = "-prepareGame"
-         landmarkType = "5">
+         landmarkName = "@implementation TMCRulesClassic"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
