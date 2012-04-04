@@ -13,6 +13,7 @@
     int _x;
     int _y;
     int _targetDepth;
+    int _topOffset;
 
     TMCColumn* _NW;
     TMCColumn* _N;
@@ -34,6 +35,7 @@
 @synthesize targetDepth=_targetDepth;
 @synthesize tile=_tile;
 @synthesize neighbors=_neighbors;
+@synthesize topOffset=_topOffset;
 
 
 - (id) initWithDepth: (int) depthArg x: (int) xArg y: (int) yArg;
@@ -97,6 +99,7 @@
 - (void) pick
 {
     _top++;
+    self.tile = nil;
 }
 
 - (void) dealloc

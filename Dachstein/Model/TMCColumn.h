@@ -26,5 +26,6 @@
 @property (readonly) int targetDepth;
 @property (assign) TMCTile* tile;
 @property (readonly) NSArray* neighbors;
+@property int topOffset;
 
 @end

@@ -13,9 +13,7 @@
 - (void)initializeColumns;
 - (void)configureColumns;
 - (void)initializeDeck;
-- (void)pruneTilesArray:(NSMutableArray *)pickableTiles toNumPickables:(int)numPickables;
 - (int)countMatchableTiles;
-- (TMCTile *)returnRandomInPrunedSelection:(int)prunedTo;
 - (void)addColumnAtDepth:(int)depthArg x:(int)xArg y:(int)yArg;
 @end
 
@@ -107,32 +105,12 @@
     }
 }
 
-- (int) countPickableIn: (NSArray *) tileArray
-{
-    int sum = 0;
-    for (TMCTile *tile in tileArray) {
-        sum += tile.pickable;
-    }
-    return sum;
-}
-
-- (void)pruneTilesArray:(NSMutableArray *)pickableTiles toNumPickables:(int)numPickables {
-    if (pickableTiles.count > numPickables) {
-        // sort _columns by top
-        [_columns sortUsingComparator:^(TMCColumn* columnA, TMCColumn* columnB) {
-           if (columnA.top > columnB.top)    return (NSComparisonResult)NSOrderedDescending;
-           if (columnA.top < columnB.top)    return (NSComparisonResult)NSOrderedAscending;
-           return (NSComparisonResult)NSOrderedSame;
-        }];
-
-        NSUInteger columnsIndex = _columns.count - 1;
-        while (([pickableTiles count] > 1) && ([self countPickableIn:pickableTiles] > numPickables)) {
-            TMCColumn *column = [_columns objectAtIndex:columnsIndex--];
-            if ([column isPickable]) {
-                [pickableTiles removeObjectIdenticalTo:column.tile];
-            }
-        }
-    }
+- (void)sortColumnsByTopOffset {
+    [_columns sortUsingComparator:^(TMCColumn* columnA, TMCColumn* columnB) {
+       if (columnA.topOffset > columnB.topOffset)    return (NSComparisonResult)NSOrderedDescending;
+       if (columnA.topOffset < columnB.topOffset)    return (NSComparisonResult)NSOrderedAscending;
+       return (NSComparisonResult)NSOrderedSame;
+    }];
 }
 
 - (int)countMatchableTiles {
@@ -145,52 +123,73 @@
     return matchables;
 }
 
-- (TMCTile *)returnRandomInPrunedSelection:(int)prunedTo {
-    NSMutableArray *availableTiles = [[_deck mutableCopy] autorelease];
-    [self pruneTilesArray:availableTiles toNumPickables:prunedTo];
-
-    CCLOG(@"choosing from all tiles pruned to the %i topmost tiles", prunedTo);
-    int index = random() % availableTiles.count;
-    return [availableTiles objectAtIndex:(NSUInteger)index];
-}
-
 - (TMCTile *)randomizeTileFor:(TMCColumn *)column
 {
     [self updateTileStats];
 
-    if ([self countMatchableTiles] < 3) {
+    CCLOG(@"randomizing column %i %i", column.x, column.y);
+
+    if ([self countMatchableTiles] < 2) {
         CCLOG(@"not enough matching tiles, choosing a match-able tile");
-        NSMutableArray *pickableTiles = [NSMutableArray array];
+        NSMutableArray *availableTiles = [NSMutableArray array];
         for (TMCTile *tile in _deck) {
             if (tile.pickable > 0) {
-                [pickableTiles addObject:tile];
+                [availableTiles addObject:tile];
             }
         }
 
-        [self pruneTilesArray:pickableTiles toNumPickables:13];
-
-        return [pickableTiles objectAtIndex:(NSUInteger)(random() % pickableTiles.count)];
+        return [availableTiles objectAtIndex:(NSUInteger)(random() % availableTiles.count)];
     }
-    else if (column.neighbors.count == 3) {
+
+    else if (column.topOffset > 0) {
         NSMutableArray *impracticalTiles = [NSMutableArray array];
         for (TMCTile *tile in _deck) {
-            if (tile.pickable == 0) {
+            if (tile.inUse == 0) {
                 [impracticalTiles addObject:tile];
             }
         }
-
+        if (impracticalTiles.count == 0) {
+            for (TMCTile *tile in _deck) {
+                if (tile.pickable == 0) {
+                    [impracticalTiles addObject:tile];
+                }
+            }
+        }
         if (impracticalTiles.count > 0) {
-            CCLOG(@"corner column, choosing from impractical tiles");
+            CCLOG(@"lower-than-desired column, choosing from impractical tiles");
             return [impracticalTiles objectAtIndex:(NSUInteger)(random() % impracticalTiles.count)];
         }
         else {
-            CCLOG(@"corner column, but failed to find an impractical tile");
-            return [self returnRandomInPrunedSelection:4];
+            CCLOG(@"lower-than-desired column, but failed to find an impractical tile");
         }
     }
-    else {
-        return [self returnRandomInPrunedSelection:8];
+
+
+    CCLOG(@"pruning selection of available tiles by topOffset, choosing from at least 3");
+
+    [self sortColumnsByTopOffset];
+    NSMutableArray *availableTiles = [[_deck mutableCopy] autorelease];
+
+    int columnsIndex = _columns.count;
+
+    while (availableTiles.count > 3 && columnsIndex > 0) {
+        columnsIndex--;
+        TMCColumn *tmpC = [_columns objectAtIndex:(NSUInteger)columnsIndex];
+
+        if (tmpC.topOffset == 0) break;
+
+        TMCTile *tile = tmpC.tile;
+        [availableTiles removeObject:tile];
+        CCLOG(@"pruning [%i %i] because it is contained in [%i %i] with topOffset %i", tile.color, tile.value, tmpC.x, tmpC.y, tmpC.topOffset);
     }
+
+    for (TMCTile *availableTile in availableTiles) {
+        CCLOG(@"available: [%i %i]", availableTile.color, availableTile.value);
+    }
+
+    TMCTile *ret = [availableTiles objectAtIndex:(NSUInteger)random() % availableTiles.count];
+
+    return ret;
 }
 
 - (void) randomizeInitialTiles
@@ -237,6 +236,7 @@
         }
         
         int topOffset = (column.top - column.targetDepth) - (_centerColumn.top - _centerColumn.targetDepth);
+        column.topOffset = topOffset;
         tile.topOffset += topOffset;
     }
 }
