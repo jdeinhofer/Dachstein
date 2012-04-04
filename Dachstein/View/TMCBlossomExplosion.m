@@ -12,6 +12,7 @@
 
 @implementation TMCBlossomExplosion {
     NSArray *_frameNames;
+    BOOL _lowRes;
 }
 
 float randomizeFloat() {
@@ -45,15 +46,17 @@ float randomizeInRange(float min, float max) {
                 break;
         }
 
-        if (![TMCGameView isLowRes]) {
-            self.scale = 0.5;
+        _lowRes = [TMCGameView isLowRes];
+        if (_lowRes)
+        {
+            self.scale *= 0.5;
         }
     }
 
     return self;
 }
 
-#define DURATION 1.0f
+#define DURATION 0.7f
 #define DURATION_EXPLO_MIN 0.15f
 #define DURATION_EXPLO_MAX 0.22f
 
@@ -62,11 +65,11 @@ float randomizeInRange(float min, float max) {
 
     CCSprite *blossomSprite = [CCSprite spriteWithSpriteFrameName:frameName];
     blossomSprite.rotation = randomizeFloat() * 360;
-    blossomSprite.scale = 4.0f;
+    blossomSprite.scale = 4.0f;//(_lowRes) ? 2.0f : 4.0f;
 
     CGPoint explo = randomizePoint();
     explo = ccpNormalize(explo);
-    explo = ccpMult(explo, randomizeInRange(160, 400));
+    explo = ccpMult(explo, randomizeInRange(50, 90));
     explo.x *= 1.5f;
     explo = ccpAdd(explo, ccp(0, 30));
     float durationExplo = randomizeInRange(DURATION_EXPLO_MIN, DURATION_EXPLO_MAX);
@@ -75,7 +78,7 @@ float randomizeInRange(float min, float max) {
     ccBezierConfig flyOut;
     flyOut.controlPoint_1 = explo;
     flyOut.controlPoint_2 = ccpAdd(explo, ccp(0, 30));
-    flyOut.endPosition = ccpAdd(flyOut.controlPoint_2, ccp(150 * DURATION, 30 * DURATION));
+    flyOut.endPosition = ccpAdd(flyOut.controlPoint_2, ccp(50 * (DURATION - durationExplo), 10 * (DURATION - durationExplo)));
     id moveFlyOut = [CCBezierBy actionWithDuration:DURATION - durationExplo bezier:flyOut];
 
     blossomSprite.position = ccpMult(explo, 0.1f);
@@ -89,8 +92,8 @@ float randomizeInRange(float min, float max) {
     [blossomSprite runAction:rotationEase];
 
 //    id fadeOut = [CCEaseExponentialIn actionWithAction:[CCFadeOut actionWithDuration:DURATION]];
-    id fadeDelay = [CCDelayTime actionWithDuration:DURATION * 0.2f];
-    id fadeOut = [CCFadeOut actionWithDuration:DURATION * 0.8f];
+    id fadeDelay = [CCDelayTime actionWithDuration:DURATION * 0.6f];
+    id fadeOut = [CCFadeOut actionWithDuration:DURATION * 0.4f];
     id fadeSequence = [CCSequence actions:fadeDelay, fadeOut, nil];
     [blossomSprite runAction:fadeSequence];
 
@@ -99,7 +102,7 @@ float randomizeInRange(float min, float max) {
 
 - (void) start
 {
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < 30; i++) {
         [self createBlossom];
     }
 

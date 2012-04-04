@@ -71,8 +71,9 @@
 
     [_rules pickedTile:[pickedColumn tile]];
 
-    [self startExplosionOnView:columnView];
-    [self startExplosionOnView:_selectedColumnView];
+    // TMP! commented out because it looks shit!
+//    [self startExplosionOnView:columnView];
+//    [self startExplosionOnView:_selectedColumnView];
 
     [selectedColumn pick];
     [pickedColumn pick];
