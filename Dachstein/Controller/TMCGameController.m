@@ -61,8 +61,8 @@
 
 - (void)startExplosionOnView:(TMCColumnView *)columnView {
     TMCBlossomExplosion *explosion = [[TMCBlossomExplosion alloc] initWithTile:columnView.column.tile];
-    explosion.position = columnView.position;
     [columnView.parent addChild:explosion];
+    explosion.position = columnView.position;
     [explosion start];
 }
 

@@ -8,11 +8,14 @@
 #import "TMCBlossomExplosion.h"
 #import "TMCColumnView.h"
 #import "TMCGameView.h"
+#import "CCActionInterval.h"
+#import "TMCBlossom.h"
 
 
 @implementation TMCBlossomExplosion {
     NSArray *_frameNames;
     BOOL _lowRes;
+    TMCTile *_tile;
 }
 
 float randomizeFloat() {
@@ -46,11 +49,14 @@ float randomizeInRange(float min, float max) {
                 break;
         }
 
-        _lowRes = [TMCGameView isLowRes];
-        if (_lowRes)
-        {
-            self.scale *= 0.5;
-        }
+        _tile = tile;
+
+//        self.scale = 2;
+//        _lowRes = [TMCGameView isLowRes];
+//        if (_lowRes)
+//        {
+//            self.scale *= 0.5;
+//        }
     }
 
     return self;
@@ -100,13 +106,52 @@ float randomizeInRange(float min, float max) {
     [self addChild:blossomSprite];
 }
 
+- (void) spawnBlossom
+{
+    NSString *frameName = [_frameNames objectAtIndex:random() % 3];
+    CCSprite *blossomSprite = [TMCBlossom spriteWithSpriteFrameName:frameName];
+
+    [self addChild:blossomSprite];
+
+    blossomSprite.rotation = randomizeFloat() * 360;
+    blossomSprite.scale = 2.0f;
+
+    CGPoint position = ccpNormalize(randomizePoint());
+    float randomScale = randomizeFloat();
+    position.x *= 100 * randomScale;
+    position.y *= 50 * randomScale;
+
+    blossomSprite.position = position;
+
+    [blossomSprite scheduleUpdate];
+}
+
 - (void) start
 {
-    for (int i = 0; i < 30; i++) {
-        [self createBlossom];
+    for (int i = 0; i < 20; i++) {
+        [self spawnBlossom];
     }
 
-    id delay = [CCDelayTime actionWithDuration:DURATION];
+//    for (int i = 0; i < 30; i++) {
+//        [self createBlossom];
+//    }
+
+//    CCSprite *tile = [CCSprite spriteWithSpriteFrameName:[TMCColumnView spriteFrameNameForTile:_tile]];
+//    CCSprite *light = [CCSprite spriteWithSpriteFrameName:[TMCColumnView spriteFrameNameForTile:_tile]];
+//    [light setColor: ccc3(255,0,255)];
+//    //[self addChild:tile];
+//    [self addChild:light];
+//
+//    id tileFade = [CCFadeOut actionWithDuration:0.2f];
+//    [tile runAction:tileFade];
+//
+//    id lightFadeIn = [CCFadeIn actionWithDuration:2.2f];
+//    id lightFadeOut = [CCFadeOut actionWithDuration:3.3f];
+//    id lightSequence = [CCSequence actions:lightFadeIn, lightFadeOut, nil];
+//    [light runAction:lightSequence];
+
+
+    id delay = [CCDelayTime actionWithDuration:15.0f];
     id remove = [CCCallFuncN actionWithTarget:self selector:@selector(remove)];
     id sequence = [CCSequence actions:delay, remove, nil];
 
