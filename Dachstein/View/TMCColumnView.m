@@ -17,8 +17,9 @@
 
 #define SHADE_OPACITY_QUADRATIC 25.0f
 #define SHADE_OPACITY_LINEAR 25.0f
-#define SHADE_OPACITY_PERY 0.3f
+#define SHADE_OPACITY_PERY 5.0f
 #define SHADE_OPACITY_MAX 200.0f
+#define SHADE_OPACITY_MULTIPLIER_Z 1.1f
 
 #define SPRITE_OFFSET_FACTOR_Y 0.87f
 
@@ -48,7 +49,7 @@
     self = [super init];
     if (self) {
         _column = column;
-        _sprite = [CCSprite alloc];
+        _sprite = [[CCSprite alloc] initWithSpriteFrameName:@"Red_1.png"];
         
         [self addChild:_sprite];
 
@@ -56,6 +57,9 @@
         [_shadow setColor:ccc3(0, 0, 0)];
         [self addChild:_shadow];
         [_shadow setOpacity:0];
+
+        // position offscreen
+        self.position = ccp(0, -9999);
     }
     
     return self;
@@ -66,8 +70,9 @@
     // update sprite view
     TMCTile* tile = [_column tile];
     NSString* spriteFrameName = [TMCColumnView spriteFrameNameForTile:tile];
-	[_sprite initWithSpriteFrameName:spriteFrameName];
-    
+    CCSpriteFrame *spriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:spriteFrameName];
+    [_sprite setDisplayFrame:spriteFrame];
+
     // update position
     CGPoint position = [self calculatePosition];
     
@@ -130,10 +135,11 @@
 
 - (int) calculateShadowOpacity
 {
-    float quadratic = SHADE_OPACITY_QUADRATIC * (1.0f - 1.0f / (1.0f + [_column top]));
-    float linear = SHADE_OPACITY_LINEAR * [_column top];
+    const int columnTop = [_column top];
+    float quadratic = SHADE_OPACITY_QUADRATIC * (1.0f - 1.0f / (1.0f + columnTop));
+    float linear = SHADE_OPACITY_LINEAR * columnTop;
     float opacityOfLevel = quadratic + linear;
-    float opacityCorrectionY = 25 * SHADE_OPACITY_PERY * (_column.y + _column.x) * -1;
+    float opacityCorrectionY = SHADE_OPACITY_MULTIPLIER_Z * columnTop * SHADE_OPACITY_PERY * (_column.y + _column.x) * -1;
 
     float total = opacityOfLevel + opacityCorrectionY;
 
