@@ -14,6 +14,17 @@
 		2E0BF79F148F712A00CC6697 /* TMCTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0BF79C148F712A00CC6697 /* TMCTile.m */; };
 		2E3111D11529DDA900A6C094 /* texture_tiles_retina.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E3111CF1529DDA900A6C094 /* texture_tiles_retina.plist */; };
 		2E3111D21529DDA900A6C094 /* texture_tiles_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E3111D01529DDA900A6C094 /* texture_tiles_retina.png */; };
+		2E3111E6152E164400A6C094 /* select_8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E3111E3152E164400A6C094 /* select_8.wav */; };
+		2E3111E7152E164400A6C094 /* success_8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E3111E4152E164400A6C094 /* success_8.wav */; };
+		2E3111E8152E164400A6C094 /* success_9.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E3111E5152E164400A6C094 /* success_9.wav */; };
+		2E3111F615348FC500A6C094 /* Fedora14.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 2E3111EE15348FC500A6C094 /* Fedora14.fnt */; };
+		2E3111F715348FC500A6C094 /* Fedora14.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E3111EF15348FC500A6C094 /* Fedora14.png */; };
+		2E3111F815348FC500A6C094 /* Fedora18.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 2E3111F015348FC500A6C094 /* Fedora18.fnt */; };
+		2E3111F915348FC500A6C094 /* Fedora18.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E3111F115348FC500A6C094 /* Fedora18.png */; };
+		2E3111FC15348FC500A6C094 /* Fedora36.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 2E3111F415348FC500A6C094 /* Fedora36.fnt */; };
+		2E3111FD15348FC500A6C094 /* Fedora36.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E3111F515348FC500A6C094 /* Fedora36.png */; };
+		2E311200153491E400A6C094 /* Fedora28.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 2E3111FE153491E400A6C094 /* Fedora28.fnt */; };
+		2E311201153491E400A6C094 /* Fedora28.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E3111FF153491E400A6C094 /* Fedora28.png */; };
 		2E5946C714ED77CD0019F582 /* TMCTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5946C614ED77CD0019F582 /* TMCTimer.m */; };
 		2E65DB5B152330A400451D1D /* SF Fedora.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB5A152330A400451D1D /* SF Fedora.ttf */; };
 		2E65DB8C152611C800451D1D /* chain_up.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB83152611C800451D1D /* chain_up.wav */; };
@@ -195,6 +206,17 @@
 		2E0BF7A5148F767E00CC6697 /* TMCGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCGameView.h; sourceTree = "<group>"; };
 		2E3111CF1529DDA900A6C094 /* texture_tiles_retina.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = texture_tiles_retina.plist; path = Art/referenced_in_project/texture_tiles_retina.plist; sourceTree = SOURCE_ROOT; };
 		2E3111D01529DDA900A6C094 /* texture_tiles_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = texture_tiles_retina.png; path = Art/referenced_in_project/texture_tiles_retina.png; sourceTree = SOURCE_ROOT; };
+		2E3111E3152E164400A6C094 /* select_8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = select_8.wav; path = Sound/referenced_in_project/select_8.wav; sourceTree = SOURCE_ROOT; };
+		2E3111E4152E164400A6C094 /* success_8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = success_8.wav; path = Sound/referenced_in_project/success_8.wav; sourceTree = SOURCE_ROOT; };
+		2E3111E5152E164400A6C094 /* success_9.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = success_9.wav; path = Sound/referenced_in_project/success_9.wav; sourceTree = SOURCE_ROOT; };
+		2E3111EE15348FC500A6C094 /* Fedora14.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fedora14.fnt; path = Art/referenced_in_project/Fedora14.fnt; sourceTree = SOURCE_ROOT; };
+		2E3111EF15348FC500A6C094 /* Fedora14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fedora14.png; path = Art/referenced_in_project/Fedora14.png; sourceTree = SOURCE_ROOT; };
+		2E3111F015348FC500A6C094 /* Fedora18.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fedora18.fnt; path = Art/referenced_in_project/Fedora18.fnt; sourceTree = SOURCE_ROOT; };
+		2E3111F115348FC500A6C094 /* Fedora18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fedora18.png; path = Art/referenced_in_project/Fedora18.png; sourceTree = SOURCE_ROOT; };
+		2E3111F415348FC500A6C094 /* Fedora36.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fedora36.fnt; path = Art/referenced_in_project/Fedora36.fnt; sourceTree = SOURCE_ROOT; };
+		2E3111F515348FC500A6C094 /* Fedora36.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fedora36.png; path = Art/referenced_in_project/Fedora36.png; sourceTree = SOURCE_ROOT; };
+		2E3111FE153491E400A6C094 /* Fedora28.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fedora28.fnt; path = Art/referenced_in_project/Fedora28.fnt; sourceTree = SOURCE_ROOT; };
+		2E3111FF153491E400A6C094 /* Fedora28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fedora28.png; path = Art/referenced_in_project/Fedora28.png; sourceTree = SOURCE_ROOT; };
 		2E5946C514ED77CD0019F582 /* TMCTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCTimer.h; sourceTree = "<group>"; };
 		2E5946C614ED77CD0019F582 /* TMCTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCTimer.m; sourceTree = "<group>"; };
 		2E65DB5A152330A400451D1D /* SF Fedora.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Fedora.ttf"; sourceTree = "<group>"; };
@@ -617,6 +639,14 @@
 		2ED7D6A7140FD7D000CC2C51 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2E3111FE153491E400A6C094 /* Fedora28.fnt */,
+				2E3111FF153491E400A6C094 /* Fedora28.png */,
+				2E3111EE15348FC500A6C094 /* Fedora14.fnt */,
+				2E3111EF15348FC500A6C094 /* Fedora14.png */,
+				2E3111F015348FC500A6C094 /* Fedora18.fnt */,
+				2E3111F115348FC500A6C094 /* Fedora18.png */,
+				2E3111F415348FC500A6C094 /* Fedora36.fnt */,
+				2E3111F515348FC500A6C094 /* Fedora36.png */,
 				2E65DB5A152330A400451D1D /* SF Fedora.ttf */,
 				2ED7D6A8140FD7D000CC2C51 /* Default.png */,
 				2ED7D6AA140FD7D000CC2C51 /* fps_images.png */,
@@ -976,6 +1006,9 @@
 		2ED7D806140FD7D200CC2CAA /* sound */ = {
 			isa = PBXGroup;
 			children = (
+				2E3111E3152E164400A6C094 /* select_8.wav */,
+				2E3111E4152E164400A6C094 /* success_8.wav */,
+				2E3111E5152E164400A6C094 /* success_9.wav */,
 				2E65DB95152617E700451D1D /* alert.mp3 */,
 				2E65DB96152617E700451D1D /* gameover_high.mp3 */,
 				2E65DB97152617E700451D1D /* gameover_low.mp3 */,
@@ -1105,6 +1138,17 @@
 				2E65DB9A152617E700451D1D /* gameover_low.mp3 in Resources */,
 				2E3111D11529DDA900A6C094 /* texture_tiles_retina.plist in Resources */,
 				2E3111D21529DDA900A6C094 /* texture_tiles_retina.png in Resources */,
+				2E3111E6152E164400A6C094 /* select_8.wav in Resources */,
+				2E3111E7152E164400A6C094 /* success_8.wav in Resources */,
+				2E3111E8152E164400A6C094 /* success_9.wav in Resources */,
+				2E3111F615348FC500A6C094 /* Fedora14.fnt in Resources */,
+				2E3111F715348FC500A6C094 /* Fedora14.png in Resources */,
+				2E3111F815348FC500A6C094 /* Fedora18.fnt in Resources */,
+				2E3111F915348FC500A6C094 /* Fedora18.png in Resources */,
+				2E3111FC15348FC500A6C094 /* Fedora36.fnt in Resources */,
+				2E3111FD15348FC500A6C094 /* Fedora36.png in Resources */,
+				2E311200153491E400A6C094 /* Fedora28.fnt in Resources */,
+				2E311201153491E400A6C094 /* Fedora28.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

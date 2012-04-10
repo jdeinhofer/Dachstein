@@ -68,7 +68,7 @@
     _highscoreLabel.position = ccp(screenSize.width / 2.5f, screenSize.height / 2 - 16);
     [self addChild:_highscoreLabel];
 
-    _messageLabel = [[TMCLabel alloc] initWithFontsize:24];
+    _messageLabel = [[TMCLabel alloc] initWithFontsize:18];
     _messageLabel.position = ccp(0, screenSize.height / 2 - 50);
     [self addChild:_messageLabel];
 }
@@ -101,7 +101,7 @@
     [self addChild:_lastTile];
     _lastTile.visible = false;
 
-    _chainLength = [[TMCLabel alloc] initWithFontsize:24];
+    _chainLength = [[TMCLabel alloc] initWithFontsize:18];
     _chainLength.position = position;
     [self addChild:_chainLength];
 }

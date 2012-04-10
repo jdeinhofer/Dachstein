@@ -4,15 +4,34 @@
     <option name="SCOPE_TYPE" value="8" />
     <option name="CUSTOM_SCOPE_NAME" value="Favorite 'Dachstein'" />
   </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/Dachstein/View/TMCLabel.m" line="5" mnemonic="8" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4b1f3c9-e4bc-401b-8e2c-6d92790f589d" name="Default" comment="improved tile randomization algorithm">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dachstein/View/TMCBlossom.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Dachstein/View/TMCBlossom.m" />
+    <list default="true" id="a4b1f3c9-e4bc-401b-8e2c-6d92790f589d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dachstein.xcodeproj/project.xcworkspace/xcuserdata/jdeinhofer.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/Dachstein.xcodeproj/project.xcworkspace/xcuserdata/jdeinhofer.xcuserdatad/UserInterfaceState.xcuserstate" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sound/referenced_in_project/chain_up.wav" afterPath="$PROJECT_DIR$/Sound/referenced_in_project/chain_up.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sound/referenced_in_project/select_1.wav" afterPath="$PROJECT_DIR$/Sound/referenced_in_project/select_1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sound/referenced_in_project/select_2.wav" afterPath="$PROJECT_DIR$/Sound/referenced_in_project/select_2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sound/referenced_in_project/select_3.wav" afterPath="$PROJECT_DIR$/Sound/referenced_in_project/select_3.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sound/referenced_in_project/select_4.wav" afterPath="$PROJECT_DIR$/Sound/referenced_in_project/select_4.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sound/referenced_in_project/select_5.wav" afterPath="$PROJECT_DIR$/Sound/referenced_in_project/select_5.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sound/referenced_in_project/select_6.wav" afterPath="$PROJECT_DIR$/Sound/referenced_in_project/select_6.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sound/referenced_in_project/select_7.wav" afterPath="$PROJECT_DIR$/Sound/referenced_in_project/select_7.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sound/referenced_in_project/success_1.wav" afterPath="$PROJECT_DIR$/Sound/referenced_in_project/success_1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sound/referenced_in_project/success_2.wav" afterPath="$PROJECT_DIR$/Sound/referenced_in_project/success_2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sound/referenced_in_project/success_3.wav" afterPath="$PROJECT_DIR$/Sound/referenced_in_project/success_3.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sound/referenced_in_project/success_4.wav" afterPath="$PROJECT_DIR$/Sound/referenced_in_project/success_4.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sound/referenced_in_project/success_5.wav" afterPath="$PROJECT_DIR$/Sound/referenced_in_project/success_5.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sound/referenced_in_project/success_6.wav" afterPath="$PROJECT_DIR$/Sound/referenced_in_project/success_6.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sound/referenced_in_project/success_7.wav" afterPath="$PROJECT_DIR$/Sound/referenced_in_project/success_7.wav" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dachstein.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Dachstein.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dachstein/Controller/TMCGameController.m" afterPath="$PROJECT_DIR$/Dachstein/Controller/TMCGameController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dachstein/View/TMCBlossomExplosion.m" afterPath="$PROJECT_DIR$/Dachstein/View/TMCBlossomExplosion.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dachstein/Controller/TMCRulesClassic.m" afterPath="$PROJECT_DIR$/Dachstein/Controller/TMCRulesClassic.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dachstein/View/TMCHudClassic.m" afterPath="$PROJECT_DIR$/Dachstein/View/TMCHudClassic.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dachstein/View/TMCLabel.h" afterPath="$PROJECT_DIR$/Dachstein/View/TMCLabel.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dachstein/View/TMCLabel.m" afterPath="$PROJECT_DIR$/Dachstein/View/TMCLabel.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dachstein/libs/cocos2d/CCLabelBMFont.h" afterPath="$PROJECT_DIR$/Dachstein/libs/cocos2d/CCLabelBMFont.h" />
     </list>
     <list id="ccdea2d5-56a5-4332-8038-583478d3f453" name="Rejected commit: Default" comment="moved setRetinaEnabled to an earlier time in intialization, thereby fixing layouting problems" />
     <ignored path="Dachstein.iws" />
@@ -39,9 +58,7 @@
         <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCColumnView.m">
           <provider selected="true" editor-type-id="text-editor">
             <state line="118" column="9" selection-start="2854" selection-end="2854" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#845#872#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -59,76 +76,72 @@
         <entry file="file://$PROJECT_DIR$/Dachstein/libs/cocos2d/CCSprite.m">
           <provider selected="true" editor-type-id="text-editor">
             <state line="720" column="27" selection-start="20981" selection-end="20981" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TMCLabel.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCLabel.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="0" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CCLabelBMFont.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dachstein/libs/cocos2d/CCLabelBMFont.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="161" column="6" selection-start="4937" selection-end="4937" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CCLabelBMFont.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dachstein/libs/cocos2d/CCLabelBMFont.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="174" column="62" selection-start="5471" selection-end="5471" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TMCLabel.m" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCLabel.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="20" selection-start="835" selection-end="835" vertical-scroll-proportion="0.72695035">
               <folding>
-                <element signature="e#2151#2178#0" expanded="true" />
+                <element signature="e#118#138#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TMCBlossom.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCBlossom.m">
+      <file leaf-file-name="TMCRulesClassic.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dachstein/Controller/TMCRulesClassic.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="18" selection-start="1336" selection-end="1336" vertical-scroll-proportion="0.0">
+            <state line="118" column="45" selection-start="2476" selection-end="2476" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TMCBlossomExplosion.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCBlossomExplosion.m">
+      <file leaf-file-name="TMCHudClassic.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCHudClassic.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="29" selection-start="992" selection-end="992" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#118#149#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TMCModel.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dachstein/Model/TMCModel.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="189" column="61" selection-start="5590" selection-end="5590" vertical-scroll-proportion="0.0">
+            <state line="74" column="99" selection-start="1844" selection-end="1844" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TMCGameView.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCGameView.h">
+      <file leaf-file-name="CCTexture2D.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dachstein/libs/cocos2d/CCTexture2D.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="625" column="70" selection-start="21831" selection-end="21831" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TMCGameView.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCGameView.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="208" column="16" selection-start="5923" selection-end="5923" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TMCColumn.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dachstein/Model/TMCColumn.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="24" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TMCGameController.m" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Dachstein/Controller/TMCGameController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="21" selection-start="1527" selection-end="1527" vertical-scroll-proportion="0.43380615">
-              <folding>
-                <element signature="e#149#178#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -147,12 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Dachstein/View/TMCSelectionHighlight.h" />
-        <option value="$PROJECT_DIR$/Dachstein/View/TMCTimer.h" />
-        <option value="$PROJECT_DIR$/Dachstein/View/TMCGameView.h" />
-        <option value="$PROJECT_DIR$/Dachstein/View/TMCGameView.m" />
-        <option value="$PROJECT_DIR$/Dachstein/Model/TMCModel.h" />
-        <option value="$PROJECT_DIR$/Dachstein/View/TMCBlossomExplosion.h" />
         <option value="$PROJECT_DIR$/Dachstein/View/TMCColumnView.h" />
         <option value="$PROJECT_DIR$/Dachstein/Model/TMCColumn.h" />
         <option value="$PROJECT_DIR$/Dachstein/Model/TMCColumn.m" />
@@ -163,6 +170,12 @@
         <option value="$PROJECT_DIR$/Dachstein/View/TMCBlossomExplosion.m" />
         <option value="$PROJECT_DIR$/Dachstein/View/TMCBlossom.m" />
         <option value="$PROJECT_DIR$/Dachstein/Controller/TMCGameController.m" />
+        <option value="$PROJECT_DIR$/Dachstein/libs/cocos2d/CCTexture2D.m" />
+        <option value="$PROJECT_DIR$/Dachstein/libs/cocos2d/CCLabelBMFont.h" />
+        <option value="$PROJECT_DIR$/Dachstein/View/TMCHudClassic.m" />
+        <option value="$PROJECT_DIR$/Dachstein/libs/cocos2d/CCLabelBMFont.m" />
+        <option value="$PROJECT_DIR$/Dachstein/View/TMCLabel.h" />
+        <option value="$PROJECT_DIR$/Dachstein/View/TMCLabel.m" />
       </list>
     </option>
   </component>
@@ -195,21 +208,11 @@
       <showLibraryContents />
       <hideEmptyPackages />
       <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
+      <autoscrollToSource ProjectPane="false" />
+      <autoscrollFromSource ProjectPane="true" />
       <sortByType />
     </navigator>
     <panes>
-      <pane id="DirectoryView.Xcode">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dachstein" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeDirectoryView$1$1" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -220,6 +223,20 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Dachstein" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dachstein" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frameworks" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodePBXReferenceNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -286,8 +303,58 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodePBXReferenceNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodePBXReferenceNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dachstein" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dachstein" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodePBXReferenceNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodePBXReferenceNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cocos2d" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodePBXReferenceNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dachstein" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dachstein" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodePBXReferenceNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Controller" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodePBXReferenceNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="DirectoryView.Xcode">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dachstein" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeDirectoryView$1$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -511,7 +578,11 @@
       <created>1333628407254</created>
       <updated>1333628407254</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="checking in broken blossom explosion for later re-evaluation (commented out)">
+      <created>1333648732821</created>
+      <updated>1333648732821</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -538,14 +609,12 @@
     <frame x="0" y="22" width="1920" height="967" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30574593" sideWeight="0.48911798" order="5" side_tool="false" content_ui="tabs" x="11" y="362" width="1897" height="286" />
+      <window_info id="Messages" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30574593" sideWeight="0.4616266" order="5" side_tool="false" content_ui="tabs" x="11" y="362" width="1897" height="286" />
       <window_info id="Changes" active="false" anchor="left" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.3294676" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="184" y="637" width="609" height="286" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32760596" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3494992" sideWeight="0.67124856" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29204005" sideWeight="0.2932417" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29204005" sideWeight="0.69874" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5461255" sideWeight="0.45933563" order="4" side_tool="false" content_ui="tabs" x="20" y="623" width="526" height="309" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39862543" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29204005" sideWeight="0.35624284" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29204005" sideWeight="0.63573885" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32999474" sideWeight="0.32646048" order="4" side_tool="false" content_ui="tabs" x="20" y="623" width="526" height="309" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20980495" sideWeight="0.34177214" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25887743" sideWeight="0.5002636" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17640321" sideWeight="0.0" order="1" side_tool="false" content_ui="tabs" />
@@ -553,8 +622,10 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3494992" sideWeight="0.67124856" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39862543" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -592,7 +663,7 @@
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="increased shade of background tiles&#10;moved tiles initially off-screen (previously they were not initialized at the beginning)" />
+    <option name="LAST_COMMIT_MESSAGE" value="using latest sound-fx (no more never-ending chain)&#10;using bitmap-fonts for label" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -605,8 +676,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="tried to clean up project structure" />
-    <MESSAGE value="added custom font&#10;created TMCLabel&#10;used TMCLabel for all text info&#10;reverted Progress Bar to use cocos2d progressbar" />
     <MESSAGE value="copied in fix for problems with custom fonts" />
     <MESSAGE value="added custom font&#10;created TMCLabel and used it for all text info&#10;reverted back to use of cocos2d built in progressbar" />
     <MESSAGE value="improved selection graphic&#10;changed texture format to png" />
@@ -630,56 +699,16 @@
     <MESSAGE value="commented out blossom explosion. shelving this for later" />
     <MESSAGE value="improved tile randomization algorithm" />
     <MESSAGE value="increased shade of background tiles&#10;moved tiles initially off-screen (previously they were not initialized at the beginning)" />
+    <MESSAGE value="checking in broken blossom explosion for later re-evaluation (commented out)" />
+    <MESSAGE value="using latest sound-fx (no more never-ending chain)&#10;using bitmap-fonts for label" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCBlossomExplosion.h">
+    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCGameView.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/libs/cocos2d/CCActionInterval.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="811" column="50" selection-start="16948" selection-end="16962" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/libs/cocos2d/CCActionInterval.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="249" column="45" selection-start="8012" selection-end="8012" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCColumnView.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/Controller/TMCRulesClassic.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="47" selection-start="3554" selection-end="3554" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/Model/TMCColumn.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="12" selection-start="577" selection-end="577" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/Model/TMCColumn.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="24" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -691,51 +720,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCColumnView.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="9" selection-start="2854" selection-end="2854" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#845#872#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCBlossom.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCBlossomExplosion.m">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="29" selection-start="992" selection-end="992" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#118#149#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCGameView.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="208" column="16" selection-start="5923" selection-end="5923" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCGameView.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dachstein/libs/cocos2d/CCSprite.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="720" column="27" selection-start="20981" selection-end="20981" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#2151#2178#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -748,9 +736,86 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Dachstein/Controller/TMCGameController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="21" selection-start="1527" selection-end="1527" vertical-scroll-proportion="0.43380615">
+        <state line="109" column="64" selection-start="2767" selection-end="2767" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/libs/cocos2d/CCLabelTTF.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="43" selection-start="3688" selection-end="3702" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/libs/cocos2d/CCTexture2D.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="625" column="70" selection-start="21831" selection-end="21831" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/Controller/TMCRulesClassic.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="118" column="45" selection-start="2476" selection-end="2476" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/libs/cocos2d/CCSprite.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="720" column="27" selection-start="20981" selection-end="20981" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCBlossom.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCColumnView.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="118" column="9" selection-start="2854" selection-end="2854" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCHudClassic.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="99" selection-start="1844" selection-end="1844" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/libs/cocos2d/CCLabelBMFont.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="174" column="62" selection-start="5471" selection-end="5471" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/libs/cocos2d/CCLabelBMFont.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="161" column="6" selection-start="4937" selection-end="4937" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCLabel.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dachstein/View/TMCLabel.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="20" selection-start="835" selection-end="835" vertical-scroll-proportion="0.72695035">
           <folding>
-            <element signature="e#149#178#0" expanded="true" />
+            <element signature="e#118#138#0" expanded="true" />
           </folding>
         </state>
       </provider>

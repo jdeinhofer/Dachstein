@@ -5,13 +5,9 @@
 //
 
 
-#define FONT_OUTLINE @"SFFedora"
-#define FONT_LABEL @"SFFedora"
-
-
 @interface TMCLabel : CCLayer
 
-- (id)initWithFontsize:(float)fontSize;
+- (id)initWithFontsize:(int)fontSize;
 - (void) setString: (NSString *) text;
 - (void)setOpacity:(GLubyte)opacity;
 

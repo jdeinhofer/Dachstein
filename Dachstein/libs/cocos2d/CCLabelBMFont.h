@@ -166,6 +166,10 @@ enum {
 
 /** updates the font chars based on the string to render */
 -(void) createFontChars;
+
+// TMC!
+- (void) setString: (NSString *) text;
+
 @end
 
 /** Free function that parses a FNT file a place it on the cache

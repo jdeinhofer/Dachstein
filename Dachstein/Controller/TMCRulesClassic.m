@@ -178,7 +178,8 @@
 - (void) playSound: (NSString *) stringFormat indexUp: (BOOL) indexUp
 {
     if (indexUp) {
-        _soundIndex = (_soundIndex + 1) % SELECT_SOUNDS_NUM;
+        _soundIndex = MIN(7, _soundIndex + 1);
+        //_soundIndex = (_soundIndex + 1) % SELECT_SOUNDS_NUM;
     }
 
     NSString *soundName = [NSString stringWithFormat:stringFormat, _soundIndex + 1];
