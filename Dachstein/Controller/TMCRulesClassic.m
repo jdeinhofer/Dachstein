@@ -199,6 +199,8 @@
         float factor = (float)(MAX_LEVEL - _level) / (float)MAX_LEVEL;
         factor = (factor + factor * factor) / 2;
         _timer_duration = TIMER_DURATION_MIN + factor * (TIMER_DURATION_MAX - TIMER_DURATION_MIN);
+
+        [_controller.view.hudClassic updateScoreMessage:[NSString stringWithFormat:@"LEVEL %i", _level + 1]];
     }
     else {
          _timer_duration *= TIMER_SPEEDUP_FACTOR_MAXLEVEL;
@@ -210,11 +212,6 @@
 
 - (void) pickedTile: (TMCTile*) tile
 {
-    _pairs_remaining--;
-    if (_pairs_remaining == 0) {
-        [self levelUp];
-    }
-
     if (_lastTile == nil) {
         [self scoreFirstTile:tile];
     }
@@ -226,6 +223,11 @@
     }
     else {
         [self scoreAnyTile:tile];
+    }
+
+    _pairs_remaining--;
+    if (_pairs_remaining == 0) {
+        [self levelUp];
     }
 
     _score += _scoreGain;
