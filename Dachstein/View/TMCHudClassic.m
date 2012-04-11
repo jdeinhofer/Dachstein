@@ -26,7 +26,6 @@
     TMCLabel *_levelLabel;
 
     CCSprite *_lastTile;
-    TMCLabel *_chainLength;
 
     TMCTimer *_timer;
     BOOL _isLowRes;
@@ -54,6 +53,8 @@
     [_timer setPosition:ccp(0, screenSize.height / 2 - 12)];
     [self addChild:_timer];
 
+    [_timer scheduleUpdate];
+
     // TMP!
     if (_isLowRes) [_timer setScale:0.5f];
 }
@@ -75,10 +76,6 @@
 
 - (void) setupLevelInfo: (CGSize)screenSize
 {
-    _pairCounterLabel = [[TMCLabel alloc] initWithFontsize:14];
-    _pairCounterLabel.position = ccp(screenSize.width / -2.4, screenSize.height / -2 + 12);
-    [self addChild:_pairCounterLabel];
-
     _levelLabel = [[TMCLabel alloc] initWithFontsize:14];
     _levelLabel.position  = ccp(screenSize.width / 2.4, screenSize.height / -2 + 12);
     [self addChild:_levelLabel];
@@ -86,7 +83,7 @@
 
 - (void) setupChainInfo: (CGSize)screenSize
 {
-    _lastTile = [[CCSprite alloc] initWithSpriteFrameName:@"Red_1.png"];
+    _lastTile = [[CCSprite alloc] initWithSpriteFrameName:@"Heart.png"];
 
     CGSize tileSize = _lastTile.contentSize;
 
@@ -99,11 +96,10 @@
 
     _lastTile.position = position;
     [self addChild:_lastTile];
-    _lastTile.visible = false;
 
-    _chainLength = [[TMCLabel alloc] initWithFontsize:18];
-    _chainLength.position = position;
-    [self addChild:_chainLength];
+    _pairCounterLabel = [[TMCLabel alloc] initWithFontsize:18];
+    _pairCounterLabel.position = position;//ccp(screenSize.width / -2.4, screenSize.height / -2 + 12);
+    [self addChild:_pairCounterLabel];
 }
 
 - (void)updatePairCounter:(int)pairs of:(int)total {
@@ -145,26 +141,17 @@
     }
 }
 
-- (void) updateChainInfo: (TMCTile *) lastTile chainLength: (int) chainLength
-{
+- (void)updateChainInfo:(TMCTile *)lastTile {
+    NSString *lastTileFrameName;
+
     if (lastTile == nil) {
-        _lastTile.visible = false;
-        _chainLength.visible = false;
+        lastTileFrameName = @"Heart.png";
     }
     else {
-        _lastTile.visible = true;
-        NSString *lastTileFrameName = [TMCColumnView spriteFrameNameForTile:lastTile];
-        [_lastTile setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:lastTileFrameName]];
-
-        if (chainLength > 0) {
-            NSString *chainString = [NSString stringWithFormat:@"%i", chainLength];
-            [_chainLength setString:chainString];
-            _chainLength.visible = true;
-        } else {
-            _chainLength.visible = false;
-        }
-
+        lastTileFrameName = [TMCColumnView spriteFrameNameForTile:lastTile];
     }
+
+    [_lastTile setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:lastTileFrameName]];
 }
 
 - (void) dealloc
@@ -176,7 +163,6 @@
     [_scoreLabel release];
 
     [_lastTile release];
-    [_chainLength release];
 
     [_timer release];
 

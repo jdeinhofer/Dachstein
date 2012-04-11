@@ -28,6 +28,7 @@
 #import "ccMacros.h"
 #import "CCTextureCache.h"
 #import "Support/CGPointExtension.h"
+#import "ccTypes.h"
 
 
 
@@ -439,7 +440,10 @@ const char kProgressTextureCoords = 0x1e;
 			vertexData_[index].texCoords.v = tMax.y - vertexData_[index].texCoords.v;
 		}
 	}
-	
+
+    for (int i = 0; i < 4; i++) {
+        vertexData_[i].colors.a = sprite_.opacity;
+    }
 }
 
 -(CGPoint)boundaryTexCoord:(char)index

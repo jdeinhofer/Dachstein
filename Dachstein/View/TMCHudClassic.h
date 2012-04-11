@@ -14,7 +14,7 @@
 - (void) updateLevelLabel:(int)level;
 - (void)updateScoreTo:(int)score highScore:(int)highScore;
 - (void)updateScoreMessage:(NSString *)text;
-- (void)updateChainInfo:(TMCTile *)lastTile chainLength:(int)chainLength;
+- (void)updateChainInfo:(TMCTile *)lastTile;
 
 @property (readonly, assign) TMCTimer *timerProgress;
 

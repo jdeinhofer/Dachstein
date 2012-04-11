@@ -12,4 +12,7 @@
 - (id) init;
 - (void) setProgress: (float) progress;
 
+- (void)setProgressImmediately:(float)progress;
+
+
 @end
