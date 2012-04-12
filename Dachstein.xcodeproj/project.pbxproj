@@ -23,6 +23,28 @@
 		2E311200153491E400A6C094 /* Fedora28.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 2E3111FE153491E400A6C094 /* Fedora28.fnt */; };
 		2E311201153491E400A6C094 /* Fedora28.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E3111FF153491E400A6C094 /* Fedora28.png */; };
 		2E3112031535C3D300A6C094 /* TimerBar_FG_Light.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E3112021535C3D300A6C094 /* TimerBar_FG_Light.png */; };
+		2E4236331536DC3500365C43 /* chain_up_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E42361D1536DC3500365C43 /* chain_up_1.wav */; };
+		2E4236341536DC3500365C43 /* chain_up_2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E42361E1536DC3500365C43 /* chain_up_2.wav */; };
+		2E4236351536DC3500365C43 /* chain_up_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E42361F1536DC3500365C43 /* chain_up_3.wav */; };
+		2E4236361536DC3500365C43 /* chain_up_4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E4236201536DC3500365C43 /* chain_up_4.wav */; };
+		2E4236371536DC3500365C43 /* good_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E4236211536DC3500365C43 /* good_1.wav */; };
+		2E4236381536DC3500365C43 /* good_2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E4236221536DC3500365C43 /* good_2.wav */; };
+		2E4236391536DC3500365C43 /* good_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E4236231536DC3500365C43 /* good_3.wav */; };
+		2E42363A1536DC3500365C43 /* good_4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E4236241536DC3500365C43 /* good_4.wav */; };
+		2E42363B1536DC3500365C43 /* good_5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E4236251536DC3500365C43 /* good_5.wav */; };
+		2E42363C1536DC3500365C43 /* good_6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E4236261536DC3500365C43 /* good_6.wav */; };
+		2E42363D1536DC3500365C43 /* great_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E4236271536DC3500365C43 /* great_1.wav */; };
+		2E42363E1536DC3500365C43 /* great_2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E4236281536DC3500365C43 /* great_2.wav */; };
+		2E42363F1536DC3500365C43 /* great_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E4236291536DC3500365C43 /* great_3.wav */; };
+		2E4236401536DC3500365C43 /* great_4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E42362A1536DC3500365C43 /* great_4.wav */; };
+		2E4236411536DC3500365C43 /* great_5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E42362B1536DC3500365C43 /* great_5.wav */; };
+		2E4236421536DC3500365C43 /* great_6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E42362C1536DC3500365C43 /* great_6.wav */; };
+		2E4236431536DC3500365C43 /* normal_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E42362D1536DC3500365C43 /* normal_1.wav */; };
+		2E4236441536DC3500365C43 /* normal_2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E42362E1536DC3500365C43 /* normal_2.wav */; };
+		2E4236451536DC3500365C43 /* normal_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E42362F1536DC3500365C43 /* normal_3.wav */; };
+		2E4236461536DC3500365C43 /* normal_4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E4236301536DC3500365C43 /* normal_4.wav */; };
+		2E4236471536DC3500365C43 /* normal_5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E4236311536DC3500365C43 /* normal_5.wav */; };
+		2E4236481536DC3500365C43 /* normal_6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E4236321536DC3500365C43 /* normal_6.wav */; };
 		2E5946C714ED77CD0019F582 /* TMCTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5946C614ED77CD0019F582 /* TMCTimer.m */; };
 		2E65DB5B152330A400451D1D /* SF Fedora.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB5A152330A400451D1D /* SF Fedora.ttf */; };
 		2E65DB8C152611C800451D1D /* chain_up.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB83152611C800451D1D /* chain_up.wav */; };
@@ -214,6 +236,28 @@
 		2E3111FE153491E400A6C094 /* Fedora28.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fedora28.fnt; path = Art/referenced_in_project/Fedora28.fnt; sourceTree = SOURCE_ROOT; };
 		2E3111FF153491E400A6C094 /* Fedora28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Fedora28.png; path = Art/referenced_in_project/Fedora28.png; sourceTree = SOURCE_ROOT; };
 		2E3112021535C3D300A6C094 /* TimerBar_FG_Light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TimerBar_FG_Light.png; path = Art/referenced_in_project/TimerBar_FG_Light.png; sourceTree = SOURCE_ROOT; };
+		2E42361D1536DC3500365C43 /* chain_up_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = chain_up_1.wav; path = Sound/referenced_in_project/chain_up_1.wav; sourceTree = SOURCE_ROOT; };
+		2E42361E1536DC3500365C43 /* chain_up_2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = chain_up_2.wav; path = Sound/referenced_in_project/chain_up_2.wav; sourceTree = SOURCE_ROOT; };
+		2E42361F1536DC3500365C43 /* chain_up_3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = chain_up_3.wav; path = Sound/referenced_in_project/chain_up_3.wav; sourceTree = SOURCE_ROOT; };
+		2E4236201536DC3500365C43 /* chain_up_4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = chain_up_4.wav; path = Sound/referenced_in_project/chain_up_4.wav; sourceTree = SOURCE_ROOT; };
+		2E4236211536DC3500365C43 /* good_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = good_1.wav; path = Sound/referenced_in_project/good_1.wav; sourceTree = SOURCE_ROOT; };
+		2E4236221536DC3500365C43 /* good_2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = good_2.wav; path = Sound/referenced_in_project/good_2.wav; sourceTree = SOURCE_ROOT; };
+		2E4236231536DC3500365C43 /* good_3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = good_3.wav; path = Sound/referenced_in_project/good_3.wav; sourceTree = SOURCE_ROOT; };
+		2E4236241536DC3500365C43 /* good_4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = good_4.wav; path = Sound/referenced_in_project/good_4.wav; sourceTree = SOURCE_ROOT; };
+		2E4236251536DC3500365C43 /* good_5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = good_5.wav; path = Sound/referenced_in_project/good_5.wav; sourceTree = SOURCE_ROOT; };
+		2E4236261536DC3500365C43 /* good_6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = good_6.wav; path = Sound/referenced_in_project/good_6.wav; sourceTree = SOURCE_ROOT; };
+		2E4236271536DC3500365C43 /* great_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = great_1.wav; path = Sound/referenced_in_project/great_1.wav; sourceTree = SOURCE_ROOT; };
+		2E4236281536DC3500365C43 /* great_2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = great_2.wav; path = Sound/referenced_in_project/great_2.wav; sourceTree = SOURCE_ROOT; };
+		2E4236291536DC3500365C43 /* great_3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = great_3.wav; path = Sound/referenced_in_project/great_3.wav; sourceTree = SOURCE_ROOT; };
+		2E42362A1536DC3500365C43 /* great_4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = great_4.wav; path = Sound/referenced_in_project/great_4.wav; sourceTree = SOURCE_ROOT; };
+		2E42362B1536DC3500365C43 /* great_5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = great_5.wav; path = Sound/referenced_in_project/great_5.wav; sourceTree = SOURCE_ROOT; };
+		2E42362C1536DC3500365C43 /* great_6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = great_6.wav; path = Sound/referenced_in_project/great_6.wav; sourceTree = SOURCE_ROOT; };
+		2E42362D1536DC3500365C43 /* normal_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = normal_1.wav; path = Sound/referenced_in_project/normal_1.wav; sourceTree = SOURCE_ROOT; };
+		2E42362E1536DC3500365C43 /* normal_2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = normal_2.wav; path = Sound/referenced_in_project/normal_2.wav; sourceTree = SOURCE_ROOT; };
+		2E42362F1536DC3500365C43 /* normal_3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = normal_3.wav; path = Sound/referenced_in_project/normal_3.wav; sourceTree = SOURCE_ROOT; };
+		2E4236301536DC3500365C43 /* normal_4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = normal_4.wav; path = Sound/referenced_in_project/normal_4.wav; sourceTree = SOURCE_ROOT; };
+		2E4236311536DC3500365C43 /* normal_5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = normal_5.wav; path = Sound/referenced_in_project/normal_5.wav; sourceTree = SOURCE_ROOT; };
+		2E4236321536DC3500365C43 /* normal_6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = normal_6.wav; path = Sound/referenced_in_project/normal_6.wav; sourceTree = SOURCE_ROOT; };
 		2E5946C514ED77CD0019F582 /* TMCTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCTimer.h; sourceTree = "<group>"; };
 		2E5946C614ED77CD0019F582 /* TMCTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCTimer.m; sourceTree = "<group>"; };
 		2E65DB5A152330A400451D1D /* SF Fedora.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Fedora.ttf"; sourceTree = "<group>"; };
@@ -1008,6 +1052,28 @@
 		2ED7D806140FD7D200CC2CAA /* sound */ = {
 			isa = PBXGroup;
 			children = (
+				2E42361D1536DC3500365C43 /* chain_up_1.wav */,
+				2E42361E1536DC3500365C43 /* chain_up_2.wav */,
+				2E42361F1536DC3500365C43 /* chain_up_3.wav */,
+				2E4236201536DC3500365C43 /* chain_up_4.wav */,
+				2E4236211536DC3500365C43 /* good_1.wav */,
+				2E4236221536DC3500365C43 /* good_2.wav */,
+				2E4236231536DC3500365C43 /* good_3.wav */,
+				2E4236241536DC3500365C43 /* good_4.wav */,
+				2E4236251536DC3500365C43 /* good_5.wav */,
+				2E4236261536DC3500365C43 /* good_6.wav */,
+				2E4236271536DC3500365C43 /* great_1.wav */,
+				2E4236281536DC3500365C43 /* great_2.wav */,
+				2E4236291536DC3500365C43 /* great_3.wav */,
+				2E42362A1536DC3500365C43 /* great_4.wav */,
+				2E42362B1536DC3500365C43 /* great_5.wav */,
+				2E42362C1536DC3500365C43 /* great_6.wav */,
+				2E42362D1536DC3500365C43 /* normal_1.wav */,
+				2E42362E1536DC3500365C43 /* normal_2.wav */,
+				2E42362F1536DC3500365C43 /* normal_3.wav */,
+				2E4236301536DC3500365C43 /* normal_4.wav */,
+				2E4236311536DC3500365C43 /* normal_5.wav */,
+				2E4236321536DC3500365C43 /* normal_6.wav */,
 				2E65DB95152617E700451D1D /* alert.mp3 */,
 				2E65DB96152617E700451D1D /* gameover_high.mp3 */,
 				2E65DB97152617E700451D1D /* gameover_low.mp3 */,
@@ -1146,6 +1212,28 @@
 				2E311200153491E400A6C094 /* Fedora28.fnt in Resources */,
 				2E311201153491E400A6C094 /* Fedora28.png in Resources */,
 				2E3112031535C3D300A6C094 /* TimerBar_FG_Light.png in Resources */,
+				2E4236331536DC3500365C43 /* chain_up_1.wav in Resources */,
+				2E4236341536DC3500365C43 /* chain_up_2.wav in Resources */,
+				2E4236351536DC3500365C43 /* chain_up_3.wav in Resources */,
+				2E4236361536DC3500365C43 /* chain_up_4.wav in Resources */,
+				2E4236371536DC3500365C43 /* good_1.wav in Resources */,
+				2E4236381536DC3500365C43 /* good_2.wav in Resources */,
+				2E4236391536DC3500365C43 /* good_3.wav in Resources */,
+				2E42363A1536DC3500365C43 /* good_4.wav in Resources */,
+				2E42363B1536DC3500365C43 /* good_5.wav in Resources */,
+				2E42363C1536DC3500365C43 /* good_6.wav in Resources */,
+				2E42363D1536DC3500365C43 /* great_1.wav in Resources */,
+				2E42363E1536DC3500365C43 /* great_2.wav in Resources */,
+				2E42363F1536DC3500365C43 /* great_3.wav in Resources */,
+				2E4236401536DC3500365C43 /* great_4.wav in Resources */,
+				2E4236411536DC3500365C43 /* great_5.wav in Resources */,
+				2E4236421536DC3500365C43 /* great_6.wav in Resources */,
+				2E4236431536DC3500365C43 /* normal_1.wav in Resources */,
+				2E4236441536DC3500365C43 /* normal_2.wav in Resources */,
+				2E4236451536DC3500365C43 /* normal_3.wav in Resources */,
+				2E4236461536DC3500365C43 /* normal_4.wav in Resources */,
+				2E4236471536DC3500365C43 /* normal_5.wav in Resources */,
+				2E4236481536DC3500365C43 /* normal_6.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
