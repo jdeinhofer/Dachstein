@@ -7,6 +7,7 @@
 
 #import "TMCBackground.h"
 
+#import "TMCFadeOutTiles.h"
 
 @implementation TMCBackground {
     NSArray *_backgrounds;
@@ -66,6 +67,7 @@
         [self addChild:nextBackground z:currentLayer - 1];
         
         id transitionAction = [CCFadeOutBLTiles actionWithSize: ccg(12,9) duration:1.0f];
+//        id transitionAction = [TMCFadeOutTiles actionWithSize: ccg(4,3) duration:5.0f];
         id stopGridAction = [CCStopGrid action];
         id finishAction = [CCCallFunc actionWithTarget:self selector:@selector(finishTransition)];
         id sequence = [CCSequence actions:transitionAction, stopGridAction, finishAction, nil];
