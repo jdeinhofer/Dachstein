@@ -10,7 +10,8 @@
 
 
 @interface TMCModel ()
-- (void)initializeColumns;
+- (void)initializeColumnsHex;
+- (void)initializeColumnsOrtho;
 - (void)configureColumns;
 - (void)initializeDeck;
 - (int)countMatchableTiles;
@@ -37,7 +38,12 @@
     if (self) {
         srandom((unsigned int)time(NULL));
 
-        [self initializeColumns];
+#ifndef VIEW_ORTHO
+        [self initializeColumnsHex];
+#else
+        [self initializeColumnsOrtho];
+#endif
+
         [self initializeDeck];
         [self configureColumns];
     }
@@ -45,7 +51,7 @@
     return self;
 }
 
-- (void) initializeColumns
+- (void)initializeColumnsHex
 {
     _columns = [[NSMutableArray alloc] init];
     
@@ -71,6 +77,48 @@
             [self addColumnAtDepth: d x: d - off y: -off];
         }
     }
+}
+
+- (void) initializeColumnsOrtho
+{
+    _columns = [[NSMutableArray alloc] init];
+
+    [self addColumnAtDepth: 0 x: 0 y: 0];
+    _centerColumn = [_columns objectAtIndex:0];
+
+    // 1 / n
+    [self addColumnAtDepth:1 x:-1 y:-1];
+    [self addColumnAtDepth:1 x:0 y:-1];
+    [self addColumnAtDepth:1 x:1 y:-1];
+
+    // 1 / e/w
+    [self addColumnAtDepth:1 x:-1 y:0];
+    [self addColumnAtDepth:1 x:1 y:0];
+
+    // 1 / s
+    [self addColumnAtDepth:1 x:-1 y:1];
+    [self addColumnAtDepth:1 x:0 y:1];
+    [self addColumnAtDepth:1 x:1 y:1];
+
+    // 2 / n
+    [self addColumnAtDepth:2 x:-1 y:-2];
+    [self addColumnAtDepth:2 x:0 y:-2];
+    [self addColumnAtDepth:2 x:1 y:-2];
+
+    // 2 / s
+    [self addColumnAtDepth:2 x:-1 y:2];
+    [self addColumnAtDepth:2 x:0 y:2];
+    [self addColumnAtDepth:2 x:1 y:2];
+
+    // 2 / e
+    [self addColumnAtDepth:2 x:-2 y:1];
+    [self addColumnAtDepth:2 x:-2 y:0];
+    [self addColumnAtDepth:2 x:-2 y:-1];
+
+    // 2 / w
+    [self addColumnAtDepth:2 x:2 y:1];
+    [self addColumnAtDepth:2 x:2 y:0];
+    [self addColumnAtDepth:2 x:2 y:-1];
 }
 
 - (void) addColumnAtDepth: (int) depthArg x: (int) xArg y: (int) yArg

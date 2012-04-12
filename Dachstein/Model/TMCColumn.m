@@ -8,6 +8,17 @@
 
 #import "TMCColumn.h"
 
+
+#ifndef VIEW_ORTHO
+    #define NEIGHBORS_NUM 6
+    #define FREE_REQUIRED 3
+#else
+    #define NEIGHBORS_NUM 4
+    #define FREE_REQUIRED 2
+#endif
+
+#define DIRECTIONS_NUM (NEIGHBORS_NUM + FREE_REQUIRED - 1)
+
 @implementation TMCColumn {
     int _top;
     int _x;
@@ -15,14 +26,7 @@
     int _targetDepth;
     int _topOffset;
 
-    TMCColumn* _NW;
-    TMCColumn* _N;
-    TMCColumn* _NE;
-    TMCColumn* _SE;
-    TMCColumn* _S;
-    TMCColumn* _SW;
-
-    TMCColumn* _directions[8];
+    TMCColumn* _directions[DIRECTIONS_NUM];
 
     NSArray* _neighbors;
 
@@ -57,19 +61,10 @@
     _tile = nil;
 }
 
-- (void) configureWithModel:(TMCModel *)model
+- (void)configureNeighbors:(int)numNeighbors
 {
-    _directions[0] =    _NW =   [model getColumnAtX:(self.x - 1)    Y:(self.y - 1)];
-    _directions[1] =    _N  =   [model getColumnAtX:(self.x)        Y:(self.y - 1)];
-    _directions[2] =    _NE =   [model getColumnAtX:(self.x + 1)    Y:(self.y)];
-    _directions[3] =    _SE =   [model getColumnAtX:(self.x + 1)    Y:(self.y + 1)];
-    _directions[4] =    _S  =   [model getColumnAtX:(self.x)        Y:(self.y + 1)];
-    _directions[5] =    _SW =   [model getColumnAtX:(self.x - 1)    Y:(self.y)];
-    _directions[6] =    _NW;
-    _directions[7] =    _N;
-
     NSMutableArray *tmp = [[[NSMutableArray alloc] init] autorelease];
-    for (int n = 0; n < 6; n++) {
+    for (int n = 0; n < numNeighbors; n++) {
         TMCColumn *const neighbor = _directions[n];
         if (neighbor != nil) {
             [tmp addObject:neighbor];
@@ -79,15 +74,41 @@
     _neighbors = [[NSArray alloc] initWithArray:tmp];
 }
 
+- (void) configureWithModel:(TMCModel *)model
+{
+#ifndef VIEW_ORTHO
+    _directions[0] = [model getColumnAtX:(self.x - 1)    Y:(self.y - 1)];
+    _directions[1] = [model getColumnAtX:(self.x)        Y:(self.y - 1)];
+    _directions[2] = [model getColumnAtX:(self.x + 1)    Y:(self.y)];
+    _directions[3] = [model getColumnAtX:(self.x + 1)    Y:(self.y + 1)];
+    _directions[4] = [model getColumnAtX:(self.x)        Y:(self.y + 1)];
+    _directions[5] = [model getColumnAtX:(self.x - 1)    Y:(self.y)];
+    _directions[6] = _directions[0];
+    _directions[7] = _directions[1];
+#else
+    _directions[0] = [model getColumnAtX:self.x - 1 Y:self.y];
+    _directions[1] = [model getColumnAtX:self.x Y:self.y + 1];
+    _directions[2] = [model getColumnAtX:self.x + 1 Y:self.y];
+    _directions[3] = [model getColumnAtX:self.x Y:self.y - 1];
+    _directions[4] = _directions[0];
+#endif
+
+
+    int numNeighbors = NEIGHBORS_NUM;
+
+    [self configureNeighbors:numNeighbors];
+
+}
+
 - (BOOL) isPickable
 {
     int free = 0;
-    
-    for (int i = 0; i < 8; i++) {
+
+    for (int i = 0; i < DIRECTIONS_NUM; i++) {
         TMCColumn *column = _directions[i];
         if (column == nil || [column top] > [self top]) {
             free++;
-            if (free == 3)
+            if (free == FREE_REQUIRED)
                 return TRUE;
         }
         else free = 0;
