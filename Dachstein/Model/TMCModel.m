@@ -10,8 +10,7 @@
 
 
 @interface TMCModel ()
-- (void)initializeColumnsHex;
-- (void)initializeColumnsOrtho;
+- (void)initializeColumns;
 - (void)configureColumns;
 - (void)initializeDeck;
 - (int)countMatchableTiles;
@@ -38,12 +37,7 @@
     if (self) {
         srandom((unsigned int)time(NULL));
 
-#ifndef VIEW_ORTHO
-        [self initializeColumnsHex];
-#else
-        [self initializeColumnsOrtho];
-#endif
-
+        [self initializeColumns];
         [self initializeDeck];
         [self configureColumns];
     }
@@ -51,7 +45,8 @@
     return self;
 }
 
-- (void)initializeColumnsHex
+#ifndef VIEW_ORTHO
+- (void)initializeColumns
 {
     _columns = [[NSMutableArray alloc] init];
     
@@ -78,8 +73,10 @@
         }
     }
 }
+#endif
 
-- (void) initializeColumnsOrtho
+#ifdef VIEW_ORTHO
+- (void) initializeColumns
 {
     _columns = [[NSMutableArray alloc] init];
 
@@ -120,6 +117,7 @@
     [self addColumnAtDepth:2 x:2 y:0];
     [self addColumnAtDepth:2 x:2 y:-1];
 }
+#endif
 
 - (void) addColumnAtDepth: (int) depthArg x: (int) xArg y: (int) yArg
 {
