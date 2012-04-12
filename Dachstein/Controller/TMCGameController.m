@@ -18,11 +18,7 @@
 @interface TMCGameController ()
 - (void)resetHintTimer;
 - (void)showHint;
-
-- (void)startExplosionOnView:(TMCColumnView *)columnView;
-
 - (void)handleNoMatchSituation;
-
 - (void)prepareGame;
 - (void)startBackgroundAmbience;
 - (void)setSelectedView:(TMCColumnView *)view;
@@ -30,6 +26,8 @@
 - (void)startGame;
 - (void)endGame;
 - (void)enableGame;
+    // commented out because it looks shit!
+//- (void)startExplosionOnView:(TMCColumnView *)columnView;
 @end
 
 @implementation TMCGameController {
@@ -59,12 +57,13 @@
     return self;
 }
 
-- (void)startExplosionOnView:(TMCColumnView *)columnView {
-    TMCBlossomExplosion *explosion = [[TMCBlossomExplosion alloc] initWithTile:columnView.column.tile];
-    [columnView.parent addChild:explosion];
-    explosion.position = columnView.position;
-    [explosion start];
-}
+    // TMP! commented out because it looks shit!
+//- (void)startExplosionOnView:(TMCColumnView *)columnView {
+//    TMCBlossomExplosion *explosion = [[[TMCBlossomExplosion alloc] initWithTile:columnView.column.tile] autorelease];
+//    [columnView.parent addChild:explosion];
+//    explosion.position = columnView.position;
+//    [explosion start];
+//}
 
 - (void)removePair:(TMCColumnView *)columnView pickedColumn:(TMCColumn *)pickedColumn selectedColumn:(TMCColumn *)selectedColumn {
     int topOff = [_model getMinTopOffset];
@@ -237,6 +236,7 @@
 
 - (void)startBackgroundAmbience
 {
+    [[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume:0.10f];
     [[CDAudioManager sharedManager] playBackgroundMusic:@"ambience.mp3" loop:YES];
 }
 
