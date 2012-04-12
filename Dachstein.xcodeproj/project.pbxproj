@@ -189,6 +189,7 @@
 		2ED7D806140FD7D200CC2CAE /* TMCLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2CAD /* TMCLabel.m */; };
 		2ED7D806140FD7D200CC2CB1 /* TMCBlossomExplosion.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2CB0 /* TMCBlossomExplosion.m */; };
 		2ED7D806140FD7D200CC2CB4 /* TMCBlossom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2CB3 /* TMCBlossom.m */; };
+		2ED7D806140FD7D200CC2CB7 /* TMCFadeOutTiles.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2CB6 /* TMCFadeOutTiles.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -509,6 +510,8 @@
 		2ED7D806140FD7D200CC2CB2 /* TMCBlossomExplosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCBlossomExplosion.h; sourceTree = "<group>"; };
 		2ED7D806140FD7D200CC2CB3 /* TMCBlossom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCBlossom.m; sourceTree = "<group>"; };
 		2ED7D806140FD7D200CC2CB5 /* TMCBlossom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCBlossom.h; sourceTree = "<group>"; };
+		2ED7D806140FD7D200CC2CB6 /* TMCFadeOutTiles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCFadeOutTiles.m; sourceTree = "<group>"; };
+		2ED7D806140FD7D200CC2CB8 /* TMCFadeOutTiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCFadeOutTiles.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -558,6 +561,8 @@
 		2E0BF7A1148F763100CC6697 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2ED7D806140FD7D200CC2CB8 /* TMCFadeOutTiles.h */,
+				2ED7D806140FD7D200CC2CB6 /* TMCFadeOutTiles.m */,
 				2ED7D806140FD7D200CC2CB5 /* TMCBlossom.h */,
 				2ED7D806140FD7D200CC2CB3 /* TMCBlossom.m */,
 				2ED7D806140FD7D200CC2CB2 /* TMCBlossomExplosion.h */,
@@ -1263,6 +1268,7 @@
 				2ED7D806140FD7D200CC2CAE /* TMCLabel.m in Sources */,
 				2ED7D806140FD7D200CC2CB1 /* TMCBlossomExplosion.m in Sources */,
 				2ED7D806140FD7D200CC2CB4 /* TMCBlossom.m in Sources */,
+				2ED7D806140FD7D200CC2CB7 /* TMCFadeOutTiles.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
