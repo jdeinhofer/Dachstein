@@ -13,8 +13,8 @@
     #define NEIGHBORS_NUM 6
     #define FREE_REQUIRED 3
 #else
-    #define NEIGHBORS_NUM 4
-    #define FREE_REQUIRED 2
+    #define NEIGHBORS_NUM 8
+    #define FREE_REQUIRED 3
 #endif
 
 #define DIRECTIONS_NUM (NEIGHBORS_NUM + FREE_REQUIRED - 1)
@@ -87,10 +87,15 @@
     _directions[7] = _directions[1];
 #else
     _directions[0] = [model getColumnAtX:self.x - 1 Y:self.y];
-    _directions[1] = [model getColumnAtX:self.x Y:self.y + 1];
-    _directions[2] = [model getColumnAtX:self.x + 1 Y:self.y];
-    _directions[3] = [model getColumnAtX:self.x Y:self.y - 1];
-    _directions[4] = _directions[0];
+    _directions[1] = [model getColumnAtX:self.x - 1 Y:self.y + 1];
+    _directions[2] = [model getColumnAtX:self.x     Y:self.y + 1];
+    _directions[3] = [model getColumnAtX:self.x + 1 Y:self.y + 1];
+    _directions[4] = [model getColumnAtX:self.x + 1 Y:self.y];
+    _directions[5] = [model getColumnAtX:self.x + 1 Y:self.y - 1];
+    _directions[6] = [model getColumnAtX:self.x     Y:self.y - 1];
+    _directions[7] = [model getColumnAtX:self.x - 1 Y:self.y - 1];
+    _directions[8] = _directions[0];
+    _directions[9] = _directions[1];
 #endif
 
 
@@ -100,13 +105,18 @@
 
 }
 
+- (BOOL)isColumnFree:(TMCColumn *)column {
+    return column == nil || [column top] > [self top];
+}
+
 - (BOOL) isPickable
 {
+#ifndef VIEW_ORTHO
     int free = 0;
 
     for (int i = 0; i < DIRECTIONS_NUM; i++) {
         TMCColumn *column = _directions[i];
-        if (column == nil || [column top] > [self top]) {
+        if ([self isColumnFree:column]) {
             free++;
             if (free == FREE_REQUIRED)
                 return TRUE;
@@ -115,6 +125,21 @@
     }
     
     return FALSE;
+#endif
+
+#ifdef VIEW_ORTHO
+    for (int corner = 0; corner < 4; corner++) {
+        if (
+            [self isColumnFree:_directions[corner * 2]] &&
+            [self isColumnFree:_directions[corner * 2 + 1]] &&
+            [self isColumnFree:_directions[corner * 2 + 2]]
+        ) {
+            return TRUE;
+        }
+    }
+
+    return FALSE;
+#endif
 }
 
 - (void) pick
