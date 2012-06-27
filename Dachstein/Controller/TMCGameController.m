@@ -29,7 +29,6 @@
 
 @implementation TMCGameController {
     TMCModel *_model;
-    TMCGameView *_view;
     id <TMCRules> _rules;
     TMCGameState _gameState;
     TMCColumnView *_selectedColumnView;

@@ -33,7 +33,6 @@
     TMCSelectionHighlight* _selection;
     TMCHint* _hint;
 
-    TMCHudClassic *_hudClassic;
     NSArray *_huds;
 }
 
@@ -47,7 +46,7 @@
         _controllerDelegate = delegate;
 
         [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
-        
+
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         [self setupResourcesAndLayout:screenSize];
         [self setupBackground];

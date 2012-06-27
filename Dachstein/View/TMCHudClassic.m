@@ -28,7 +28,6 @@
     CCSprite *_lastTile;
     TMCLabel *_chainLength;
 
-    TMCTimer *_timer;
     BOOL _isLowRes;
 }
 

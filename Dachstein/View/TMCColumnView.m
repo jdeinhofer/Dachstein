@@ -35,8 +35,6 @@
 @end
 
 @implementation TMCColumnView {
-    TMCColumn *_column;
-    CCSprite *_sprite;
     CCSprite *_shadow;
 }
 
