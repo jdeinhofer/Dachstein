@@ -24,13 +24,6 @@
     TMCColumn *_centerColumn;
 }
 
-// kept for future reference
-//int weightedRandom(int count) {
-//    int weighted = ABS((random() % count) + (random() % count) - count);
-//    if (weighted == count) return 0; // research: understand why "count" can even happen as a value
-//    return weighted;
-//}
-
 - (id)init
 {
     self = [super init];
@@ -44,38 +37,6 @@
     
     return self;
 }
-
-#ifndef VIEW_ORTHO
-- (void)initializeColumns
-{
-    _columns = [[NSMutableArray alloc] init];
-    
-    [self addColumnAtDepth: 0 x: 0 y: 0];
-    _centerColumn = [_columns objectAtIndex:0];
-    
-    for (int d = 1; d <= COLUMNS_OFFSET; d++) {
-        // horizontal rows
-        for (int x = -d; x <= 0; x++) {
-            [self addColumnAtDepth: d x: x y: -d];
-            [self addColumnAtDepth: d x: x + d y: d];
-        }
-        
-        // vertical rows
-        for (int y = -d + 1; y <= 0; y++) {
-            [self addColumnAtDepth: d x: -d y: y];
-            [self addColumnAtDepth: d x: d y: -y];
-        }
-        
-        // skewed rows
-        for (int off = 1; off < d; off++) {
-            [self addColumnAtDepth: d x: -d + off y: off];
-            [self addColumnAtDepth: d x: d - off y: -off];
-        }
-    }
-}
-#endif
-
-#ifdef VIEW_ORTHO
 - (void) initializeColumns
 {
     _columns = [[NSMutableArray alloc] init];
@@ -117,7 +78,6 @@
     [self addColumnAtDepth:2 x:2 y:0];
     [self addColumnAtDepth:2 x:2 y:-1];
 }
-#endif
 
 - (void) addColumnAtDepth: (int) depthArg x: (int) xArg y: (int) yArg
 {
@@ -245,25 +205,6 @@
     for (TMCColumn* column in _columns) {
         [column setTile:[_deck objectAtIndex:(NSUInteger)(random() % _deck.count)]];
     }
-
-//    for (TMCColumn* column in _columns) {
-//        [column setTile:[self randomizeTileFor:column]];
-//    }
-
-    // kept for testing: testbed for no matching tiles situations
-//    int tileIndex = 1;
-//    for (TMCColumn *column in _columns) {
-//        if (column.neighbors.count == 3) {
-//            [column setTile:[_deck objectAtIndex:tileIndex++]];
-//        }
-//        else if (column.neighbors.count == 4) {
-//            [column setTile:[_deck objectAtIndex:0]];
-//        }
-//        else
-//        {
-//            [column setTile:[_deck objectAtIndex:8]];
-//        }
-//    }
 }
 
 - (void) updateTileStats
@@ -308,7 +249,6 @@
     
     return minOff;
 }
-
 
 - (void) raiseByOne {
     for (TMCColumn* column in _columns) {

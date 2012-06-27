@@ -41,6 +41,4 @@
 #error(unknown architecture)
 #endif
 
-#define VIEW_ORTHO
-
 #endif // __GAME_CONFIG_H

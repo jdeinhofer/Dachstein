@@ -2,6 +2,9 @@
 <module type="CIDR_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
+    <content url="file://$USER_HOME$/Library/Caches/appCode10/DerivedData/Dachstein-7cf6b594/Build/Products/Debug-iphonesimulator/Dachstein.app">
+      <sourceFolder url="file://$USER_HOME$/Library/Caches/appCode10/DerivedData/Dachstein-7cf6b594/Build/Products/Debug-iphonesimulator/Dachstein.app" isTestSource="false" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

@@ -37,7 +37,6 @@
 
 @interface TMCRulesClassic ()
 - (void)playSound:(NSString *)stringFormat indexUp:(BOOL)indexUp;
-- (void)playVocal:(id)NSArray;
 - (void)scoreDominoChain:(TMCTile *)tile;
 - (void)scorePerfectChain:(TMCTile *)tile;
 - (void)scoreFirstTile:(TMCTile *)tile;
@@ -78,13 +77,6 @@
     BOOL _alertActive;
     ALuint _alertId;
     ccTime _alertDuration;
-
-
-    // vocal sfx
-    NSArray *_sfxNamesNormal;
-    NSArray *_sfxNamesGood;
-    NSArray *_sfxNamesGreat;
-    NSArray *_sfxNamesChainUp;
 }
 
 - (id<TMCRules>) initWithController: (id <TMCRulesControllerDelegate>) controller
@@ -95,11 +87,6 @@
 
         [_controller.view showHud:[_controller.view hudClassic]];
         _hud = _controller.view.hudClassic;
-
-        _sfxNamesNormal = [[NSArray alloc] initWithObjects:@"normal_1.wav", @"normal_2.wav", @"normal_3.wav", @"normal_4.wav", @"normal_5.wav", @"normal_6.wav", nil];
-        _sfxNamesGood = [[NSArray alloc] initWithObjects:@"good_1.wav", @"good_2.wav", @"good_3.wav", @"good_4.wav", @"good_5.wav", @"good_6.wav", nil];
-        _sfxNamesGreat = [[NSArray alloc] initWithObjects:@"great_1.wav", @"great_2.wav", @"great_3.wav", @"great_4.wav", @"great_5.wav", @"great_6.wav", nil];
-        _sfxNamesChainUp = [[NSArray alloc] initWithObjects:@"chain_up_1.wav", @"chain_up_2.wav", @"chain_up_3.wav", @"chain_up_4.wav", nil];
     }
     
     return self;
@@ -185,33 +172,17 @@
 
 - (void) selectedTile: (TMCTile*) tile
 {
-//   [self playSound:@"select_%i.wav" indexUp:FALSE];
-    [self playVocal:_sfxNamesNormal];
+   [self playSound:@"select_%i.wav" indexUp:FALSE];
 }
 
 - (void) playSound: (NSString *) stringFormat indexUp: (BOOL) indexUp
 {
     if (indexUp) {
-        _soundIndex = MIN(7, _soundIndex + 1);
-        //_soundIndex = (_soundIndex + 1) % SELECT_SOUNDS_NUM;
+        _soundIndex = (_soundIndex + 1) % SELECT_SOUNDS_NUM;
     }
 
     NSString *soundName = [NSString stringWithFormat:stringFormat, _soundIndex + 1];
     [[SimpleAudioEngine sharedEngine] playEffect:soundName];
-}
-
-- (void) playVocal: (NSArray *)sfxNames
-{
-    NSString *sfxName = [sfxNames objectAtIndex:(NSUInteger)(random() % sfxNames.count)];
-//    [[SimpleAudioEngine sharedEngine] playEffect:sfxName pitch:1.0f pan:0.0f gain:8.0f];
-    [[SimpleAudioEngine sharedEngine] playEffect:sfxName];
-}
-
-- (void) playChainUpVocal: (int) chainLength
-{
-    chainLength = MIN(3, chainLength);
-    NSString *sfxName = [_sfxNamesChainUp objectAtIndex:(NSUInteger)chainLength];
-    [[SimpleAudioEngine sharedEngine] playEffect:sfxName];
 }
 
 - (void)scoreDominoChain:(TMCTile *)tile {
@@ -221,8 +192,7 @@
 
     [_controller.view.hudClassic updateScoreMessage:[NSString stringWithFormat:@"DOMINO CHAIN! %i", _scoreGainBase + _scoreGainBonus]];
 
-//    [self playSound:@"success_%i.wav" indexUp:TRUE];
-    [self playVocal:_sfxNamesGood];
+    [self playSound:@"success_%i.wav" indexUp:TRUE];
 }
 
 - (void)scorePerfectChain:(TMCTile *)tile {
@@ -232,8 +202,7 @@
 
     [_controller.view.hudClassic updateScoreMessage:[NSString stringWithFormat:@"PERFECT CHAIN! %i", _scoreGainBase + _scoreGainBonus]];
 
-//    [self playSound:@"success_%i.wav" indexUp:TRUE];
-    [self playVocal:_sfxNamesGreat];
+    [self playSound:@"success_%i.wav" indexUp:TRUE];
 }
 
 - (void)scoreFirstTile:(TMCTile *)tile {
@@ -243,23 +212,19 @@
 
     [_controller.view.hudClassic updateScoreMessage:[NSString stringWithFormat:@"%i", _scoreGainBase + _scoreGainBonus]];
 
-//    [self playSound:@"success_%i.wav" indexUp:FALSE];
-    [self playVocal:_sfxNamesNormal];
+    [self playSound:@"success_%i.wav" indexUp:FALSE];
 }
 
 - (void)scoreAnyTile:(TMCTile *)tile {
     if (_bonusLevel > 0) {
-        [self playChainUpVocal:_bonusLevel - 1];
         [self startChainCountdown];
-//        [[SimpleAudioEngine sharedEngine] playEffect:@"chain_up.wav"];
-//        [self playVocal:_sfxNamesChainUp];
+        [[SimpleAudioEngine sharedEngine] playEffect:@"chain_up.wav"];
 
         _soundIndex = 0;
     } else  {
         [_controller.view.hudClassic updateScoreMessage:[NSString stringWithFormat:@"%i", _scoreGainBase]];
 
-//        [self playSound:@"success_%i.wav" indexUp:FALSE];
-        [self playVocal:_sfxNamesNormal];
+        [self playSound:@"success_%i.wav" indexUp:FALSE];
     }
 
     _scoreGainBonus = 0;
@@ -361,11 +326,6 @@
 
 - (void) dealloc
 {
-    [_sfxNamesChainUp release];
-    [_sfxNamesGood release];
-    [_sfxNamesGreat release];
-    [_sfxNamesNormal release];
-
     [super dealloc];
 }
 

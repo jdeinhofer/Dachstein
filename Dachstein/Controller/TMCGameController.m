@@ -10,7 +10,6 @@
 
 #import "SimpleAudioEngine.h"
 #import "TMCRulesClassic.h"
-#import "TMCBlossomExplosion.h"
 
 #define HINT_TIMER_DELAY 8.0f
 
@@ -26,8 +25,6 @@
 - (void)startGame;
 - (void)endGame;
 - (void)enableGame;
-    // commented out because it looks shit!
-//- (void)startExplosionOnView:(TMCColumnView *)columnView;
 @end
 
 @implementation TMCGameController {
@@ -57,22 +54,10 @@
     return self;
 }
 
-    // TMP! commented out because it looks shit!
-//- (void)startExplosionOnView:(TMCColumnView *)columnView {
-//    TMCBlossomExplosion *explosion = [[[TMCBlossomExplosion alloc] initWithTile:columnView.column.tile] autorelease];
-//    [columnView.parent addChild:explosion];
-//    explosion.position = columnView.position;
-//    [explosion start];
-//}
-
 - (void)removePair:(TMCColumnView *)columnView pickedColumn:(TMCColumn *)pickedColumn selectedColumn:(TMCColumn *)selectedColumn {
     int topOff = [_model getMinTopOffset];
 
     [_rules pickedTile:[pickedColumn tile]];
-
-    // TMP! commented out because it looks shit!
-//    [self startExplosionOnView:columnView];
-//    [self startExplosionOnView:_selectedColumnView];
 
     [selectedColumn pick];
     [pickedColumn pick];
@@ -236,7 +221,6 @@
 
 - (void)startBackgroundAmbience
 {
-    [[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume:0.10f];
     [[CDAudioManager sharedManager] playBackgroundMusic:@"ambience.mp3" loop:YES];
 }
 

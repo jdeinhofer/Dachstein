@@ -15,21 +15,11 @@
 
 #define RAISE_DURATION 0.2f
 
-
-#ifndef VIEW_ORTHO
-    #define SHADE_OPACITY_MAX 200.0f
-    #define SHADE_OPACITY_MULTIPLIER_Z 1.1f
-    #define SHADE_OPACITY_QUADRATIC 25.0f
-    #define SHADE_OPACITY_LINEAR 25.0f
-    #define SHADE_OPACITY_PERY 5.0f
-#else
-    #define SHADE_OPACITY_MAX 200.0f
-    #define SHADE_OPACITY_MULTIPLIER_Z 1.1f
-    #define SHADE_OPACITY_QUADRATIC 2.0f
-    #define SHADE_OPACITY_LINEAR 40.0f
-    #define SHADE_OPACITY_PERY 3.0f
-#endif
-
+#define SHADE_OPACITY_MAX 200.0f
+#define SHADE_OPACITY_MULTIPLIER_Z 1.1f
+#define SHADE_OPACITY_QUADRATIC 2.0f
+#define SHADE_OPACITY_LINEAR 40.0f
+#define SHADE_OPACITY_PERY 3.0f
 
 #define SPRITE_OFFSET_FACTOR_Y 0.87f
 
@@ -102,21 +92,12 @@
     float tileStep = contentHeight - tileHeight;
     float tileWidth = contentWidth;
 
-#ifndef VIEW_ORTHO
-    float xx = x * tileWidth / 2;
-    float xy = -y * tileWidth * 3 / 4;
-
-    float yx = -x * tileHeight / 2;
-    float yy = -y * tileHeight / 4;
-    float yz = -z * tileStep;
-#else
     float xx = x * tileWidth / 2;
     float xy = -y * tileWidth / 2;
 
     float yx = -x * tileHeight / 2;
     float yy = -y * tileHeight / 2;
     float yz = -z * tileStep;
-#endif
 
     CGPoint position = ccp(xx + xy, yx + yy + yz);
     
