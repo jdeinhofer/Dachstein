@@ -60,6 +60,7 @@
 		2E65DB93152611C800451D1D /* success_6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB8A152611C800451D1D /* success_6.wav */; };
 		2E65DB94152611C800451D1D /* success_7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB8B152611C800451D1D /* success_7.wav */; };
 		2E65DB98152617E700451D1D /* alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E65DB95152617E700451D1D /* alert.mp3 */; };
+		2E81C4E3159B344900A2831B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E81C4E5159B344900A2831B /* Localizable.strings */; };
 		2EB3AB1814EED1A500A805C9 /* TMCRulesClassic.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB3AB1714EED1A500A805C9 /* TMCRulesClassic.m */; };
 		2ECD1DF014E9556E00F295AA /* TMCColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECD1DEF14E9556E00F295AA /* TMCColumnView.m */; };
 		2ED7D697140FD7D000CC2C51 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED7D696140FD7D000CC2C51 /* QuartzCore.framework */; };
@@ -209,8 +210,8 @@
 		2ED7D806140FD7D200CC2CA9 /* success_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2CA8 /* success_3.wav */; };
 		2ED7D806140FD7D200CC2CAC /* TimerBar_FG.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2CAB /* TimerBar_FG.png */; };
 		2ED7D806140FD7D200CC2CAE /* TMCLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7D806140FD7D200CC2CAD /* TMCLabel.m */; };
-		2ED7D806140FD7D200CC2CB4 /* TMCBlossom.m in Sources */ = {isa = PBXBuildFile; };
-		2ED7D806140FD7D200CC2CB7 /* TMCFadeOutTiles.m in Sources */ = {isa = PBXBuildFile; };
+		2ED7D806140FD7D200CC2CB4 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		2ED7D806140FD7D200CC2CB7 /* (null) in Sources */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -273,6 +274,8 @@
 		2E65DB8A152611C800451D1D /* success_6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = success_6.wav; path = Sound/referenced_in_project/success_6.wav; sourceTree = SOURCE_ROOT; };
 		2E65DB8B152611C800451D1D /* success_7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = success_7.wav; path = Sound/referenced_in_project/success_7.wav; sourceTree = SOURCE_ROOT; };
 		2E65DB95152617E700451D1D /* alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = alert.mp3; path = Sound/referenced_in_project/alert.mp3; sourceTree = SOURCE_ROOT; };
+		2E81C4E4159B344900A2831B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2E81C4E6159B345700A2831B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = /Users/jdeinhofer/Arbeit/Dachstein/Dachstein/Resources/de.lproj/Localizable.strings; sourceTree = "<absolute>"; };
 		2EB3AB1614EED1A500A805C9 /* TMCRulesClassic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCRulesClassic.h; sourceTree = "<group>"; };
 		2EB3AB1714EED1A500A805C9 /* TMCRulesClassic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCRulesClassic.m; sourceTree = "<group>"; };
 		2EB3AB1A14EEDB4F00A805C9 /* TMCRules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCRules.h; sourceTree = "<group>"; };
@@ -671,6 +674,7 @@
 		2ED7D6A7140FD7D000CC2C51 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2E81C4E5159B344900A2831B /* Localizable.strings */,
 				2E3111FE153491E400A6C094 /* Fedora28.fnt */,
 				2E3111FF153491E400A6C094 /* Fedora28.png */,
 				2E3111EE15348FC500A6C094 /* Fedora14.fnt */,
@@ -1221,6 +1225,7 @@
 				2E090A4415493F2600FBD70E /* gameover_high.mp3 in Resources */,
 				2E090A4515493F2600FBD70E /* gameover_low.mp3 in Resources */,
 				2E090A4615493F2600FBD70E /* music.mp3 in Resources */,
+				2E81C4E3159B344900A2831B /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1341,12 +1346,25 @@
 				2ED7D806140FD7D200CC2C62 /* TMCHint.m in Sources */,
 				2ED7D806140FD7D200CC2C65 /* TMCBackground.m in Sources */,
 				2ED7D806140FD7D200CC2CAE /* TMCLabel.m in Sources */,
-				2ED7D806140FD7D200CC2CB4 /* TMCBlossom.m in Sources */,
-				2ED7D806140FD7D200CC2CB7 /* TMCFadeOutTiles.m in Sources */,
+				2ED7D806140FD7D200CC2CB4 /* (null) in Sources */,
+				2ED7D806140FD7D200CC2CB7 /* (null) in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2E81C4E5159B344900A2831B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E81C4E4159B344900A2831B /* en */,
+				2E81C4E6159B345700A2831B /* de */,
+			);
+			name = Localizable.strings;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2ED7D802140FD7D200CC2C51 /* Debug */ = {

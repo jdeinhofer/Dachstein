@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Dachstein
+
+  Created by Josef Deinhofer on 6/27/12.
+  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+*/
+
+"IDS_PERFECT_CHAIN" = "PERFEKTE KETTE! $i";
+"IDS_DOMINO_CHAIN" = "DOMINO KETTE! $i";
+"IDS_CHAIN_OVER" = "KETTENENDE!";

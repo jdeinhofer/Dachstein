@@ -190,7 +190,7 @@
     _scoreGainBonus = 3 * _scoreGainBase / 5;
     CCLOG(@"FITTING TILE! (%i %i)", tile.color, tile.value);
 
-    [_controller.view.hudClassic updateScoreMessage:[NSString stringWithFormat:@"DOMINO CHAIN! %i", _scoreGainBase + _scoreGainBonus]];
+    [_controller.view.hudClassic updateScoreMessage:[NSString stringWithFormat:NSLocalizedString(@"IDS_DOMINO_CHAIN", nil), _scoreGainBase + _scoreGainBonus]];
 
     [self playSound:@"success_%i.wav" indexUp:TRUE];
 }
@@ -200,7 +200,7 @@
     _scoreGainBonus = _scoreGainBase;
     CCLOG(@"SAME TILE! (%i %i)", tile.color, tile.value);
 
-    [_controller.view.hudClassic updateScoreMessage:[NSString stringWithFormat:@"PERFECT CHAIN! %i", _scoreGainBase + _scoreGainBonus]];
+    [_controller.view.hudClassic updateScoreMessage:[NSString stringWithFormat:NSLocalizedString(@"IDS_PERFECT_CHAIN", nil), _scoreGainBase + _scoreGainBonus]];
 
     [self playSound:@"success_%i.wav" indexUp:TRUE];
 }
@@ -303,7 +303,7 @@
 
     [_hud updateChainInfo:_lastTile chainLength:_chainLength];
     [_hud updateScoreTo:_score highScore:_highScore];
-    [_hud updateScoreMessage:[NSString stringWithFormat:@"CHAIN UP! %i", _scoreGainBase]];
+    [_hud updateScoreMessage:[NSString stringWithFormat:NSLocalizedString(@"IDS_CHAIN_OVER", nil), _scoreGainBase]];
 }
 
 - (void) cashInChainImmediately
